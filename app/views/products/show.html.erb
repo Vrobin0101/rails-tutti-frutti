@@ -3,5 +3,12 @@
   <p><%= @product.category.capitalize %></p>
   <p><%= @product.sub_category.capitalize %></p>
   <p><%= @product.description %></p>
-  <%= Date.today.month %>
+
+  <%= simple_form_for [@product, @follow_up] do |f| %>
+  <%= f.check_box :local %>
+  <%= f.check_box :bio %>
+  <%= f.input :carbon_calcul %>
+  <%= f.submit %>
+  <% end %>
+
 </div>

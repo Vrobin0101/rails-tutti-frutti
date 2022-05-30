@@ -5,7 +5,9 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
-  def show() end
+  def show
+    @follow_up = FollowUp.new
+  end
 
   private
 
