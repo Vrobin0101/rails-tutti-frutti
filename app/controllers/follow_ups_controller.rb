@@ -7,7 +7,8 @@ class FollowUpsController < ApplicationController
     @follow_up = FollowUp.new(params_follow_up)
     @follow_up.user = @user
     @follow_up.product = @product
-    autorize @offer
+    @follow_up.month_number = Date.today.month
+    authorize @follow_up
     if @follow_up.save
       redirect_to profile_path(@user)
     else
@@ -39,7 +40,7 @@ class FollowUpsController < ApplicationController
   end
 
   def set_product
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:product_id])
   end
 
   def params_follow_up
