@@ -3,4 +3,12 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def profile
+  end
+
+  private
+
+  def balance
+  end
 end

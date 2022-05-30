@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :follow_ups, only: :create
   end
   resources :follow_ups, only: %i[edit update destroy]
-  get "/profile/:id", to: "pages#profile"
+  get "/profile/:id", to: "pages#profile", as: 'profile'
 end
