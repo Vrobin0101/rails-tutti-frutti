@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :products, only: %i[index show]
+  resources :follow_ups, only: %i[create edit update destroy]
+  get "/profile/:id", to: "pages#profile"
 end
