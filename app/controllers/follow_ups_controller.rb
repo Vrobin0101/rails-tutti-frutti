@@ -1,0 +1,2 @@
+class FollowUpsController < ApplicationController
+end
