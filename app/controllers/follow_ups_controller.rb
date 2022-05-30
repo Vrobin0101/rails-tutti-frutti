@@ -1,10 +1,12 @@
 class FollowUpsController < ApplicationController
   before_action :set_follow_up, only: %i[edit update destroy]
   before_action :set_user, only: %i[create destroy]
+  before_action :set_product, only: :create
 
   def create
     @follow_up = FollowUp.new(params_follow_up)
     @follow_up.user = @user
+    @follow_up.product = @product
     autorize @offer
     if @follow_up.save
       redirect_to profile_path(@user)
@@ -34,6 +36,10 @@ class FollowUpsController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 
   def params_follow_up
