@@ -1,13 +1,16 @@
-<div class="container">
-  <p><%= @product.name %></p>
-  <p><%= @product.category.capitalize %></p>
+<%= render 'product', product: @product %>
+
+<div class="container p-3">
   <p><%= @product.sub_category.capitalize %></p>
   <p><%= @product.description %></p>
+</div>
 
   <%= simple_form_for [@product, @follow_up] do |f| %>
-  <%= f.check_box :local %>
-  <%= f.check_box :bio %>
-  <%= f.submit %>
+  <%= f.label :local do %>
+    <%= f.check_box :local, as: :boolean, checked_value: true, unchecked_value: false %> <span class="d-block btn btn-primary">local?</span>
   <% end %>
-
-</div>
+  <%= f.label :bio do %>
+    <%= f.check_box :bio, as: :boolean, checked_value: true, unchecked_value: false %> <span class="d-block btn btn-secondary">bio?</span>
+  <% end %>
+  <%= f.submit class:"d-block fixed-bottom w-100 btn btn-primary", value: "Ajouter à mon suivi "%>
+  <% end %>
