@@ -50,9 +50,9 @@ class FollowUpsController < ApplicationController
 
   def calcul_follow_up
     sum = 0
-    if (@product.start_month..@product.end_month).include? @follow_up.month_number
-    elsif @follow_up.local == true
-    elsif @follow_up.bio == true
-    end
+    sum += 75 if (@product.start_month..@product.end_month).include? @follow_up.month_number
+    sum += 15 if @follow_up.local
+    sum += 10 if @follow_up.bio
+    return sum
   end
 end

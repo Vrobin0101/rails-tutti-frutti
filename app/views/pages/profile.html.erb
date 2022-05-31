@@ -1,0 +1,24 @@
+<p>Global score</p>
+<div class="container">
+  <%= @global_score %>
+  <%= @global_note %>
+</div>
+
+<br>
+
+<p>Months of follow up</p>
+<div class="container">
+  <% current_user.follow_ups.each do |follow| %>
+    <%= follow.month_number %>
+  <% end %>
+</div>
+
+<br>
+
+<p>Current month follow up</p>
+<div class="container">
+  <%= @current_score %>
+  <%= @current_note %>
+</div>
+
+<%= console %>
