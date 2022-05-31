@@ -1,32 +1,35 @@
 <div class="container">
   <h2>Recherche ton fruit ou ton légume</h2>
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-    <div class="search-form-control form-group">
+    <div class="search-form-control form-group mb-3">
       <input class="form-control string required" type="text" name="search[query]" id="search_query" />
       <button name="button" type="submit" class="btn btn-flat">
         <i class="fas fa-search"></i>
       </button>
     </div>
   <% end %>
-  <h2>Les fruits et legumes de <%= @current_month %></h2>
-   <div class="swiper mySwiper" data-controller="swiper">
+  <h3>Les fruits et legumes de <%= @current_month %></h3>
+
+   <div class="swiper mySwiper mb-3" data-controller="swiper">
       <div class="swiper-wrapper">
       <% @products.each_with_index do |product, index| %>
         <div class="swiper-slide">
-        <img src="https://picsum.photos/200" alt="">
-          <h3 class="text-black"><%= product.name %></h3>
+          <div class="card-category">
+            <%= product.name %>
+          </div>
         </div>
       <% end %>
     </div>
+    <div class="swiper-pagination"></div>
   </div>
   <%# ---------------------  ------------- %>
-  <div class="container border p-3">
-    <h3>En mai, on fête l’arrivée des fruits rouges, allez-y sans modération !</h3>
+  <div class="container border p-2 mb-3">
+    <p>En mai, on fête l'arrivée des fruits rouges, allez-y sans modération !</p>
   </div>
-  <h2>Tous les fruits et légumes du moment !</h2>
-  <div class="d-flex justify-content-between">
-    <div class="card-category w-50 mx-3">Fruits</div>
-    <div class="card-category w-50 mx-3">Légumes</div>
+  <h2 class="text-center">Tous les fruits et légumes du moment !</h2>
+  <div class="d-flex justify-content-between mb-3">
+    <div class="card-category w-100 mx-1 bg-warning">Fruits</div>
+    <div class="card-category w-100 mx-1 bg-primary">Légumes</div>
   </div>
   <h2>Où les trouver ?</h2>
   <%# map here %>
