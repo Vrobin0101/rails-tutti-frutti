@@ -21,4 +21,18 @@
   <%= @current_note %>
 </div>
 
-<%= console %>
+
+<div class="container">
+<div class="set-size charts-container">
+
+  <div class="pie-wrapper progress-<%= @global_score %> style-2">
+    <span class="label"><%= @global_score %><span class="smaller"></span></span>
+    <div class="pie">
+      <div class="left-side half-circle"></div>
+      <div class="right-side half-circle"></div>
+    </div>
+    <div class="shadow"></div>
+  </div>
+
+</div>
+</div>
