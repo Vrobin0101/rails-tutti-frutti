@@ -1,12 +1,32 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $green;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-lewagon .navbar-brand {
+  color: $purple;
+  font-family: $headers-font;
+  font-weight: 600;
+}
+
+.navbar-toggler:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.dropdown-item {
+  font-family: $body-font;
+  font-size: 16px;
+  color: $purple;
+  font-weight: 700;
+  text-align: end;
+}
+
+.navbar-brand {
+  margin: 0;
+  padding: 0 0.5em;
 }
