@@ -1,17 +1,21 @@
 import { Controller } from "@hotwired/stimulus"
-import Swiper from "swiper"
-// Connects to data-controller="swiper"
+import Swiper from 'swiper/bundle';
+
+// import styles bundle
+
 export default class extends Controller {
   connect() {
-    console.log("swiper")
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: "auto",
+    const swiper = new Swiper('.swiper', {
       spaceBetween: 30,
+      slidesPerView: "auto",
+      autoplay: {
+        delay: 6000,
+      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
       },
     });
-    console.log(swiper)
+
   }
 }
