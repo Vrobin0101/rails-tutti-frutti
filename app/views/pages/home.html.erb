@@ -1,2 +1,34 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h2>Recherche ton fruit ou ton légume</h2>
+  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <div class="search-form-control form-group">
+      <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+      <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  <% end %>
+  <h2>Les fruits et legumes de <%= @current_month %></h2>
+   <div class="swiper mySwiper" data-controller="swiper">
+      <div class="swiper-wrapper">
+      <% @products.each_with_index do |product, index| %>
+        <div class="swiper-slide">
+        <img src="https://picsum.photos/200" alt="">
+          <h3 class="text-black"><%= product.name %></h3>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%# ---------------------  ------------- %>
+  <div class="container border p-3">
+    <h3>En mai, on fête l’arrivée des fruits rouges, allez-y sans modération !</h3>
+  </div>
+  <h2>Tous les fruits et légumes du moment !</h2>
+  <div class="d-flex justify-content-between">
+    <div class="card-category w-50 mx-3">Fruits</div>
+    <div class="card-category w-50 mx-3">Légumes</div>
+  </div>
+  <h2>Où les trouver ?</h2>
+  <%# map here %>
+  <%# ---------- %>
+</div>
