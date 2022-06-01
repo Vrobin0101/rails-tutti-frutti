@@ -10,16 +10,23 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><%= store['fields']['nom_du_commerce'] %></h5>
+          <h5 class="modal-title" id="exampleModalLabel"><%= store['fields']['nom_du_commerce'].titleize %></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-basket-shopping pe-3 fa-sm font-icon-map"></i><%= store['fields']['type_de_commerce'].split.first %></li>
+            <li><span><i class="fa-solid fa-location-dot pe-3 fa-sm font-icon-map"></i></span> <%= store['fields']['adresse'].titleize %>, <%= store['fields']['code_postal'] %></li>
+            <% if  store['fields']['site_internet'] %>
+              <li><i class="fa-solid fa-earth-europe pe-3 fa-sm font-icon-map"></i><strong><%= link_to store['fields']['nom_du_commerce'].titleize, store['fields']['site_internet'], target: '_blank', class: 'text-decoration-none' %></strong></li>
+            <% end %>
+          </ul>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary btn-modal-map" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
 <% end %>
+<!-- End Modal -->
