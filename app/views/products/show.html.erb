@@ -8,8 +8,12 @@
 <div class="container">
   <%= simple_form_for [@product, @follow_up] do |f| %>
     <div class="d-flex justify-content-evenly">
-      <%= f.input :local, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none" } %>
-      <%= f.input :bio, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"} %>
+      <% if @product.localable %>
+        <%= f.input :local, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none" }, label_html: {style: "background-image: url('#{image_url('france.png')}');"}  %>
+      <% else %>
+        <%= f.input :local, as: :boolean, disabled: true, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('france.png')}');"} %>
+      <% end %>
+      <%= f.input :bio, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('bio3.png')}');"} %>
       <%= f.submit class:"d-block fixed-bottom w-100 btn btn-primary", value: "Ajouter à mon suivi "%>
     </div>
   <% end %>
