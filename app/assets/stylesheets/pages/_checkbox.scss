@@ -1,0 +1,30 @@
+.toggle {
+  position: absolute;
+  transform: scale(0);
+}
+
+.toggle + label {
+  position: relative;
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  object-fit: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  outline: 1px dotted rgba(0,0,0,0.7);
+  border-radius: 5px;
+  outline-offset: 10px;
+}
+
+.toggle:checked + label {
+  outline: 3px solid $purple;
+  outline-offset: 10px;
+  border-radius: $border-radius;
+}
+
+.form-check {
+  padding: 0px !important;
+  margin: 0px !important;
+}

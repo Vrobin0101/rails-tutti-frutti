@@ -1,3 +1,6 @@
+require 'json'
+require 'open-uri'
+
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
@@ -9,6 +12,10 @@ class PagesController < ApplicationController
   def profile
     tutti_score_global
     tutti_score_current_month
+  end
+
+  def map
+    api_parsing
   end
 
   private
@@ -32,5 +39,17 @@ class PagesController < ApplicationController
   def tutti_score_current_month
     @current_score = current_user.total_month_average
     @current_note = note(@current_score)
+  end
+
+  def api_parsing
+    url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=coronavirus-commercants-parisiens-livraison-a-domicile&q=bio&rows=100&facet=code_postal&facet=type_de_commerce&facet=fabrique_a_paris&facet=services"
+    stores = JSON.parse(URI.open(url).read)
+    @markers = stores['records'].map do |e|
+      {
+        lng: e['fields']['geo_point_2d'][1],
+        lat: e['fields']['geo_point_2d'][0],
+        image_url: helpers.asset_url("marker_map_green")
+      }
+    end
   end
 end
