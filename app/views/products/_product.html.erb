@@ -1,5 +1,5 @@
 <div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <%= cl_image_tag product.photo.key, height: 400, width: 400, crop: :fill %>
   <div class="card-product-infos">
     <h2 class="mb-3"><%= product.name.capitalize %></h2>
 
@@ -12,7 +12,6 @@
         <i class="pt-1 fa-solid fa-location-dot text-danger"></i><h3 class="ms-3">hors saison</h3>
       </div>
     <% end %>
-
     <% if product.localable %>
       <div class="d-flex align-items-center mb-3">
         <i class="pt-1 fa-solid fa-calendar-check text-success"></i><h3 class="ms-3">potentiellement produit en france</h3>
