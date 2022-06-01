@@ -1,0 +1,671 @@
+- ail:
+    category: légume
+    sub_category: amaryllidaceae
+    description: sa saveur puissante n’a pas d’égal pour relever le goût de nos plats favoris.
+    localable: true
+    start_month: 1
+    end_month: 12
+    image_id: ail_eshdfh
+- artichaut:
+    category: légume
+    sub_category: artichaut
+    description: l’artichaut favorise une meilleure digestion des aliments, grâce à la présence d’un glucide particulièrement efficace.
+    localable: true
+    start_month: 4
+    end_month: 9
+    image_id: artichaut_vsrufj
+- asperge:
+    category: légume
+    sub_category: asperge
+    description: cuites ou crues, ce sont de formidables sources d'agents antioxydants comme la vitamine C, E et A.
+    localable: true
+    start_month: 3
+    end_month: 7
+    image_id: asperge_or3mrp
+- aubergine:
+    category: légume
+    sub_category: aubergine
+    description: l’aubergine est en réalité un fruit mais qui se déguste comme un légume, on vous l’accorde.
+    localable: true
+    start_month: 5
+    end_month: 10
+    image_id: aubergine_egjg94
+- avocat:
+    category: légume
+    sub_category: avocat
+    description: les avocats sont extrêmement polyvalents. Vous pouvez les utiliser dans quasiment tous les plats. Préferez ceux qui viennent d'Espagne :)
+    localable: false
+    start_month: 10
+    end_month: 12
+    image_id: avocat_gbs1tk
+- betterave:
+    category: légume
+    sub_category: rhizome
+    description: si la betterave rouge est riche en sucres, elle contient également beaucoup de fibres, qui ralentissent l’assimilation de ces sucres. Hehe.
+    localable: true
+    start_month: 1
+    end_month: 12
+    image_id: betterave_kl7obt
+- blette:
+    category: légume
+    sub_category: amaranthacée
+    description: elle se consomme aussi bien crue que cuite, comme les épinards, mais son goût est légèrement plus sucré.
+    localable: true
+    start_month: 3
+    end_month: 10
+    image_id: blette_zbenc4
+- brocoli:
+    category: légume
+    sub_category: crucifère
+    description: le brocoli possède des qualités nutritionnelles remarquables. 100 g de brocoli contiennent 2 fois plus de vitamine C qu'une orange.
+    localable: true
+    start_month: 6
+    end_month: 11
+    image_id: brocoli_ilsiur
+- carotte:
+    category: légume
+    sub_category: apiacée
+    description: consommez la cuite et sous forme de purée pour encore plus de bêta-carotène ingéré !
+    localable: true
+    start_month: 1
+    end_month: 12
+    image_id: carotte_cflsm8
+- céleri branche:
+    category: légume
+    sub_category: apiacée
+    description: le céleri-branche possède un goût puissant. Il donne du goût aux bouillons et à diverses sauces mais on peut aussi le consommer cru en bâtonnets à tremper dans une sauce au fromage frais ou... dans un Bloody Mary.
+    localable: true
+    start_month: 7
+    end_month: 9
+    image_id: celeri_branche_obfzno
+- céleri rave:
+    category: légume
+    sub_category: apiacée
+    description: on peut le consommer cru en salade ou cuit pour remplacer la pomme de terre par exemple. Dans les deux cas, il faut le rincer puis éplucher sa peau épaisse.
+    localable: true
+    start_month: 3
+    end_month: 3
+    image_id: celeri_rave_z7o7q8
+- chou:
+    category: légume
+    sub_category: crucifère
+    description: il y en a de deux sortes. Il se nomme chou Cabus, si sa tête et ses feuilles sont lisses. Ou chou pommé de Milan, si sa tête et ses feuilles sont frisées.
+    localable: true
+    start_month: 12
+    end_month: 15
+    image_id: chou_l9ifvv
+- chou de Bruxelles:
+    category: légume
+    sub_category: crucifère
+    description: les choux de Bruxelles ne poussent pas au sol mais dans les cavités d’un plant de chou.
+    localable: true
+    start_month: 9
+    end_month: 15
+    image_id: chou_de_bruxelles_ofgcp4
+- chou Romaneso:
+    category: légume
+    sub_category: crucifère
+    description: wahou un objet fractal naturel ! Cela signifie que chaque partie du chou de la plus petite à la plus grande possède une forme identique à la forme de l’ensemble.
+    localable: true
+    start_month: 6
+    end_month: 6
+    image_id: chou_romanesco_py8mmx
+- chou fleur:
+    category: légume
+    sub_category: crucifère
+    description: selon la légende, des marins italiens aurait ramené le chou-fleur de leur voyage en Orient jusqu’en Europe !
+    localable: true
+    start_month: 4
+    end_month: 5
+    image_id: chou_fleur_s4oyvc
+- concombre:
+    category: légume
+    sub_category: cucurbitacée
+    description: le concombre est considéré comme étant un légume alors qu’il est issu de la transformation des fleurs et représente un ensemble de baies contenant des graines.
+    localable: true
+    start_month: 4
+    end_month: 10
+    image_id: concombre_kbq4lf
+- courge:
+    category: légume
+    sub_category: cucurbitacée
+    description: excellente en purée et en potage, la courge apporte une belle touche orangée et de la douceur aux plats salés ou sucrés. En soupe, ragoût, tarte ou biscuit, elle est un parfait alliée pendant l'automne !
+    localable: true
+    start_month: 8
+    end_month: 13
+    image_id: courge_zf7x5f
+- courgette:
+    category: légume
+    sub_category: cucurbitacée
+    description: légume gorgé de soleil et d’eau, la courgette nous fait profiter de sa douce saveur avant même sa maturité complète !
+    localable: true
+    start_month: 5
+    end_month: 10
+    image_id: courgette_h5ks6f
+- crosne:
+    category: rhizome
+    sub_category: crucifère
+    description: plante vivace et rustique, elle peut être consommée comme la pomme de terre.
+    localable: true
+    start_month: 11
+    end_month: 12
+    image_id: crosne_ik21ph
+- échalote:
+    category: légume
+    sub_category: amaryllidaceae
+    description: à partir du bulbe, l’échalote forme 2 ou 3 bourgeons que l’on observe lorsqu’il est coupé. L’échalion lui n’en forme qu’un seul.
+    localable: true
+    start_month: 10
+    end_month: 12
+    image_id: echalote_zdgpxw
+- endive:
+    category: légume
+    sub_category: salade
+    description: pour avoir une texture parfaite et une couleur blanche, on les cultive dans un endroit sombre où on les arrosera de temps en temps.
+    localable: true
+    start_month: 10
+    end_month: 16
+    image_id: endive_oaf513
+- épinard:
+    category: légume
+    sub_category: amaranthacée
+    description: l’épinard est riche en fibres et surtout en vitamine C. Attention, la vitamine C disparaît de moitié lors de la cuisson à l’eau. Et le fer dans les épinards, c'est une légende, désolé.
+    localable: true
+    start_month: 1
+    end_month: 12
+    image_id: epinard_dozvmw
+- fenouil:
+    category: apiacée
+    sub_category: crucifère
+    description: les propriétés digestives du fenouil sont reconnues grâce aux substances contenues dans ses graines ainsi que dans son bulbe.
+    localable: true
+    start_month: 6
+    end_month: 11
+    image_id: fenouil_gxhzpg
+- frisée:
+    category: légume
+    sub_category: salade
+    description: pour le préparer, détachez les feuilles du cœur avec un couteau. Lavez la salade dans plusieurs bains pour éliminer la terre et le sable avant de l’essorer.
+    localable: true
+    start_month: 9
+    end_month: 17
+    image_id: frisee_wwx4p0
+- haricot vert:
+    category: légume
+    sub_category: pois
+    description: plus le haricot est gros, plus vous risquez de trouver des fils !
+    localable: true
+    start_month: 6
+    end_month: 10
+    image_id: haricot_vert_u0fhaz
+- laitue:
+    category: légume
+    sub_category: salade
+    description: cette variété de salade est l’un des légumes les plus populaires dans le monde.
+    localable: true
+    start_month: 4
+    end_month: 10
+    image_id: laitue_vzqegk
+- mâche:
+    category: légume
+    sub_category: salade
+    description: en tant que premier producteur européen, les français raffolent de la mâche ! Et cela depuis très longtemps car il s’agit d’une variété ancienne originaire du bassin méditerranéen et cultivée en France depuis le XVIe siècle.
+    localable: true
+    start_month: 11
+    end_month: 15
+    image_id: mache_mb1pdk
+- navet:
+    category: féculent
+    sub_category: crucifère
+    description: un bon navet doit être bien blanc, sans taches brunes, ni flétrissures. Mieux vaut éviter les gros navets qui sont souvent assez durs et creux.
+    localable: true
+    start_month: 10
+    end_month: 18
+    image_id: navet_iyx4cf
+- oignon:
+    category: légume
+    sub_category: amaryllidaceae
+    description: "l’oignon peut avoir des formes diverses : rond, allongé, ou aplati. Il peut être également de différentes couleurs : blanc, jaune ou rouge. Votre choix sera forcément le bon."
+    localable: true
+    start_month: 4
+    end_month: 9
+    image_id: oignon_dkzrsz
+- panais:
+    category: légume
+    sub_category: féculent
+    description: "délicieux rôti au four : arrosez le d'huile d'olive et déposez de la fleur de sel dessus. Patientez 30 min. Régalez-vous. De rien."
+    localable: true
+    start_month: 9
+    end_month: 15
+    image_id: panais_l9hkvj
+- patate douce:
+    category: légume
+    sub_category: féculent
+    description: son nom peut nous laisser croire que c'est une pomme de terre, mais non. La patate douce possède 50% de fibres de plus que sa cousine, son indice glycémique est nettement plus bas. Une vraie alliée pour une alimentation équilibrée ! Ne nous remerciez pas.
+    localable: false
+    start_month: 9
+    end_month: 10
+    image_id: panais_l9hkvj
+- petit pois:
+    category: légume
+    sub_category: pois
+    description: la France est le pays qui produit le plus de petits pois en Europe. Ce légume printanier plaît beaucoup aux petits et aux grands grâce à son goût légèrement sucré.
+    localable: true
+    start_month: 4
+    end_month: 7
+    image_id: petit_pois_kvtwhv
+- poireau:
+    category: légume
+    sub_category: amaryllidaceae
+    description: du légume bicolore, certains préfèrent le blanc, pourtant, les feuilles se cuisinent parfaitement bien et parfument à merveille les plats.
+    localable: true
+    start_month: 9
+    end_month: 12
+    image_id: poireau_asfb1h
+- poivron:
+    category: légume
+    sub_category: poivron
+    description: la concentration en vitamine C du poivron évolue au fur et à mesure de son processus de maturité. La teneur en vitamine C des poivrons verts conservés à température ambiante augmente après la récolte, tandis que celle des poivrons rouges a tendance à diminuer.
+    localable: true
+    start_month: 6
+    end_month: 9
+    image_id: poivron_zbybvj
+- pomme de terre:
+    category: légume
+    sub_category: féculent
+    description: "on la consomme sous toutes ses formes : en frites, en purée, en soupe, en galettes, sautées, bouillies… A l’infini, pour le bonheur de nos papilles !"
+    localable: true
+    start_month: 1
+    end_month: 12
+    image_id: pomme_de_terre_ordcsf
+- potiron:
+    category: légume
+    sub_category: cucurbitacée
+    description: sa chair est ferme et sucrée avec un petit goût de châtaigne. En soupe, rôti au four, en purée, on ne s'ennuie pas en cuisine.
+    localable: true
+    start_month: 9
+    end_month: 9
+    image_id: potiron_ajhy5b
+- radis:
+    category: légume
+    sub_category: apiacée
+    description: le radis noir est un légume qui a des capacités détoxifiantes radicales. Grâce à ses effets purificateurs, il stimule les fonctions digestives et facilite l’évacuation de la bile en excès.
+    localable: true
+    start_month: 2
+    end_month: 12
+    image_id: potiron_ajhy5b
+- rutabaga:
+    category: légume
+    sub_category: rhizome
+    description: pour le préparer, il faut soigneusement peler la peau puis le rincer. On peut le consommer cru comme des carottes râpées ou bien cuit en gratin.
+    localable: true
+    start_month: 10
+    end_month: 15
+    image_id: rutabaga_od4jpg
+- salsifi:
+    category: légume
+    sub_category: rhizome
+    description: pour préparer les salsifis, il faut d’abord bien les laver. Ensuite, on coupe les extrémités puis on les épluche. Pour ne pas les casser, on maintient le salsifis à plat sur une planche puis on l’épluche de la tête vers le pied.
+    start_month: 10
+    end_month: 15
+    image_id: salsifi_vwakod
+- topinambour:
+    category: légume
+    sub_category: rhizome
+    description: avec une saveur semblable à celle de son cousin l’artichaut, le topinambour présente une texture délicate et une chair fine.
+    localable: true
+    start_month: 10
+    end_month: 15
+    image_id: topinambour_ecyk2c
+- lentille:
+    category: légume
+    sub_category: légumineuse
+    description: riches en protéines, elles constituent un mets exquis et délicat à consommer régulièrement.
+    localable: true
+    start_month: 10
+    end_month: 15
+    image_id: lentille_wrndfn
+- abricot:
+    category: fruit
+    sub_category: rosacée
+    description: tout doux, l'abricot est un véritable symbole de l‘été. Qu’on le croque en toute simplicité, qu’on le déguste dans une pâtisserie ou qu’on s’en délecte en confiture, l’abricot a le pouvoir d’offrir à nos papilles une dose de soleil.
+    localable: true
+    start_month: 6
+    end_month: 8
+    image_id: abricot_duicrx
+- ananas:
+    category: fruit
+    sub_category: exotique
+    description: parfum des parfums, c’est ainsi que les amérindiens nommèrent l’ananas, eux qui connaissent et cultivent ce fruit depuis fort longtemps. Ce fruit est malheureusement importé de loin, très loin.
+    localable: false
+    start_month: 12
+    end_month: 15
+    image_id: ananas_mnumjn
+- amande sèche:
+    category: fruit
+    sub_category: noix
+    description: parmi les graines oléagineuses, l'amande est sans doute l'une de celles regroupant le plus de bienfaits pour la santé. À tel point qu'elle était classée l'été dernier parmi les 50 ingrédients les plus sains au monde.
+    localable: true
+    start_month: 1
+    end_month: 12
+    image_id: amande_mklzmn
+- baie de Goji:
+    category: fruit
+    sub_category: noix
+    description: « Le ciel est la limite lorsqu’il s’agit d’incorporer les baies de goji dans votre alimentation ».
+    localable: true
+    start_month: 8
+    end_month: 10
+    image_id: baie_de_goji_bprq3v
+- banane:
+    category: fruit
+    sub_category: exotique
+    description: pleine de potassium, de glucides, de fibres et de vitamine C, la banane constitue une collation très nutritive, facilement transportable, enfin on vous apprend rien sur la banane. Enfin si, elle vient de loin alors à consommer avec modération.
+    localable: false
+    start_month: 9
+    end_month: 14
+    image_id: banane_fvqp9q
+- brugnon:
+    category: fruit
+    sub_category: rosacée
+    description: on différencie le brugnon de la nectarine grâce à son noyau qui adhère à la pulpe et à sa chair plus molle et fragile.
+    localable: true
+    start_month: 6
+    end_month: 8
+    image_id: brugnon_cevo3v
+- cassis:
+    category: fruit
+    sub_category: fruit rouge
+    description: la baie de cassis est quatre fois plus riche en vitamine C  que l'orange !
+    localable: true
+    start_month: 6
+    end_month: 8
+    image_id: cassis_rmd9fw
+- cerise:
+    category: fruit
+    sub_category: fruit rouge
+    description: la cerise, originaire d’Asie mineure, est arrivée en Italie en -70 avant J-C. Eh oui, la cerise est un fruit absolument délicieux.
+    localable: true
+    start_month: 5
+    end_month: 8
+    image_id: cerise_kjdgd0
+- châtaigne:
+    category: fruit
+    sub_category: noix
+    description: la châtaigne est cloisonnée, tandis que le marron est un fruit homogène. A vous de briller en société maintenant.
+    localable: true
+    start_month: 10
+    end_month: 12
+    image_id: chataigne_uim8vn
+- citron:
+    category: fruit
+    sub_category: agrume
+    description: le citron est un fruit disponible tout au long de l’année et a la particularité d’apporter soleil, vitamines et énergie en plein mois de novembre.
+    localable: true
+    start_month: 1
+    end_month: 12
+    image_id: citron_hfz4s5
+- citron vert:
+    category: fruit
+    sub_category: agrume
+    description: commençons par renommer notre citron vert. Il s'agit en fait de la lime. Pendant des années nous aussi avons cru que lime était tout simplement la traduction en anglais de "citron vert" mais pas du tout.
+    localable: true
+    start_month: 2
+    end_month: 12
+    image_id: citron_vert_tvl5tw
+- clémentine:
+    category: fruit
+    sub_category: agrume
+    description: même si elle est délicieuse nature, elle sublime aussi de nombreux mets comme la volaille, le poisson gras ou les crudités.
+    localable: true
+    start_month: 11
+    end_month: 14
+    image_id: clementine_kvgbdl
+- coing:
+    category: fruit
+    sub_category: piridion
+    description: avec son allure dodue et rebondie, on le prend souvent pour une pomme. Et sa tête, légèrement pointue, rappelle celle de la poire. Mais il ne faut pas se fier aux apparences, car sous ses airs de fruit mélangé, le coing est peut-être l’ancêtre des deux premiers.
+    localable: true
+    start_month: 9
+    end_month: 11
+    image_id: coing_f1wbms
+- figue:
+    category: fruit
+    sub_category: figue
+    description: contrairement à ce que l’on pourrait penser, la figue n’est pas un fruit. Il s’agit en effet d’une sorte de fleur inversée dans laquelle de petites fleurs poussent à l’intérieur de la coque rigide. C'est délicieux. Evidemment.
+    localable: true
+    start_month: 9
+    end_month: 10
+    image_id: figue_alwuea
+- fraise:
+    category: fruit
+    sub_category: fruit rouge
+    description: les fraises sont produites dans de nombreuses régions françaises et ont donné naissance à plus de 600 variétés dont la gariguette, la mara des bois, la fraise des bois, plus petite, plus savoureuse et plus parfumée que la fraise cultivée.
+    localable: true
+    start_month: 5
+    end_month: 8
+    image_id: fraise_xti1ku
+- framboise:
+    category: fruit
+    sub_category: fruit rouge
+    description: son aspect de baie sauvage et son goût à l’équilibre parfait entre le sucré et l’acide en font un des fruits préférés des Français.
+    localable: true
+    start_month: 6
+    end_month: 8
+    image_id: framboise_apabtp
+- fruit de la passion:
+    category: fruit
+    sub_category: exotique
+    description: chaque personne possède sa technique mais la façon la plus classique de déguster le fruit de la passion est de le couper en deux et de le déguster avec une petite cuillère. Vous pouvez aussi en mettre dans vos cocktails. Juste une idée comme ça.
+    localable: false
+    start_month: 10
+    end_month: 14
+    image_id: fruit_de_la_passion_izzbgk
+- grenade:
+    category: fruit
+    sub_category: exotique
+    description: originaire du Bassin Méditerranéen, la grenade est un fruit très réputé pour ses qualités gustatives dans les pays du Proche-Orient ou encore en Italie et en Espagne. On l'adore ici aussi.
+    localable: true
+    start_month: 9
+    end_month: 11
+    image_id: grenade_iamrym
+- groseille:
+    category: fruit
+    sub_category: fruit rouge
+    description: on les cultive surtout dans la vallée du Rhône, en Côte-d’Or et dans le Val de Loire. Du rouge carmin au blanc, en passant par le violet ou le jaune, la groseille est une baie qui offre une farandole de couleurs.
+    localable: true
+    start_month: 10
+    end_month: 15
+    image_id: groseille_o7mtnn
+- kaki:
+    category: fruit
+    sub_category: piridion
+    description: le kaki est un fruit méditerranéen dont les couleurs vives égayent le cœur de l'hiver. Il vous aide à diversifier votre alimentation, à une saison durant laquelle il est plus difficile de le faire.
+    localable: true
+    start_month: 10
+    end_month: 15
+    image_id: kaki_qlbvmt
+- kiwi:
+    category: fruit
+    sub_category: juicy
+    description: "le kiwi possède des qualités nutritionnelles exceptionnelles : 100 g de kiwi contiennent 5 fois plus de vitamine C qu'une orange. Le kiwi jaune vient souvent de très loin, préférez le kiwi local."
+    localable: true
+    start_month: 10
+    end_month: 14
+    image_id: kiwi_hgtqnh
+- mandarine:
+    category: fruit
+    sub_category: agrume
+    description: cet agrume au goût sucré tiendrait son nom de sa couleur, proche de celle des robes en soie des mandarins qui aimaient la savourer. La médecine chinoise utilise depuis des millénaires sa peau séchée pour réguler l’énergie et la digestion.
+    localable: true
+    start_month: 11
+    end_month: 14
+    image_id: mandarine_cncyyl
+- mangue:
+    category: fruit
+    sub_category: exotique
+    description: "le goût de la mangue est dépendant de sa variété et de sa maturité : on peut y déceler des saveurs de pêche, fleurs, citron, abricot, banane, menthe... Tout simplement délicieuse, malheureusement elle vient de loin. A savourer avec modération donc."
+    localable: false
+    start_month: 12
+    end_month: 19
+    image_id: mangue_jbinqf
+- melon:
+    category: fruit
+    sub_category: juicy
+    description: on compte plus de 300 variétés différentes de melon. La variété la plus répandue étant le charentais (aussi appelée cantaloup), que vous pouvez reconnaître à sa chair orangée, fondante, sucrée et juteuse. Qui a hâte d'être à l'été maintenant ?
+    localable: true
+    start_month: 6
+    end_month: 9
+    image_id: melon_od8amp
+- mirabelle:
+    category: fruit
+    sub_category: rosacée
+    description: la mirabelle lorraine est l’une des productions les plus géolocalisées du monde. La Lorraine est à l’origine de 90% de la production mondiale de mirabelles !
+    localable: true
+    start_month: 9
+    end_month: 9
+    image_id: mirabelle_b7cmf5
+- mûre:
+    category: fruit
+    sub_category: fruit rouge
+    description: cette délicieuse petite baie sombre au goût légèrement acide et délicatement sucré est un véritable bijou de la saison estivale. Succulente sauvage, elle est aussi exquise cultivée.
+    localable: true
+    start_month: 9
+    end_month: 9
+    image_id: mure_l3lqte
+- myrtille:
+    category: fruit
+    sub_category: fruit rouge
+    description: seulement 11 % des Français consomment des myrtilles. Elle est particulièrement indiquée pour renforcer la vision crépusculaire, ainsi que pour lutter contre la fatigue oculaire. On pose ça là.
+    localable: true
+    start_month: 7
+    end_month: 10
+    image_id: myrtille_bnbg4d
+- nectarine:
+    category: fruit
+    sub_category: rosacée
+    description: on différencie le brugnon de la nectarine grâce à son noyau qui adhère à la pulpe et à sa chair plus molle et fragile.
+    localable: true
+    start_month: 7
+    end_month: 8
+    image_id: nectarine_kwmzde
+- noisette:
+    category: fruit
+    sub_category: noix
+    description: amande du fruit du noisetier, la noisette se cueille durant l'automne, mais se déguste partout et tout le temps. Avec du chocolat, vous voyez bien ce que ça donne.
+    localable: true
+    start_month: 8
+    end_month: 10
+    image_id: noisette_qggroy
+- noix:
+    category: fruit
+    sub_category: noix
+    description: c’est au frais et au sec que les noix se conserveront de la meilleure manière. Plus la température est élevée, plus sa maturation est rapide.
+    localable: true
+    start_month: 9
+    end_month: 10
+    image_id: noix_vy6pm7
+- noix de coco:
+    category: fruit
+    sub_category: exotique
+    description: chaque portion de 100g de chair de noix de coco contient 9g de fibres alimentaires, ce qui équivaut à environ 35% de ce qui est recommandé quotidiennement, voilà ce qui explique que la noix de coco aide à calmer la faim et donne un sentiment de satiété.
+    localable: true
+    start_month: 9
+    end_month: 14
+    image_id: noix_de_coco_y3opqq
+- orange:
+    category: fruit
+    sub_category: agrume
+    description: savez-vous qui est arrivé en premier entre l’orange fruit et la couleur orange ? Selon les recherches étymologiques, il semblerait que le fruit précède la couleur, apparue seulement au XVIème siècle et d’abord nommée « la couleur d’orange ».
+    localable: true
+    start_month: 11
+    end_month: 12
+    image_id: orange_y15jwf
+- pamplemousse:
+    category: fruit
+    sub_category: agrume
+    description: lorsque vous dégustez un pamplemousse vous mangez en réalité un pomelo. Ces deux agrumes sont systématiquement confondus.
+    localable: true
+    start_month: 1
+    end_month: 3
+    image_id: pamplemousse_hz8hax
+- papaye:
+    category: fruit
+    sub_category: exotique
+    description: la papaye est un fruit originaire du Mexique. Le papayer est un arbre qui pousse facilement et rapidement, et qui a en plus la particularité de donner des fruits tout au long de l’année !
+    localable: false
+    start_month: 10
+    end_month: 12
+    image_id: papaye_ppwugd
+- pastèque:
+    category: fruit
+    sub_category: juicy
+    description: originaire d’Afrique, la pastèque fait partie de la famille des cucurbitacées au même titre que le melon, le potimarron ou le cornichon. C'est trop bon (rime en "on")
+    localable: true
+    start_month: 6
+    end_month: 9
+    image_id: pasteque_dicqe7
+- pêche:
+    category: fruit
+    sub_category: rosacée
+    description: à Montreuil, du 17e au 19e siècle, on cultivait des pêches dans les fameux vergers des Murs à pêches.
+    localable: true
+    start_month: 6
+    end_month: 9
+    image_id: peche_nqkvji
+- physalis:
+    category: fruit
+    sub_category: rosacée
+    description: "la problématique était la suivante : trouver des fruits et légumes qui donnent en abondance avec un minimum de travail et qui se consomment en hiver. Eh bien, ces fruits et légumes existent ! En voici un : la physalis."
+    localable: true
+    start_month: 10
+    end_month: 14
+    image_id: physalis_wnqka4
+- poire:
+    category: fruit
+    sub_category: piridion
+    description: les poires s'oxydent lorsque leur chair est exposée à l'air. Pour limiter cette oxydation, arroser le fruit de jus de citron. Promis, la bonne poire, ce ne sera pas vous.
+    localable: true
+    start_month: 7
+    end_month: 16
+    image_id: poire_nwmbzx
+- pomme:
+    category: fruit
+    sub_category: piridion
+    description: manger une pomme est plus efficace pour rester éveillé que de boire un café. C'est vrai.
+    localable: true
+    start_month: 6
+    end_month: 16
+    image_id: pomme_d9aoju
+- prune:
+    category: fruit
+    sub_category: rosacée
+    description: la prune Reine Claude fut baptisée ainsi pour rendre hommage à Claude, la première femme de François 1er.
+    localable: true
+    start_month: 6
+    end_month: 9
+    image_id: prune_u6c8uy
+- raisin:
+    category: fruit
+    sub_category: juicy
+    description: il est le fruit le plus cultivé dans le monde... Bien sucré, gorgé de soleil et juteux à souhait ! Croquer une grappe de raisin noir, blanc ou rosé est l’un des grands plaisirs de l’automne pour garder la forme.
+    localable: true
+    start_month: 8
+    end_month: 10
+    image_id: raisin_rbzhhc
+- rhubarbe:
+    category: fruit
+    sub_category: rhubarbe
+    description: elle est riche en vitamine C, en calcium, en magnésium, en potassium et en phosphore. Surtout, elle est pleine de fibres, ce qui en fait un allié de choix pour… le transit !
+    localable: true
+    start_month: 5
+    end_month: 7
+    image_id: rhubarbe_f15rjd
+- tomate:
+    category: fruit
+    sub_category: tomate
+    description: la tomate est l'aliment le plus consommé au monde. Il s'agit bien d'un fruit et non d'un légume. On se doute que vous le savez mais on aime bien le rappeler.
+    localable: true
+    start_month: 5
+    end_month: 10
+    image_id: tomate_jo5v4z
