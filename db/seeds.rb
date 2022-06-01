@@ -21,17 +21,6 @@ end
 puts "Finish Users"
 
 puts "Creating Products..."
-# 10.times do
-#   if rand(0..1)
-#     name = Faker::Food.vegetables
-#     category = "vegetables"
-#   else
-#     name = Faker::Food.fruits
-#     category = "fruits"
-#   end
-#   product = Product.new(name: name, category: category, sub_category: Faker::Food.ethnic_category, description: Faker::Food.description, start_month: rand(1...6), end_month: rand(6..12), localable: rand(0..1).zero?)
-#   product.save!
-# end
 
 file = YAML.load_file('db/seed.yml')
 file.each do |hash|
@@ -46,7 +35,7 @@ puts "Finish Products"
 puts "Creating Follow ups...."
 
 Product.all.each do |product|
-  fu = FollowUp.new(user: User.find(rand(1..10)), product: product, month_number: rand(0..12), carbon_calcul: [-1, +1].sample , local: rand(0..1).zero?, bio: rand(0..1).zero?)
+  fu = FollowUp.new(user: User.find(rand(1..10)), product: product, month_number: rand(0..24), carbon_calcul: rand(0..100) , local: rand(0..1).zero?, bio: rand(0..1).zero?)
   fu.save!
 end
 puts "Finish Follow ups"
