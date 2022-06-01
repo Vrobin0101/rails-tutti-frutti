@@ -20,6 +20,10 @@
   transition: background 0.3s ease;
 }
 
+.btn-bot {
+  height: 75px;
+}
+
 .btn-flat:hover {
   background: $red;
   color: white;
