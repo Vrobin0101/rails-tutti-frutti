@@ -24,7 +24,7 @@
       <ul class="navbar-nav me-auto d-flex flex-col align-items-end">
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-            <%= link_to "Mon profile", "#", class: "dropdown-item" %>
+            <%= link_to "Mon profil", "#", class: "dropdown-item" %>
             <%= link_to "Où acheter ?", "#", class: "dropdown-item" %>
             <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
           </li>
