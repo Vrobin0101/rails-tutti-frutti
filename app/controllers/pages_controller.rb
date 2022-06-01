@@ -48,7 +48,7 @@ class PagesController < ApplicationController
       {
         lng: e['fields']['geo_point_2d'][1],
         lat: e['fields']['geo_point_2d'][0],
-        image_url: helpers.asset_url("logo_tutti_frutti")
+        image_url: helpers.asset_url("marker_map_green")
       }
     end
   end
