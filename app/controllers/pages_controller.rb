@@ -43,12 +43,13 @@ class PagesController < ApplicationController
 
   def api_parsing
     url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=coronavirus-commercants-parisiens-livraison-a-domicile&q=bio&rows=100&facet=code_postal&facet=type_de_commerce&facet=fabrique_a_paris&facet=services"
-    stores = JSON.parse(URI.open(url).read)
-    @markers = stores['records'].map do |e|
+    @stores = JSON.parse(URI.open(url).read)
+    @markers = @stores['records'].map do |e|
       {
         lng: e['fields']['geo_point_2d'][1],
         lat: e['fields']['geo_point_2d'][0],
-        image_url: helpers.asset_url("marker_map_green")
+        image_url: helpers.asset_url("marker_map"),
+        id: e['recordid']
       }
     end
   end

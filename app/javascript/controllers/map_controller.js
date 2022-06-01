@@ -31,6 +31,8 @@ export default class extends Controller {
 
       // Create a HTML element for your custom marker
       const customMarker = document.createElement("div")
+      customMarker.setAttribute('data-bs-toggle', "modal")
+      customMarker.setAttribute('data-bs-target', `#store-modal-${marker.id}`)
       customMarker.className = "marker"
       customMarker.style.backgroundImage = `url('${marker.image_url}')`
       customMarker.style.backgroundSize = "contain"
@@ -41,7 +43,7 @@ export default class extends Controller {
       // Pass the element as an argument to the new marker
       new mapboxgl.Marker(customMarker)
         .setLngLat([marker.lng, marker.lat])
-        .setPopup(popup)
+        // .setPopup(popup)
         .addTo(this.map)
     })
   }
