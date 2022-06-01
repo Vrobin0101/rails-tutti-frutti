@@ -11,7 +11,7 @@
 # puts "Destroy follow ups..."
 # FollowUp.destroy_all
 # puts "Destroy users.."
-# User.destroy_all
+# User.destroy_allZ
 
 puts "Creating Users..."
 10.times do
@@ -21,15 +21,13 @@ end
 puts "Finish Users"
 
 puts "Creating Products..."
-10.times do
-  if rand(0..1)
-    name = Faker::Food.vegetables
-    category = "vegetables"
-  else
-    name = Faker::Food.fruits
-    category = "fruits"
-  end
-  product = Product.new(name: name, category: category, sub_category: Faker::Food.ethnic_category, description: Faker::Food.description, start_month: rand(0...12), end_month: rand(12..24), localable: rand(0..1).zero?)
+
+file = YAML.load_file('db/seed.yml')
+file.each do |hash|
+  name = hash.keys.first
+  image = URI.open("https://res.cloudinary.com/de6cwutjk/image/upload/tutti%20frutti/#{hash[name]['image_id']}.jpg")
+  product = Product.new(name: hash.keys.first, category: hash[name]['category'], sub_category: hash[name]['sub_category'], description: hash[name]['description'], localable: hash[name]['localable'], start_month: hash[name]['start_month'], end_month: hash[name]['end_month'])
+  product.photo.attach(io: image, filename: hash[name], content_type: 'jpg')
   product.save!
 end
 puts "Finish Products"

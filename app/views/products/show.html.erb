@@ -5,12 +5,12 @@
   <p><%= @product.description %></p>
 </div>
 
+<div class="container">
   <%= simple_form_for [@product, @follow_up] do |f| %>
-  <%= f.label :local do %>
-    <%= f.check_box :local, as: :boolean, checked_value: true, unchecked_value: false %> <span class="d-block btn btn-primary">local?</span>
+    <div class="d-flex justify-content-evenly">
+      <%= f.input :local, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none" } %>
+      <%= f.input :bio, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"} %>
+      <%= f.submit class:"d-block fixed-bottom w-100 btn btn-primary", value: "Ajouter à mon suivi "%>
+    </div>
   <% end %>
-  <%= f.label :bio do %>
-    <%= f.check_box :bio, as: :boolean, checked_value: true, unchecked_value: false %> <span class="d-block btn btn-secondary">bio?</span>
-  <% end %>
-  <%= f.submit class:"d-block fixed-bottom w-100 btn btn-primary", value: "Ajouter à mon suivi "%>
-  <% end %>
+</div>

@@ -1,0 +1,96 @@
+- ail:
+    category: légume
+    sub_category: amaryllidaceae
+    description: sa saveur puissante n’a pas d’égal pour relever le goût de nos plats favoris.
+    localable: true
+    start_month: 1
+    end_month: 12
+    image_id: ail_eshdfh
+- artichaut:
+    category: légume
+    sub_category: artichaut
+    description: l’artichaut favorise une meilleure digestion des aliments, grâce à la présence d’un glucide particulièrement efficace.
+    localable: true
+    start_month: 4
+    end_month: 9
+    image_id: artichaut_vsrufj
+- asperge:
+    category: légume
+    sub_category: asperge
+    description: cuites ou crues, ce sont de formidables sources d'agents antioxydants comme la vitamine C, E et A.
+    localable: true
+    start_month: 3
+    end_month: 7
+    image_id: asperge_or3mrp
+- aubergine:
+    category: légume
+    sub_category: aubergine
+    description: l’aubergine est en réalité un fruit mais qui se déguste comme un légume, on vous l’accorde.
+    localable: true
+    start_month: 5
+    end_month: 10
+    image_id: aubergine_egjg94
+- avocat:
+    category: légume
+    sub_category: avocat
+    description: les avocats sont extrêmement polyvalents. Vous pouvez les utiliser dans quasiment tous les plats. Préferez ceux qui viennent d'Espagne :)
+    localable: true
+    start_month: 10
+    end_month: 12
+    image_id: avocat_gbs1tk
+- betterave:
+    category: légume
+    sub_category: rhizome
+    description: si la betterave rouge est riche en sucres, elle contient également beaucoup de fibres, qui ralentissent l’assimilation de ces sucres. Hehe.
+    localable: true
+    start_month: 1
+    end_month: 12
+    image_id: betterave_kl7obt
+- blette:
+    category: légume
+    sub_category: amaranthacée
+    description: elle se consomme aussi bien crue que cuite, comme les épinards, mais son goût est légèrement plus sucré.
+    localable: true
+    start_month: 3
+    end_month: 10
+    image_id: blette_zbenc4
+- brocoli:
+    category: légume
+    sub_category: crucifère
+    description: le brocoli possède des qualités nutritionnelles remarquables. 100 g de brocoli contiennent 2 fois plus de vitamine C qu'une orange.
+    localable: true
+    start_month: 6
+    end_month: 11
+    image_id: brocoli_ilsiur
+- carotte:
+    category: légume
+    sub_category: apiacée
+    description: consommez la cuite et sous forme de purée pour encore plus de bêta-carotène ingéré !
+    localable: true
+    start_month: 1
+    end_month: 12
+    image_id: carotte_cflsm8
+- céleri branche:
+    category: légume
+    sub_category: apiacée
+    description: le céleri-branche possède un goût puissant. Il donne du goût aux bouillons et à diverses sauces mais on peut aussi le consommer cru en bâtonnets à tremper dans une sauce au fromage frais ou... dans un Bloody Mary.
+    localable: true
+    start_month: 7
+    end_month: 9
+    image_id: celeri_branche_obfzno
+- céleri rave:
+    category: légume
+    sub_category: apiacée
+    description: on peut le consommer cru en salade ou cuit pour remplacer la pomme de terre par exemple. Dans les deux cas, il faut le rincer puis éplucher sa peau épaisse.
+    localable: true
+    start_month: 3
+    end_month: 3
+    image_id: celeri_rave_z7o7q8
+- chou:
+    category: légume
+    sub_category: crucifère
+    description: il y en a de deux sortes. Il se nomme chou Cabus, si sa tête et ses feuilles sont lisses. Ou chou pommé de Milan, si sa tête et ses feuilles sont frisées.
+    localable: true
+    start_month: 12
+    end_month: 15
+    image_id: chou_l9ifvv

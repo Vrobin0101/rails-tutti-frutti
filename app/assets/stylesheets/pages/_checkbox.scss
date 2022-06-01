@@ -1,0 +1,28 @@
+.toggle {
+  position: absolute;
+  transform: scale(0);
+}
+
+.toggle + label {
+  background-image: image-url('bio3.png');
+  position: relative;
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  object-fit: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.toggle:checked + label {
+  outline: 3px solid $purple;
+  outline-offset: 10px;
+  border-radius: $border-radius;
+}
+
+.form-check {
+  padding: 0px !important;
+  margin: 0px !important;
+}
