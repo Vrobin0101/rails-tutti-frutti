@@ -1,34 +1,44 @@
 <div class="container">
-  <h2>Recherche ton fruit ou ton légume</h2>
-  <%= simple_form_for :search, class: "rounded", url: root_path, method: :get do |f| %>
-    <div class="search-form-control form-group mb-3 ">
-      <input class="form-control string required bg-light" type="text" name="search[query]" id="search_query" placeholder="tomate"/>
-      <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i>
-      </button>
-    </div>
-  <% end %>
-  <h4>Les fruits et legumes de <%= @current_month %></h4>
-
-   <div class="swiper mySwiper mb-3" data-controller="swiper">
-      <div class="swiper-wrapper">
-      <% @products.each_with_index do |product, index| %>
-        <div class="swiper-slide">
-          <div class="card-category">
-            <%= product.name %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="swiper-pagination"></div>
+  <div class="search-bar-home mt-3">
+    <h2>Recherche ton fruit ou ton légume</h2>
+    <%= simple_form_for :search, class: "rounded", url: root_path, method: :get do |f| %>
+      <div class="search-form-control form-group mb-3 ">
+        <input class="form-control string required bg-light" type="text" name="search[query]" id="search_query" placeholder="Fruit ou légume"/>
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    <% end %>
   </div>
   <%# ---------------------  ------------- %>
-  <p class="border rounded p-2 text-center">En mai, on fête l'arrivée des fruits rouges, allez-y sans modération !</p>
-  <h2 class="text-center">Tous les fruits et légumes du moment !</h2>
-  <div class="d-flex justify-content-between mb-3">
-    <div class="card-category w-100 mx-1 bg-warning">Fruits</div>
-    <div class="card-category w-100 mx-1 bg-primary">Légumes</div>
+  <div class="monthly-product mt-30">
+    <h2>Les fruits et légumes de <%= @current_month %></h2>
+    <div class="swiper mySwiper mb-3" data-controller="swiper">
+        <div class="swiper-wrapper">
+        <% @products.each_with_index do |product, index| %>
+          <div class="swiper-slide">
+            <div class="card-category">
+              <%= product.name %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
   </div>
+  <%# ---------------------  ------------- %>
+  <div class="card-month-description text-center">
+    <p>En mai, on fête l'arrivée des fruits rouges, allez-y sans modération !</p>
+  </div>
+  <%# ---------------------  ------------- %>
+  <div class="all-monthly-product mt-3">
+    <h2>Tous les fruits et légumes du moment !</h2>
+      <div class="d-flex justify-content-between mb-3">
+        <div class="card-category w-100 mx-1 bg-warning">Fruits</div>
+        <div class="card-category w-100 mx-1 bg-primary">Légumes</div>
+      </div>
+  </div>
+  <%# ---------------------  ------------- %>
   <h2>Où les trouver ?</h2>
   <%# map here %>
   <%# ---------- %>
