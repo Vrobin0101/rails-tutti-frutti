@@ -1,26 +1,27 @@
-<div class="card-product">
+<div class="card-product m-3">
   <%= cl_image_tag product.photo.key, height: 400, width: 400, crop: :fill %>
-  <div class="card-product-infos">
-    <h2 class="mb-3"><%= product.name.capitalize %></h2>
-
-    <% if product.season? Date.today.month + 48 %>
-      <div class="d-flex align-items-center mb-3">
-      <i class="pt-1 fa-solid fa-location-dot text-success"></i><h3 class="ms-3">de saison</h3>
-      </div>
-    <% else %>
-      <div class="d-flex align-items-center mb-3">
-        <i class="pt-1 fa-solid fa-location-dot text-danger"></i><h3 class="ms-3">hors saison</h3>
-      </div>
-    <% end %>
-    <% if product.localable %>
-      <div class="d-flex align-items-center mb-3">
-        <i class="pt-1 fa-solid fa-calendar-check text-success"></i><h3 class="ms-3">potentiellement produit en france</h3>
-      </div>
-    <% else %>
+  <div class="card-product-infos ms-2 rounded d-flex flex-column align-items-center p-3 justify-content-start">
+    <h1 class="mb-3"><%= product.name.capitalize %></h1>
+    <div class="my-auto">
+      <% if product.season? Date.today.month + 48 %>
         <div class="d-flex align-items-center mb-3">
-          <i class="pt-1 fa-solid fa-calendar-xmark"></i><h3 class="ms-3">produit hors France</h3>
+        <i class="pb-1 fa-solid fa-lg fa-calendar-check text-success"></i><h3 class="ms-3">de saison</h3>
         </div>
-    <% end %>
+      <% else %>
+        <div class="d-flex align-items-center mb-3">
+          <i class="pb-1 fa-solid fa-lg fa-calendar-check text-danger"></i><h3 class="ms-3">hors saison</h3>
+        </div>
+      <% end %>
+      <% if product.localable %>
+        <div class="d-flex align-items-center mb-3">
+          <i class="pb-1 fa-solid fa-lg fa-location-dot text-success"></i><h3 class="ms-3">potentiellement produit en france</h3>
+        </div>
+      <% else %>
+          <div class="d-flex align-items-center mb-3">
+            <i class="pb-1 fa-solid fa-lg fa-location-dot"></i><h3 class="ms-3">produit hors France</h3>
+          </div>
+      <% end %>
+    </div>
 
   </div>
 </div>

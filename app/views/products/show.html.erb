@@ -1,20 +1,22 @@
 <%= render 'product', product: @product %>
 
 <div class="container p-3">
-  <p><%= @product.sub_category.capitalize %></p>
   <p><%= @product.description.capitalize %></p>
 </div>
 
 <div class="container">
+  <h2>Préciser l’origine</h2>
   <%= simple_form_for [@product, @follow_up] do |f| %>
     <div class="d-flex justify-content-evenly">
       <% if @product.localable %>
-        <%= f.input :local, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none" }, label_html: {style: "background-image: url('#{image_url('france.svg')}');"}  %>
+        <%= f.input :local, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none" }, label_html: {style: "background-image: url('#{image_url('france.svg')}'); background-position: center; background-size: 75%;"}  %>
       <% else %>
-        <%= f.input :local, as: :boolean, disabled: true, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('france.svg')}');"} %>
+        <%= f.input :local, as: :boolean, disabled: true, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('france.svg')}'); background-position: center; background-size: 75%;"} %>
       <% end %>
-      <%= f.input :bio, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('bio3.png')}');"} %>
-      <%= f.submit class:"d-block fixed-bottom w-100 btn-lg btn-primary rounded-0", value: "Ajouter à mon suivi "%>
+      <%= f.input :bio, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('bio3.png')}'); background-position: center; background-size: 75%;"} %>
+    </div>
+    <div class="d-flex mt-3">
+      <%= f.submit class:"py-3 btn-block fixed-bottom w-100 btn-lg btn-primary rounded-0", value: "Ajouter à mon suivi "%>
     </div>
   <% end %>
 </div>

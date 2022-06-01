@@ -6,20 +6,20 @@
 .toggle + label {
   position: relative;
   display: inline-block;
-  height: 60px;
-  width: 60px;
+  height: 100px;
+  width: 100px;
   cursor: pointer;
   object-fit: contain;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  outline: 1px dotted rgba(0,0,0,0.7);
-  border-radius: 5px;
+  border: 2px dotted rgba(0,0,0,0.7);
   outline-offset: 10px;
+  border-radius: $border-radius;
 }
 
 .toggle:checked + label {
-  outline: 3px solid $purple;
+  border: 2px solid $purple;
   outline-offset: 10px;
   border-radius: $border-radius;
 }
