@@ -13,6 +13,8 @@ class User < ApplicationRecord
   end
 
   def total_month_average
-    FollowUp.total_month_score(self).div(self.follow_ups.where(month_number: Date.today.month).count)
+    unless FollowUp.total_month_score(self).zero?
+      FollowUp.total_month_score(self).div(self.follow_ups.where(month_number: Date.today.month).count)
+    end
   end
 end

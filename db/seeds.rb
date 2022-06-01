@@ -29,7 +29,7 @@ puts "Creating Products..."
     name = Faker::Food.fruits
     category = "fruits"
   end
-  product = Product.new(name: name, category: category, sub_category: Faker::Food.ethnic_category, description: Faker::Food.description, start_month: rand(1...6), end_month: rand(6..12), localable: rand(0..1).zero?)
+  product = Product.new(name: name, category: category, sub_category: Faker::Food.ethnic_category, description: Faker::Food.description, start_month: rand(0...12), end_month: rand(12..24), localable: rand(0..1).zero?)
   product.save!
 end
 puts "Finish Products"
@@ -37,7 +37,7 @@ puts "Finish Products"
 puts "Creating Follow ups...."
 
 Product.all.each do |product|
-  fu = FollowUp.new(user: User.find(rand(1..10)), product: product, month_number: rand(0..12), carbon_calcul: [-1, +1].sample , local: rand(0..1).zero?, bio: rand(0..1).zero?)
+  fu = FollowUp.new(user: User.find(rand(1..10)), product: product, month_number: rand(0..24), carbon_calcul: rand(0..100) , local: rand(0..1).zero?, bio: rand(0..1).zero?)
   fu.save!
 end
 puts "Finish Follow ups"
