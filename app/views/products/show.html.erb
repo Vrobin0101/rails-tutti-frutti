@@ -2,19 +2,19 @@
 
 <div class="container p-3">
   <p><%= @product.sub_category.capitalize %></p>
-  <p><%= @product.description %></p>
+  <p><%= @product.description.capitalize %></p>
 </div>
 
 <div class="container">
   <%= simple_form_for [@product, @follow_up] do |f| %>
     <div class="d-flex justify-content-evenly">
       <% if @product.localable %>
-        <%= f.input :local, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none" }, label_html: {style: "background-image: url('#{image_url('france.png')}');"}  %>
+        <%= f.input :local, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none" }, label_html: {style: "background-image: url('#{image_url('france.svg')}');"}  %>
       <% else %>
-        <%= f.input :local, as: :boolean, disabled: true, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('france.png')}');"} %>
+        <%= f.input :local, as: :boolean, disabled: true, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('france.svg')}');"} %>
       <% end %>
       <%= f.input :bio, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('bio3.png')}');"} %>
-      <%= f.submit class:"d-block fixed-bottom w-100 btn btn-primary", value: "Ajouter à mon suivi "%>
+      <%= f.submit class:"d-block fixed-bottom w-100 btn-lg btn-primary rounded-0", value: "Ajouter à mon suivi "%>
     </div>
   <% end %>
 </div>
