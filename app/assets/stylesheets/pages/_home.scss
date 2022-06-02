@@ -1,24 +1,22 @@
 .container {
   h2 {
     font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
   }
 }
 
-.card-month-description {
-  border-radius: $border-radius;
-  height: 60px;
-  justify-content: center;
-  align-items: center;
-  color: $white;
-  background-color: $green;
-  font-size: 16px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+.monthly-fact {
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border: 0.5px solid $purple;
-  display: flex;
+  background-color: $light-green;
+  height: 123px;
+  padding: 10px;
+  position: relative;
     p {
       margin: 0;
     }
+}
+
+.pin-monthly-fact {
+  position: absolute;
 }

@@ -21,9 +21,10 @@
 .dropdown-item {
   font-family: $body-font;
   font-size: 16px;
-  color: $purple;
+  color: $white;
   font-weight: 700;
   text-align: end;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .navbar-brand {
