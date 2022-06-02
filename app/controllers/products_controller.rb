@@ -3,7 +3,10 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @products = Product.all
+    # @products = Product.all
+    @products = policy_scope(Product)
+    authorize @products
+    @current_month = (l Time.now, format: "%B").capitalize
   end
 
   def show

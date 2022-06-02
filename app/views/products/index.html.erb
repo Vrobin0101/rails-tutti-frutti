@@ -1,0 +1,8 @@
+<div class="container">
+<h2>Les fruits de <%= @current_month %></h2>
+    <% @products.each do |product| %>
+        <div class="card-category-index">
+        <%= product.name.capitalize %>
+        </div>
+    <% end %>
+</div>
