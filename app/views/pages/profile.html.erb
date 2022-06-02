@@ -1,35 +1,33 @@
-<div class="container">
+<div class="container text-center py-3">
   <% fruit_icon = ['<i class="fa-solid fa-lemon fa-sm icon-lemon-title"></i>', '<i class="fa-solid fa-apple-whole fa-sm icon-apple-title"></i>', '<i class="fa-solid fa-carrot fa-sm icon-carrot-title"></i>','<i class="fa-solid fa-pepper-hot fa-sm icon-pepper-title"></i>' ] %>
   <h2>Bonjour <%= current_user.first_name %> <%= fruit_icon.sample.html_safe %></h2>
 
+  <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Score Global</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Score <%= @current_month %></button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Amis</button>
+    </li>
+  </ul>
 
-  <div class="container-score-global">
-    <h6>Votre <span class="title-score"><strong>tutti score</strong></span></h6>
-  </div>
+  <div class="tab-content" id="myTabContent">
 
-  <div class="set-size charts-container">
-    <div class="pie-wrapper progress-<%= @global_score %> style-2">
-      <span class="label"><%= @global_score %><span class="smaller"></span></span>
-      <div class="pie">
-        <div class="left-side half-circle"></div>
-        <div class="right-side half-circle"></div>
-      </div>
-      <div class="shadow"></div>
+    <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      <h5 class="pt-3">Votre <span class="title-score"><strong>tutti score</strong></span> global</h5>
+      <%= render 'shared/grades', score: @global_score, note: @global_note %>
     </div>
+
+    <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <h5 class="pt-3">Votre <span class="title-score"><strong>tutti score</strong></span> du mois de <%= @current_month %></h5>
+      <%= render 'shared/grades', score: @current_score, note: @current_note %>
+    </div>
+
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
   </div>
-
-  <% if @global_score < 20 %>
-    <p>Aïe, allez on vous aide. Voici les fruits et légumes du mois: <%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %> !</p>
-  <% elsif @global_score >= 20 && @global_score < 40%>
-    <p>Encore un petit peu d'efforts ! <%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %></p>
-  <% elsif @global_score >= 40 && @global_score < 60 %>
-    <p>C'est de mieux en mieux ! <%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %></p>
-  <% elsif @global_score >= 60 && @global_score < 80 %>
-    <p>Bravo, vous êtes à quelques pas du but ! <%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %></p>
-  <% elsif @global_score <= 100 %>
-    <p>Génial, vos petits gestes ont de grands impacts ! <%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %></p>
-  <% end %>
-
 
 
 </div>
