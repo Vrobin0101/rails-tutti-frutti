@@ -13,13 +13,29 @@ $label-font-size-redo: $default-size * 4;
 }
 
 @mixin draw-progress($progress, $color) {
+
+  $calcul: $progress * 3.6deg;
+
+  // @keyframes grow {
+  //   0% {
+  //     transform: rotate(0);
+  //   }
+  //   100% {
+  //     transform: rotate($calcul);
+  //     // transform: rotate(100);
+  //   }
+  // }
+
   .pie {
     .half-circle {
       border-color: $color;
     }
 
     .left-side {
-      transform: rotate($progress * 3.6deg);
+      // animation: grow 10s ease;
+      // animation-iteration-count: 1;
+      // animation-fill-mode: forwards;
+      transform: rotate($calcul)
     }
 
     @if $progress <= 50 {
@@ -36,26 +52,7 @@ $label-font-size-redo: $default-size * 4;
   }
 }
 
-@mixin draw-progress--solid($progress, $color, $bg-color) {
-  background: linear-gradient(to right, $color 50%, $bg-color 50%);
-
-  &:before {
-    @if $progress <= 50 {
-      background: $bg-color;
-      transform: rotate((100 - (50 - $progress)) / 100 * 360deg * -1);
-    } @else {
-      background: $color;
-      transform: rotate((100 - $progress) / 100 * 360deg);
-    }
-  }
-}
-
 // -- selectors
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
 
 .set-size {
   font-size: 10em;
@@ -156,7 +153,7 @@ $label-font-size-redo: $default-size * 4;
   }
   @for $i from $d-note through $c-note {
     &.progress-#{$i} {
-      @include draw-progress($i, #FBE573);
+      @include draw-progress($i, $light-yellow);
     }
   }
   @for $i from $c-note through $b-note {
@@ -168,35 +165,5 @@ $label-font-size-redo: $default-size * 4;
     &.progress-#{$i} {
       @include draw-progress($i, $light-green);
     }
-  }
-}
-
-.pie-wrapper--solid {
-  border-radius: 50%;
-  overflow: hidden;
-
-  &:before {
-    border-radius: 0 100% 100% 0 / 50%;
-    content: '';
-    display: block;
-    height: 100%;
-    margin-left: 50%;
-    transform-origin: left;
-  }
-
-  .label {
-    background: transparent;
-  }
-
-  &.progress-65 {
-    @include draw-progress--solid(65, #e67e22, $bg-color);
-  }
-
-  &.progress-25 {
-    @include draw-progress--solid(25, #9b59b6, $bg-color);
-  }
-
-  &.progress-88 {
-    @include draw-progress--solid(88, #3498db, $bg-color);
   }
 }
