@@ -1,7 +1,9 @@
-<div class="container-sm mx-1">
+<div class="container-sm">
 <h2 class="mt-3">Les fruits et légumes de <%= @current_month %></h2>
+    <div class="container">
+      <%= render 'shared/carousel', products: @products %>
+    </div>
   <div class="cards-all row justify-content-center">
-    <%= render 'shared/carousel', products: @products %>
       <% @products.each do |product| %>
         <%= link_to product_path(product),
                     class: 'card-category-index col-4 m-1',
