@@ -1,0 +1,31 @@
+.icon-lemon-title {
+  color: $light-yellow;
+}
+
+.icon-carrot-title {
+  color: $yellow;
+}
+
+.icon-apple-title {
+  color: $green;
+}
+
+.icon-pepper-title {
+  color: $red;
+}
+
+.icon-lemon-title,
+.icon-apple-title,
+.icon-carrot-title,
+.icon-pepper-title {
+  text-shadow: 0 0 0.5px black, 0 0 0.5px black, 0 0 0.5px black, 0 0 0.5px black;
+}
+
+.icon-link-score {
+  color: $purple;
+  font-size: 18px;
+}
+
+.title-score {
+  color: $purple;
+}
