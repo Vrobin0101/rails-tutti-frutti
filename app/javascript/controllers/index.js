@@ -10,5 +10,8 @@ application.register("hello", HelloController)
 import MapController from "./map_controller.js"
 application.register("map", MapController)
 
+import SearchButtonController from "./search_button_controller.js"
+application.register("search-button", SearchButtonController)
+
 import SwiperController from "./swiper_controller.js"
 application.register("swiper", SwiperController)

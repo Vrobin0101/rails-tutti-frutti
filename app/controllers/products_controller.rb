@@ -4,10 +4,13 @@ class ProductsController < ApplicationController
 
   def index
     @products = policy_scope(Product)
-    if params[:query].present?
-     @products = Product.where("name ILIKE ? OR category ILIKE ? OR sub_category ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
-    end
     @products = Product.seasonal(Time.now.month)
+    if params[:query].present?
+      @products = Product.where("name ILIKE ? OR category ILIKE ? OR sub_category ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
+      if @products.count == 1
+        redirect_to @products.first
+      end
+    end
     authorize @products
     @current_month = (l Time.now, format: "%B").capitalize
   end
