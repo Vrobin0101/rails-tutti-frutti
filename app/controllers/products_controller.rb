@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   def index
     # @products = Product.all
     @products = policy_scope(Product)
+    @products = Product.seasonal(Time.now.month)
     authorize @products
     @current_month = (l Time.now, format: "%B").capitalize
   end

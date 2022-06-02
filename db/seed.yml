@@ -293,7 +293,7 @@
     localable: true
     start_month: 2
     end_month: 12
-    image_id: potiron_ajhy5b
+    image_id: radis_plwtgx
 - rutabaga:
     category: légume
     sub_category: rhizome
@@ -581,7 +581,7 @@
     start_month: 11
     end_month: 12
     image_id: orange_y15jwf
-- pamplemousse:
+- pomelo:
     category: fruit
     sub_category: agrume
     description: lorsque vous dégustez un pamplemousse vous mangez en réalité un pomelo. Ces deux agrumes sont systématiquement confondus.
