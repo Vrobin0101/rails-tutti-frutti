@@ -1,14 +1,7 @@
 <div class="container">
   <div class="search-bar-home my-4">
     <h2>Rechercher un fruit ou un légume</h2>
-    <%= simple_form_for :search, class: "rounded", url: root_path, method: :get do |f| %>
-      <div class="search-form-control form-group mb-3 ">
-        <input class="form-control string required bg-light" type="text" name="search[query]" id="search_query" placeholder="Fraise"/>
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
-    <% end %>
+    <%= render "shared/search_form" %>
   </div>
   <%# ---------------------  ------------- %>
   <div class="monthly-product mt-5 mb-4">
@@ -36,6 +29,7 @@
     <h2>Tous les fruits et légumes du moment !</h2>
       <div class="d-flex justify-content-between mb-3">
         <div class="card-category w-100 mx-1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url('fruits.jpg')%>')">Fruits</div>
+
         <div class="card-category vegetables w-100 mx-1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url('vegetable.jpg')%>')">Légumes</div>
       </div>
   </div>
