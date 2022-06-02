@@ -6,10 +6,13 @@
         <% end %>
       <% else %>
           <div class="navbar-brand">
-              <div class="search-box-navbar">
-                <button name="button" type="submit" class="btn-search-navbar"><i class="fas fa-search"></i></button>
-                <input type="text" class="input-search-navbar" placeholder="Fruit ou légume">
-              </div>
+            <div class="search-box-navbar" data-controller="search-button">
+              <button name="button" class="btn-search-navbar" data-action = "click->search-button#displaySearchBar"><i class="fas fa-search"></i></button>
+              <%= form_tag products_path, method: :get do |f| %>
+                  <button name="button" type="submit" class="d-none" data-search-button-target="submit"><i class="fas fa-search"></i></button>
+                  <%= text_field_tag :query, params[:query], data: { 'search-button-target' => 'input' }, class: "form-control string required input-search-navbar", id: "search_query", placeholder: "Fruit ou légume" %>
+              <% end  %>
+            </div>
           </div>
           <%= link_to root_path do %>
             <i class="fa-solid fa-seedling"></i>
