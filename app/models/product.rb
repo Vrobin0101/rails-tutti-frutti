@@ -5,7 +5,6 @@ class Product < ApplicationRecord
   has_one_attached :photo
   scope :seasonal, ->(month) { where("? > start_month AND ? < end_month", month, month) }
 
-
   def season?(month_number)
     (start_month..end_month).include? month_number % 12
   end
