@@ -1,0 +1,12 @@
+<div class="swiper mySwiper my-4" data-controller="swiper">
+  <div class="swiper-wrapper">
+  <% products.each do |product| %>
+    <div class="swiper-slide">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path product.photo.key, height: 300, crop: :fill %>')">
+        <%= product.name.capitalize %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>

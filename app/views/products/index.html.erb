@@ -1,10 +1,6 @@
 <div class="container-sm mx-1">
 <h2 class="mt-3">Les fruits de <%= @current_month %></h2>
   <div class="cards-all row justify-content-center">
-    <% @products.each do |product| %>
-        <div class="card-category-index col-4 m-1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path product.photo.key, quality: :auto, crop: :fill%>)">
-          <%= product.name.capitalize %>
-        </div>
-    <% end %>
+    <%= render 'shared/carousel', products: @products %>
   </div>
 </div>
