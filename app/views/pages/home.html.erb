@@ -6,18 +6,7 @@
   <%# ---------------------  ------------- %>
   <div class="monthly-product mt-5 mb-4">
     <h2>Les fruits et légumes de <%= @current_month %></h2>
-    <div class="swiper mySwiper mb-3" data-controller="swiper">
-        <div class="swiper-wrapper">
-        <% @products.each_with_index do |product, index| %>
-          <div class="swiper-slide">
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path product.photo.key, height: 300, crop: :fill %>')">
-              <%= product.name.capitalize %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <div class="swiper-button-next swiper-small"></div>
-      <div class="swiper-button-prev swiper-small"></div>
+    <%= render 'shared/carousel', products: @products %>
     </div>
   </div>
   <%# ---------------------  ------------- %>
