@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @products = Product.all
     @follow_up = FollowUp.new
   end
 
