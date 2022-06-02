@@ -8,6 +8,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :social_as_asker, class_name: "Social", foreign_key: :asker_id
+  has_many :social_as_receiver, class_name: "Social", foreign_key: :receiver_id
+
   def total_average
     FollowUp.total_score(self).div(self.follow_ups.count)
   end
