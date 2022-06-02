@@ -2,9 +2,11 @@
   <div class="swiper-wrapper">
   <% products.each do |product| %>
     <div class="swiper-slide">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path product.photo.key, height: 300, crop: :fill %>')">
-        <%= product.name.capitalize %>
-      </div>
+      <%= link_to product_path(product),
+                    class: 'card-category text-decoration-none',
+                    style: "background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(#{cl_image_path product.photo.key, quality: :auto, crop: :fill})" do %>
+          <%= product.name.capitalize %>
+        <% end %>
     </div>
     <% end %>
   </div>

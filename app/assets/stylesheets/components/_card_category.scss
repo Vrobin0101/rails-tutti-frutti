@@ -12,6 +12,11 @@
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  text-decoration: none;
+}
+
+.swiper-slide a:hover, .cards-all a:hover {
+  color: $white;
 }
 
 .card-category-index {
