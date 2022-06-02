@@ -1,38 +1,35 @@
-<p>Global score</p>
 <div class="container">
-  <%= @global_score %>
-  <%= @global_note %>
-</div>
-
-<br>
-
-<p>Months of follow up</p>
-<div class="container">
-  <% current_user.follow_ups.each do |follow| %>
-    <%= follow.month_number %>
-  <% end %>
-</div>
-
-<br>
-
-<p>Current month follow up</p>
-<div class="container">
-  <%= @current_score %>
-  <%= @current_note %>
-</div>
+  <% fruit_icon = ['<i class="fa-solid fa-lemon fa-sm icon-lemon-title"></i>', '<i class="fa-solid fa-apple-whole fa-sm icon-apple-title"></i>', '<i class="fa-solid fa-carrot fa-sm icon-carrot-title"></i>','<i class="fa-solid fa-pepper-hot fa-sm icon-pepper-title"></i>' ] %>
+  <h2>Bonjour <%= current_user.first_name %> <%= fruit_icon.sample.html_safe %></h2>
 
 
-<div class="container">
-<div class="set-size charts-container">
-
-  <div class="pie-wrapper progress-<%= @global_score %> style-2">
-    <span class="label"><%= @global_score %><span class="smaller"></span></span>
-    <div class="pie">
-      <div class="left-side half-circle"></div>
-      <div class="right-side half-circle"></div>
-    </div>
-    <div class="shadow"></div>
+  <div class="container-score-global">
+    <h6>Votre <span class="title-score"><strong>tutti score</strong></span></h6>
   </div>
 
-</div>
+  <div class="set-size charts-container">
+    <div class="pie-wrapper progress-<%= @global_score %> style-2">
+      <span class="label"><%= @global_score %><span class="smaller"></span></span>
+      <div class="pie">
+        <div class="left-side half-circle"></div>
+        <div class="right-side half-circle"></div>
+      </div>
+      <div class="shadow"></div>
+    </div>
+  </div>
+
+  <% if @global_score < 20 %>
+    <p>Aïe, allez on vous aide. Voici les fruits et légumes du mois: <%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %> !</p>
+  <% elsif @global_score >= 20 && @global_score < 40%>
+    <p>Encore un petit peu d'efforts ! <%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %></p>
+  <% elsif @global_score >= 40 && @global_score < 60 %>
+    <p>C'est de mieux en mieux ! <%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %></p>
+  <% elsif @global_score >= 60 && @global_score < 80 %>
+    <p>Bravo, vous êtes à quelques pas du but ! <%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %></p>
+  <% elsif @global_score <= 100 %>
+    <p>Génial, vos petits gestes ont de grands impacts ! <%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %></p>
+  <% end %>
+
+
+
 </div>
