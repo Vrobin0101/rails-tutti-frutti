@@ -12,6 +12,7 @@ class PagesController < ApplicationController
   def profile
     tutti_score_global
     tutti_score_current_month
+    @current_month = (l Time.now, format: "%B").capitalize
   end
 
   def map
