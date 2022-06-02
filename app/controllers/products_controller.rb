@@ -3,7 +3,10 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @products = Product.all
+    @products = policy_scope(Product)
+    if params[:query].present?
+      @products = Product.where("name ILIKE ? OR category ILIKE ? OR sub_category ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
+    end
   end
 
   def show
