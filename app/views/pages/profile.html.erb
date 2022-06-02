@@ -22,7 +22,17 @@
     </div>
 
     <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <h5 class="pt-3">Votre <span class="title-score"><strong>tutti score</strong></span> du mois de <%= @current_month %></h5>
+
+      <% if @current_score.nil? %>
+        <div class="container">
+          <h5 class="pt-3">Vous n'avez pas encore de <span class="title-score"><strong>tutti score</strong></span> pour le mois de <%= @current_month %> <i class="fa-solid fa-face-sad-tear fa-xs smile-title-profile"></i></h5>
+          <br><p>Commencez dès maintenant votre suivi en suivant ce lien</p>
+          <br><br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, products_path %></p>
+        </div>
+      <% else %>
+        <h5 class="pt-3">Votre <span class="title-score"><strong>tutti score</strong></span> du mois de <%= @current_month %></h5>
+      <% end %>
+
       <%= render 'shared/grades', score: @current_score, note: @current_note %>
     </div>
 
