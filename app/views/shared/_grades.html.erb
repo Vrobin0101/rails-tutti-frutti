@@ -1,0 +1,69 @@
+<div class="d-flex justify-content-evenly py-3">
+    <div class="set-size charts-container">
+      <div class="pie-wrapper progress-<%= score %> style-2">
+        <span class="label"><%= score %><span class="smaller"></span></span>
+        <div class="pie">
+          <div class="left-side half-circle"></div>
+          <div class="right-side half-circle"></div>
+        </div>
+        <div class="shadow"></div>
+      </div>
+    </div>
+
+    <div>
+      <ul class="list-unstyled grade-scale-profile">
+        <li>
+          <% if note == 'A' %>
+            <p><span class="grade-a">A</span> <i class="fa-solid fa-caret-left fa-xs grade-indicator"></i></p>
+          <% else %>
+            <p><span class="grade-a">A</span></p>
+          <% end %>
+        </li>
+        <li>
+          <% if note == 'B' %>
+            <p><span class="grade-b">B</span> <i class="fa-solid fa-caret-left fa-xs grade-indicator"></i></p>
+          <% else %>
+            <p><span class="grade-b">B</span></p>
+          <% end %>
+        </li>
+        <li>
+          <% if note == 'C' %>
+            <p><span class="grade-c">C</span> <i class="fa-solid fa-caret-left fa-xs grade-indicator"></i></p>
+          <% else %>
+            <p><span class="grade-c">C</span></p>
+          <% end %>
+        </li>
+        <li>
+          <% if note == 'D' %>
+            <p><span class="grade-d">D</span> <i class="fa-solid fa-caret-left fa-xs grade-indicator"></i></p>
+          <% else %>
+            <p><span class="grade-d">D</span></p>
+          <% end %>
+        </li>
+        <li>
+          <% if note == 'E' %>
+            <p><span class="grade-e">E</span><i class="fa-solid fa-caret-left fa-xs grade-indicator"></i></p>
+          <% else %>
+            <p><span class="grade-e">E</span></p>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <% if score < 20 %>
+    <h6 class="comment-score">Aïe, allez on vous aide.</h6>
+    <p>Voici les fruits et légumes du mois: <br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %> !</p>
+  <% elsif score >= 20 && score < 40%>
+    <h6 class="comment-score">Encore un petit peu d'effort !</h6>
+    <p>Suivez les fruits et légumes du mois ici: <br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %></p>
+  <% elsif score >= 40 && score < 60 %>
+    <h6 class="comment-score">C'est de mieux en mieux !</h6>
+    <p>Continuez sur cette lancée en vous aidant de notre guide: <br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %></p>
+  <% elsif score >= 60 && score < 80 %>
+    <h6 class="comment-score">Bravo, vous êtes à quelques pas du but !</h6>
+    <p>Aidez vous de notre guide des produits du moments: <br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %></p>
+  <% elsif score <= 100 %>
+    <h6 class="comment-score">Génial, vos petits gestes ont de grands impacts !</h6>
+    <p>Surpassez vous encore, et aller voir les produits du mois: <br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, root_path %></p>
+  <% end %>

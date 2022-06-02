@@ -11,7 +11,24 @@
   background-color: $light-green;
   height: 123px;
   padding: 10px;
+  height: 140px;
+  // padding: 10px;
+  position: relative;
     p {
       margin: 0;
     }
+}
+
+.pin-monthly-fact {
+  position: absolute;
+}
+
+.swiper-small {
+  --swiper-navigation-size: 25px;
+  font-weight: bold;
+}
+
+body {
+  background-size: cover;
+  background-position: center;
 }
