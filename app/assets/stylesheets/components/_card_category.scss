@@ -2,7 +2,7 @@
   border-radius: $border-radius;
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,5 +30,6 @@
   font-weight: 500;
   text-shadow: 1px 1px 3px rgba(10,10,10,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  flex-grow: 1;
   text-decoration: none;
 }

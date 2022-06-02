@@ -22,18 +22,7 @@
       <h2>Les alternatifs</h2>
     </div>
     <div class="container w-75">
-      <div class="swiper mySwiper my-4" data-controller="swiper">
-        <div class="swiper-wrapper">
-        <% @products.each_with_index do |product, index| %>
-          <div class="swiper-slide">
-            <div class="card-category">
-              <%= product.name.capitalize %>
-            </div>
-          </div>
-          <% end %>
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
+      <%= render 'shared/carousel', products: @products %>
     </div>
     <div style="margin-top: 150px"></div>
     <div class="d-flex">

@@ -10,13 +10,14 @@
         <div class="swiper-wrapper">
         <% @products.each_with_index do |product, index| %>
           <div class="swiper-slide">
-            <div class="card-category">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path product.photo.key, height: 300, crop: :fill %>')">
               <%= product.name.capitalize %>
             </div>
           </div>
         <% end %>
       </div>
-      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next swiper-small"></div>
+      <div class="swiper-button-prev swiper-small"></div>
     </div>
   </div>
   <%# ---------------------  ------------- %>
@@ -28,9 +29,9 @@
   <div class="all-monthly-product mt-5 mb-4">
     <h2>Tous les fruits et légumes du moment !</h2>
       <div class="d-flex justify-content-between mb-3">
-        <div class="card-category w-100 mx-1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url('fruits.jpg')%>')">Fruits</div>
+        <div class="card-category w-100 mx-1" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_url('fruits.jpg')%>')">Fruits</div>
 
-        <div class="card-category vegetables w-100 mx-1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url('vegetable.jpg')%>')">Légumes</div>
+        <div class="card-category vegetables w-100 mx-1" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_url('vegetable.jpg')%>')">Légumes</div>
       </div>
   </div>
 </div>
