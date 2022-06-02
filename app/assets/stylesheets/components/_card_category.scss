@@ -10,6 +10,24 @@
   background-color: $green;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.card-category-index {
+  border-radius: $border-radius;
+  background-size: cover;
+  background-position: center;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content:left;
+  align-items:flex-end;
+  color: white;
+  background-color: $white;
+  border: 1px solid $white;
+  font-size: 14px;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(10,10,10,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }

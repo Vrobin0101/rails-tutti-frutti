@@ -5,8 +5,11 @@ class ProductsController < ApplicationController
   def index
     @products = policy_scope(Product)
     if params[:query].present?
-      @products = Product.where("name ILIKE ? OR category ILIKE ? OR sub_category ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
+     @products = Product.where("name ILIKE ? OR category ILIKE ? OR sub_category ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
     end
+    @products = Product.seasonal(Time.now.month)
+    authorize @products
+    @current_month = (l Time.now, format: "%B").capitalize
   end
 
   def show
