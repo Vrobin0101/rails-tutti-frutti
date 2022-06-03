@@ -12,12 +12,20 @@ class User < ApplicationRecord
   has_many :social_as_receiver, class_name: "Social", foreign_key: :receiver_id
 
   def total_average
-    FollowUp.total_score(self).div(self.follow_ups.count)
+    unless FollowUp.total_score(self).zero?
+      FollowUp.total_score(self).div(self.follow_ups.count)
+    end
   end
 
   def total_month_average
     unless FollowUp.total_month_score(self).zero?
       FollowUp.total_month_score(self).div(self.follow_ups.where(month_number: Date.today.month).count)
+    end
+  end
+
+  def total_last_month_average
+    unless FollowUp.total_last_month_score(self).zero?
+      FollowUp.total_last_month_score(self).div(self.follow_ups.where(month_number: (Date.today - 1.month).month).count)
     end
   end
 end
