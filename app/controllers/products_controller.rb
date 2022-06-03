@@ -18,8 +18,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @products = Product.all
+    @products = Product.seasonal(Time.now.month)
     @follow_up = FollowUp.new
+    category = Product.find(params[:id]).category
+    sub_category = Product.find(params[:id]).sub_category
+    name = Product.find(params[:id]).name
+    @alternatives = @products.where(category: category, sub_category: sub_category).and(Product.where.not(name: name))
+    @alternatives = @products.where(category: category).and(Product.where.not(name: name)) if @alternatives.empty?
   end
 
   private
