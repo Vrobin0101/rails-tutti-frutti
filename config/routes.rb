@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   end
   resources :follow_ups, only: %i[edit update destroy]
   get "/profile/:id", to: "pages#profile", as: 'profile'
+  post "/profile/:id", to: "pages#add_friend", as: 'add_friend'
   get "/map", to: "pages#map", as: 'map'
 end

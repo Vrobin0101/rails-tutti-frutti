@@ -9,7 +9,7 @@
     <%= render 'shared/carousel', products: @products %>
   </div>
   <%# ---------------------  ------------- %>
-  <div class="monthly-fact text-justify my-5 align-items-justify">
+  <div class="text-justify my-5 align-items-justify">
     <h2>Pourquoi consommer de saison ?</h2>
     <p>Optez pour des fruits et légumes de saison afin de bénéficier de leurs <strong>bienfaits nutritionnels</strong>, <strong>réduire l'impact écologique</strong> et <strong>encourager les circuits courts</strong> au détriment des produits importés. </p>
   </div>
@@ -17,9 +17,13 @@
   <div class="all-monthly-product my-3">
     <h2>Tous les fruits et légumes du moment</h2>
       <div class="justify-content-between mb-3">
+        <%= link_to products_path, class: 'category-link text-decoration-none' do %>
         <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_url('fruities.jpg')%>')">Fruits</div>
+        <% end %>
 
+        <%= link_to products_path, class: 'category-link text-decoration-none' do %>
         <div class="card-category vegetables my-3" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_url('veggies.jpg')%>')">Légumes</div>
+        <% end %>
       </div>
   </div>
 </div>
