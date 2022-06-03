@@ -4,9 +4,9 @@ class ProductsController < ApplicationController
 
   def index
     @products = policy_scope(Product)
-    @products = Product.seasonal(Time.now.month)
+    @products = Product.seasonal(Time.now.month).includes([photo_attachment: :blob])
     if params[:query].present?
-      @products = Product.where("name ILIKE ? OR category ILIKE ? OR sub_category ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
+      @products = Product.includes([photo_attachment: :blob]).where("name ILIKE ? OR category ILIKE ? OR sub_category ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
       if @products.count == 1
         redirect_to @products.first
       end
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @products = Product.all
+    @products = Product.all.includes([photo_attachment: :blob])
     @follow_up = FollowUp.new
   end
 
