@@ -1,6 +1,6 @@
 <div class="swiper mySwiper my-4" data-controller="swiper">
   <div class="swiper-wrapper">
-  <% products.each do |product| %>
+  <% products.shuffle.each do |product| %>
     <div class="swiper-slide">
       <%= link_to product_path(product),
                     class: 'card-category text-decoration-none',

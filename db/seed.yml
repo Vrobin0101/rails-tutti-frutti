@@ -8,7 +8,7 @@
     image_id: ail_eshdfh
 - artichaut:
     category: légume
-    sub_category: artichaut
+    sub_category: crucifère
     description: L’artichaut favorise une meilleure digestion des aliments, grâce à la présence d’un glucide particulièrement efficace.
     localable: true
     start_month: 4
@@ -16,7 +16,7 @@
     image_id: artichaut_vsrufj
 - asperge:
     category: légume
-    sub_category: asperge
+    sub_category: amaranthacée
     description: Cuites ou crues, ce sont de formidables sources d'agents antioxydants comme la vitamine C, E et A.
     localable: true
     start_month: 3
@@ -24,7 +24,7 @@
     image_id: asperge_or3mrp
 - aubergine:
     category: légume
-    sub_category: aubergine
+    sub_category: cucurbitacée
     description: L’aubergine est en réalité un fruit mais qui se déguste comme un légume, on vous l’accorde.
     localable: true
     start_month: 5
@@ -264,7 +264,7 @@
     image_id: poireau_asfb1h
 - poivron:
     category: légume
-    sub_category: poivron
+    sub_category: cucurbitacée
     description: La concentration en vitamine C du poivron évolue au fur et à mesure de son processus de maturité. La teneur en vitamine C des poivrons verts conservés à température ambiante augmente après la récolte, tandis que celle des poivrons rouges a tendance à diminuer.
     localable: true
     start_month: 6
@@ -319,7 +319,7 @@
     image_id: topinambour_ecyk2c
 - lentille:
     category: légume
-    sub_category: légumineuse
+    sub_category: pois
     description: Riches en protéines, elles constituent un mets exquis et délicat à consommer régulièrement.
     localable: true
     start_month: 10
@@ -662,8 +662,8 @@
     end_month: 7
     image_id: rhubarbe_f15rjd
 - tomate:
-    category: fruit
-    sub_category: tomate
+    category: légume
+    sub_category: légume
     description: La tomate est l'aliment le plus consommé au monde. Il s'agit bien d'un fruit et non d'un légume. On se doute que vous le savez mais on aime bien le rappeler.
     localable: true
     start_month: 5

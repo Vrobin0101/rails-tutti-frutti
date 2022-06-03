@@ -3,9 +3,9 @@ require 'open-uri'
 
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :map ]
-
+  before_action :set_user, only: [ :profile ]
   def home
-    @products = Product.seasonal(Time.now.month)
+    @products = Product.includes([photo_attachment: :blob]).seasonal(Time.now.month)
     @current_month = (l Time.now, format: "%B").capitalize
   end
 
@@ -15,10 +15,30 @@ class PagesController < ApplicationController
     tutti_score_last_month
     @current_month = (l Time.now, format: "%B").capitalize
     @last_month = (l (Date.today - 1.month), format: "%B").capitalize
+    @followers = @user.social_as_receiver
+    @followings = @user.social_as_asker
+    @followings = @followings.includes([:receiver])
+    @followers = @followers.includes([:asker])
   end
 
   def map
     api_parsing
+  end
+
+  def add_friend
+    receiver = User.find_by_username(params["username"])
+
+    if receiver == current_user
+      flash.alert = "Vous ne pouvez pas etre amis avec vous meme :)"
+    end
+    if receiver.present?
+      social = Social.new(asker: current_user, receiver: receiver)
+      redirect_to profile_path(current_user), status: :unprocessable_entity unless social.save
+      redirect_to profile_path(current_user)
+    else
+      redirect_to profile_path, status: :unprocessable_entity
+      flash.alert = "Utilisateur inconnu"
+    end
   end
 
   private
@@ -35,17 +55,17 @@ class PagesController < ApplicationController
   end
 
   def tutti_score_global
-    @global_score = current_user.total_average
+    @global_score = @user.total_average
     @global_note = note(@global_score)
   end
 
   def tutti_score_current_month
-    @current_score = current_user.total_month_average
+    @current_score = @user.total_month_average
     @current_note = note(@current_score)
   end
 
   def tutti_score_last_month
-    @last_score = current_user.total_last_month_average
+    @last_score = @user.total_last_month_average
     @last_note = note(@last_score)
   end
 
@@ -56,9 +76,13 @@ class PagesController < ApplicationController
       {
         lng: e['fields']['geo_point_2d'][1],
         lat: e['fields']['geo_point_2d'][0],
-        image_url: helpers.asset_url("marker_contours_green"),
+        image_url: helpers.asset_url("marker_contours_green.png"),
         id: e['recordid']
       }
     end
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
