@@ -2,6 +2,7 @@
   border-radius: $border-radius;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   height: 200px;
   display: flex;
   justify-content: center;
@@ -23,6 +24,7 @@
   border-radius: $border-radius;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   height: 100px;
   width: 100px;
   display: flex;
