@@ -25,13 +25,12 @@ class PagesController < ApplicationController
 
   def add_friend
     receiver = User.find_by_username(params["username"])
-    return unless receiver.present?
 
-    social = Social.new(asker: current_user, receiver: receiver)
-    if social.save
-      redirect_to profile_path(receiver)
+    if receiver.present?
+      social = Social.new(asker: current_user, receiver: receiver)
+      redirect_to profile_path(current_user), status: :unprocessable_entity unless social.save
     else
-      redirect_to profile_path(receiver), status: :unprocessable_entity
+      redirect_to profile_path, status: :unprocessable_entity
     end
   end
 
