@@ -1,0 +1,13 @@
+  <% unless last.nil? %>
+    <% if last < 20 %>
+      <p>Votre score du mois de <%= last_m %> <br><i class="fa-solid fa-circle fa-2xs grade-e"></i> <%= last %> points</p>
+    <% elsif last >= 20 && last < 40%>
+      <p>Votre score du mois de <%= last_m %> <br><i class="fa-solid fa-circle fa-2xs grade-d"></i> <%= last %> points</p>
+    <% elsif last >= 40 && last < 60 %>
+      <p>Votre score du mois de <%= last_m %> <br><i class="fa-solid fa-circle fa-2xs grade-c"></i> <%= last %> points</p>
+    <% elsif last >= 60 && last < 80 %>
+      <p>Votre score du mois de <%= last_m %> <br><i class="fa-solid fa-circle fa-2xs grade-b"></i> <%= last %> points</p>
+    <% elsif last <= 100 %>
+      <p>Votre score du mois de <%= last_m %> <br><i class="fa-solid fa-circle fa-2xs grade-a"></i> <%= last %> points</p>
+    <% end %>
+  <% end %>

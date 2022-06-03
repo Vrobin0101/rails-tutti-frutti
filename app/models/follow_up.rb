@@ -6,4 +6,5 @@ class FollowUp < ApplicationRecord
 
   scope :total_score, ->(user) { where(user: user).sum(&:carbon_calcul) }
   scope :total_month_score, ->(user, month = Date.today.month) { where(user: user, month_number: month).sum(&:carbon_calcul) }
+  scope :total_last_month_score, ->(user, month = (Date.today - 1.month).month) { where(user: user, month_number: month).sum(&:carbon_calcul) }
 end

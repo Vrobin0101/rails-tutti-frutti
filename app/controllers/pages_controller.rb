@@ -12,7 +12,9 @@ class PagesController < ApplicationController
   def profile
     tutti_score_global
     tutti_score_current_month
+    tutti_score_last_month
     @current_month = (l Time.now, format: "%B").capitalize
+    @last_month = (l (Date.today - 1.month), format: "%B").capitalize
     @followers = @user.social_as_receiver
     @followings = @user.social_as_asker
     @followings = @followings.includes([:receiver])
@@ -60,6 +62,11 @@ class PagesController < ApplicationController
   def tutti_score_current_month
     @current_score = @user.total_month_average
     @current_note = note(@current_score)
+  end
+
+  def tutti_score_last_month
+    @last_score = @user.total_last_month_average
+    @last_note = note(@last_score)
   end
 
   def api_parsing

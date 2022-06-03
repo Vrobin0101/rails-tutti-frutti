@@ -40,30 +40,31 @@
   border-radius: 5px;
   text-align: start;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  .grade-a {
-    color: $light-green;
-    font-weight: bold;
-  }
-  .grade-b {
-    color: $green;
-    font-weight: bold;
-  }
-  .grade-c {
-    color: $light-yellow;
-    font-weight: bold;
-  }
-  .grade-d {
-    color: $yellow;
-    font-weight: bold;
-  }
-  .grade-e {
-    color: $red;
-    font-weight: bold;
-  }
   .grade-indicator {
     color: rgba(0, 0, 0, 0.7);
     margin-left: 5px;
   }
+}
+
+.grade-a {
+  color: $light-green;
+  font-weight: bold;
+}
+.grade-b {
+  color: $green;
+  font-weight: bold;
+}
+.grade-c {
+  color: $light-yellow;
+  font-weight: bold;
+}
+.grade-d {
+  color: $yellow;
+  font-weight: bold;
+}
+.grade-e {
+  color: $red;
+  font-weight: bold;
 }
 
 .comment-score {
