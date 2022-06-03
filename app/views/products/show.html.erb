@@ -19,6 +19,18 @@
       </div>
     </div>
 
+  <div class="container">
+    <h2>Des idees de recettes</h2>
+    <% @recipes.each do |recipe| %>
+      <div>
+        <p>
+          <%= recipe[:name] %>
+          <%= recipe[:note] %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+
 <div class="container">
   <% if @product.season?(Time.now.month) %>
     <h2>Ils pourraient vous plaire </h2>

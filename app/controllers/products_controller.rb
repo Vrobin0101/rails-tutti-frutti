@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'nokogiri'
+
 class ProductsController < ApplicationController
   before_action :set_product, only: :show
   skip_before_action :authenticate_user!
@@ -18,6 +21,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    scrapping
     @products = Product.seasonal(Time.now.month).includes([photo_attachment: :blob])
     @follow_up = FollowUp.new
     category = Product.find(params[:id]).category
@@ -31,5 +35,16 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def scrapping
+    url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=#{@product.name}"
+    html = URI.open(url).read
+    doc = Nokogiri::HTML(html)
+    html_doc = doc.search(".MRTN__sc-1cct3mj-1")
+    @recipes = []
+    3.times do |index|
+      @recipes << { name: html_doc[index].search(".MRTN__sc-30rwkm-0").text, note: html_doc[index].search(".SHRD__sc-10plygc-0").text }
+    end
   end
 end
