@@ -1,6 +1,10 @@
 <div class="container text-center py-3">
   <% fruit_icon = ['<i class="fa-solid fa-lemon fa-sm icon-lemon-title"></i>', '<i class="fa-solid fa-apple-whole fa-sm icon-apple-title"></i>', '<i class="fa-solid fa-carrot fa-sm icon-carrot-title"></i>','<i class="fa-solid fa-pepper-hot fa-sm icon-pepper-title"></i>' ] %>
-  <h2>Bonjour <%= current_user.first_name %> <%= fruit_icon.sample.html_safe %></h2>
+  <% if current_user == @user %>
+    <h2>Bonjour <%= current_user.first_name %> <%= fruit_icon.sample.html_safe %></h2>
+  <% else %>
+    <h2>Le profile de <%= @user.username %> <%= fruit_icon.sample.html_safe %></h2>
+  <% end %>
 
   <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
@@ -37,7 +41,7 @@
     </div>
 
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <%= form_tag add_friend_path, class: "simple_form_home search rounded" do |f| %>
+      <%= form_tag add_friend_path, class: "simple_form_home search rounded", remote: true, method: :post do |f| %>
         <div class="search-form-control form-group mb-3 ">
           <%= text_field_tag :username, params[:query], class: "form-control string required bg-light", id: "search_query", placeholder: "Constantin" %>
           <button name="button" type="submit" class="btn btn-flat">
@@ -47,12 +51,12 @@
       <% end %>
       <div class="container">
         <h3>Abonnés</h3>
-        <% @followings.each do |following| %>
-          <%= following.receiver.username %>
+        <% @followers.each do |follower| %>
+          <%= link_to follower.asker.username, profile_path(follower.asker) %>
         <% end %>
         <h4>Abonnements</h4>
-        <% @followers.each do |follower| %>
-          <%= follower.asker.username %>
+        <% @followings.each do |following| %>
+        <%= link_to following.receiver.username, profile_path(following.receiver) %>
         <% end %>
       </div>
     </div>
