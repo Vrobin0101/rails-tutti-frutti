@@ -12,6 +12,8 @@ class ProductsController < ApplicationController
       end
     end
     authorize @products
+    @fruits = Product.seasonal(Time.now.month).where(category:'fruit')
+    @légumes = Product.seasonal(Time.now.month).where(category: 'légume')
     @current_month = (l Time.now, format: "%B").capitalize
   end
 
