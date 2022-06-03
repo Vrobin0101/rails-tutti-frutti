@@ -6,6 +6,18 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
+
+    if params[:legumes] == "true"
+      @legumes_active = ["active", "show active"]
+      @fruits_active = []
+    elsif params[:fruits] == "true"
+      @fruits_active = ["active", "show active"]
+      @legumes_active = []
+    else
+      @legumes_active = []
+      @fruits_active = []
+    end
+
     @products = policy_scope(Product)
     authorize @products
     @products = Product.seasonal(Time.now.month).includes([photo_attachment: :blob])
