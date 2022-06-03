@@ -5,15 +5,15 @@ class ProductsController < ApplicationController
   def index
     @products = policy_scope(Product)
     authorize @products
+    @products = Product.seasonal(Time.now.month).includes([photo_attachment: :blob])
     if params[:query].present?
-      @products = Product.seasonal(Time.now.month).includes([photo_attachment: :blob])
       @products = Product.includes([photo_attachment: :blob]).where("name ILIKE ? OR category ILIKE ? OR sub_category ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
       if @products.count == 1
         redirect_to @products.first
       end
     end
-    @fruits = Product.seasonal(Time.now.month).where(category: 'fruit')
-    @legumes = Product.seasonal(Time.now.month).where(category: 'légume')
+    @fruits = @products.where(category: 'fruit')
+    @legumes = @products.where(category: 'légume')
     @current_month = (l Time.now, format: "%B").capitalize
   end
 
