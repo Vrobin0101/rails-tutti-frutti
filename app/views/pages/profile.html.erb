@@ -36,7 +36,26 @@
       <%= render 'shared/grades', score: @current_score, note: @current_note %>
     </div>
 
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <%= form_tag add_friend_path, class: "simple_form_home search rounded" do |f| %>
+        <div class="search-form-control form-group mb-3 ">
+          <%= text_field_tag :username, params[:query], class: "form-control string required bg-light", id: "search_query", placeholder: "Constantin" %>
+          <button name="button" type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      <% end %>
+      <div class="container">
+        <h3>Abonnés</h3>
+        <% @followings.each do |following| %>
+          <%= following.receiver.username %>
+        <% end %>
+        <h4>Abonnements</h4>
+        <% @followers.each do |follower| %>
+          <%= follower.asker.username %>
+        <% end %>
+      </div>
+    </div>
   </div>
 
 

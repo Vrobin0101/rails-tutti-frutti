@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :map ]
 
   def home
-    @products = Product.seasonal(Time.now.month)
+    @products = Product.includes([photo_attachment: :blob]).seasonal(Time.now.month)
     @current_month = (l Time.now, format: "%B").capitalize
   end
 
@@ -13,10 +13,26 @@ class PagesController < ApplicationController
     tutti_score_global
     tutti_score_current_month
     @current_month = (l Time.now, format: "%B").capitalize
+    @followers = current_user.social_as_receiver
+    @followings = current_user.social_as_asker
+    @followings = @followings.includes([:receiver])
+    @followers = @followers.includes([:asker])
   end
 
   def map
     api_parsing
+  end
+
+  def add_friend
+    receiver = User.find_by_username(params["username"])
+    return unless receiver.present?
+
+    social = Social.new(asker: current_user, receiver: receiver)
+    if social.save
+      redirect_to profile_path(receiver)
+    else
+      redirect_to profile_path(receiver), status: :unprocessable_entity
+    end
   end
 
   private
