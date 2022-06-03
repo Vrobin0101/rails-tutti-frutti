@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :map ]
 
   def home
-    @products = Product.seasonal(Time.now.month)
+    @products = Product.includes([photo_attachment: :blob]).seasonal(Time.now.month)
     @current_month = (l Time.now, format: "%B").capitalize
   end
 
