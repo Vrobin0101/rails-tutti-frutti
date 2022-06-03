@@ -33,7 +33,7 @@
 
 <div class="container">
   <% if @product.season?(Time.now.month) %>
-    <h2>Ils pourraient vous plaire </h2>
+    <h2>Cela pourrait vous plaire </h2>
     <div class="container w-75">
       <%= render 'shared/carousel', products: @alternatives %>
     </div>

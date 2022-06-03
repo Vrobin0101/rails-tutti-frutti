@@ -5,7 +5,8 @@
   </div>
   <%# ---------------------  ------------- %>
   <div class="monthly-product my-3">
-    <h2>Les fruits et légumes de <%= @current_month %></h2>
+    <h2 class="text-center">Les fruits et légumes de </h2>
+    <h2 class="month-display text-center"><%= @current_month %></h2>
     <%= render 'shared/carousel', products: @products %>
   </div>
   <%# ---------------------  ------------- %>
@@ -22,7 +23,7 @@
         <% end %>
 
         <%= link_to products_path, class: 'category-link text-decoration-none' do %>
-        <div class="card-category vegetables my-3" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_url('veggies.jpg')%>')">Légumes</div>
+        <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_url('veggies.jpg')%>')">Légumes</div>
         <% end %>
       </div>
   </div>
