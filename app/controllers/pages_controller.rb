@@ -3,7 +3,7 @@ require 'open-uri'
 
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :map ]
-
+  before_action :set_user, only: [ :profile ]
   def home
     @products = Product.includes([photo_attachment: :blob]).seasonal(Time.now.month)
     @current_month = (l Time.now, format: "%B").capitalize
@@ -13,8 +13,8 @@ class PagesController < ApplicationController
     tutti_score_global
     tutti_score_current_month
     @current_month = (l Time.now, format: "%B").capitalize
-    @followers = current_user.social_as_receiver
-    @followings = current_user.social_as_asker
+    @followers = @user.social_as_receiver
+    @followings = @user.social_as_asker
     @followings = @followings.includes([:receiver])
     @followers = @followers.includes([:asker])
   end
@@ -26,11 +26,16 @@ class PagesController < ApplicationController
   def add_friend
     receiver = User.find_by_username(params["username"])
 
+    if receiver == current_user
+      flash.alert = "Vous ne pouvez pas etre amis avec vous meme :)"
+    end
     if receiver.present?
       social = Social.new(asker: current_user, receiver: receiver)
       redirect_to profile_path(current_user), status: :unprocessable_entity unless social.save
+      redirect_to profile_path(current_user)
     else
       redirect_to profile_path, status: :unprocessable_entity
+      flash.alert = "Utilisateur inconnu"
     end
   end
 
@@ -48,12 +53,12 @@ class PagesController < ApplicationController
   end
 
   def tutti_score_global
-    @global_score = current_user.total_average
+    @global_score = @user.total_average
     @global_note = note(@global_score)
   end
 
   def tutti_score_current_month
-    @current_score = current_user.total_month_average
+    @current_score = @user.total_month_average
     @current_note = note(@current_score)
   end
 
@@ -68,5 +73,9 @@ class PagesController < ApplicationController
         id: e['recordid']
       }
     end
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
