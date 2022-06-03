@@ -17,11 +17,11 @@
   <div class="all-monthly-product my-3">
     <h2>Tous les fruits et légumes du moment</h2>
       <div class="justify-content-between mb-3">
-        <%= link_to products_path, class: 'category-link text-decoration-none' do %>
+        <%= link_to products_path(fruits: true), class: 'category-link text-decoration-none' do %>
         <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_url('fruities.jpg')%>')">Fruits</div>
         <% end %>
 
-        <%= link_to products_path, class: 'category-link text-decoration-none' do %>
+        <%= link_to products_path(legumes: true), class: 'category-link text-decoration-none' do %>
         <div class="card-category vegetables my-3" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= image_url('veggies.jpg')%>')">Légumes</div>
         <% end %>
       </div>
