@@ -50,13 +50,10 @@
 
     </div>
 
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <%= form_tag add_friend_path, class: "simple_form_home search rounded", remote: true, method: :post do |f| %>
-        <div class="search-form-control form-group mb-3 ">
-          <%= text_field_tag :username, params[:query], class: "form-control string required bg-light", id: "search_query", placeholder: "Constantin" %>
-          <button name="button" type="submit" class="btn btn-flat">
-            <i class="fas fa-search"></i>
-          </button>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" data-controller="search-users">
+      <%= simple_form_for add_friend_path, method: 'get', class: "form-inline" do %>
+        <div id= "search-data" class="form-search search-data" data-users="<%= @users %>">
+          <%= text_field_tag :q, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search by programming language..." %>
         </div>
       <% end %>
       <div class="container">

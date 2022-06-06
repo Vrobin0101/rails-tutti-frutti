@@ -21,6 +21,26 @@ body {
 }
 
 .month-display {
-  color: $green;
+  color: $light-green;
   font-size: 28px !important;
+}
+
+.highlight-title {
+  h6 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: .15rem;
+  display: flex;
+  align-items: center;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: $green;
+  text-shadow: -2px 3px 0px #0B8790;
+  color: white;
+  margin-bottom: 30px;
+  }
+}
+.highlight-title p {
+  color: $green;
 }
