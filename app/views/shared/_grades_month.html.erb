@@ -85,7 +85,6 @@
 
 
 
-  <div class='d-none'>
     <% month = Date.today.month %>
     <% month_fo_product = user.follow_ups.where(month_number: month) %>
     <% month_fo_product.each do |fo| %>
@@ -126,4 +125,3 @@
 
       </div>
     <% end %>
-  </div>
