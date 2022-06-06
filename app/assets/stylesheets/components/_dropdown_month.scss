@@ -1,0 +1,12 @@
+.dropdown-month {
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown-month-item {
+  text-align: center;
+  padding: 3px;
+  a {
+    text-decoration: none;
+  }
+}
