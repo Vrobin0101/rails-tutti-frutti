@@ -21,7 +21,6 @@ class PagesController < ApplicationController
     @followings = @followings.includes([:receiver])
     @followers = @followers.includes([:asker])
     @follow_ups = current_user.follow_ups
-    @product_id = @follow_ups.map { |f_u| { id: f_u.product.id } }
     @users = User.all.pluck(:username).sort.to_json
   end
 
