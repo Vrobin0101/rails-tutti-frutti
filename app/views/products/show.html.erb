@@ -19,17 +19,17 @@
 <div class="container">
   <h2>Préciser l’origine</h2>
 </div>
-  <%= simple_form_for [@product, @follow_up] do |f| %>
-    <div class="container">
-      <div class="d-flex justify-content-evenly h-100">
-        <% if @product.localable %>
-          <%= f.input :local, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none" }, label_html: {style: "background-image: url('#{image_url('france.svg')}'); background-position: center; background-size: 75%;"}  %>
-        <% else %>
-          <%= f.input :local, as: :boolean, disabled: true, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('france.svg')}'); background-position: center; background-size: 75%;"} %>
-        <% end %>
-        <%= f.input :bio, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('bio3.png')}'); background-position: center; background-size: 75%;"} %>
-      </div>
+<%= simple_form_for [@product, @follow_up] do |f| %>
+  <div class="container">
+    <div class="d-flex justify-content-evenly h-100">
+      <% if @product.localable %>
+        <%= f.input :local, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none" }, label_html: {style: "background-image: url('#{image_url('france.svg')}'); background-position: center; background-size: 75%;"}  %>
+      <% else %>
+        <%= f.input :local, as: :boolean, disabled: true, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('france.svg')}'); background-position: center; background-size: 75%;"} %>
+      <% end %>
+      <%= f.input :bio, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('bio3.png')}'); background-position: center; background-size: 75%;"} %>
     </div>
+  </div>
 
   <div class="container">
     <h2>Des idees de recettes</h2>
@@ -43,19 +43,19 @@
     <% end %>
   </div>
 
-<div class="container">
-  <% if @product.season?(Time.now.month) %>
-    <h2>Cela pourrait vous plaire </h2>
-    <div class="container w-75">
-      <%= render 'shared/carousel', products: @alternatives %>
-    </div>
-  <% else %>
-    <h2>Découvrez les alternatives </h2>
-    <div class="container w-75">
-      <%= render 'shared/carousel', products: @alternatives %>
-    </div>
-  <% end %>
-</div>
+  <div class="container">
+    <% if @product.season?(Time.now.month) %>
+      <h2>Cela pourrait vous plaire </h2>
+      <div class="container w-75">
+        <%= render 'shared/carousel', products: @alternatives %>
+      </div>
+    <% else %>
+      <h2>Découvrez les alternatives </h2>
+      <div class="container w-75">
+        <%= render 'shared/carousel', products: @alternatives %>
+      </div>
+    <% end %>
+  </div>
 
     <div style="margin-top: 150px"></div>
     <div class="d-flex">

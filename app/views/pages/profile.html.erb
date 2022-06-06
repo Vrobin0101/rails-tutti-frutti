@@ -1,9 +1,8 @@
-<div class="container text-center py-3" data-controller="find-user">
-  <% fruit_icon = ['<i class="fa-solid fa-lemon fa-sm icon-lemon-title"></i>', '<i class="fa-solid fa-apple-whole fa-sm icon-apple-title"></i>', '<i class="fa-solid fa-carrot fa-sm icon-carrot-title"></i>','<i class="fa-solid fa-pepper-hot fa-sm icon-pepper-title"></i>' ] %>
+<div class="container text-center py-3">
   <% if current_user == @user %>
-    <h2>Bonjour <%= current_user.first_name %> <%= fruit_icon.sample.html_safe %></h2>
+    <h2>Bonjour <%= current_user.first_name %></h2>
   <% else %>
-    <h2>Le profile de <%= @user.username %> <%= fruit_icon.sample.html_safe %></h2>
+    <h2>Le profil de <%= @user.first_name %></h2>
   <% end %>
 
   <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
