@@ -1,4 +1,4 @@
-<div class="container text-center py-3">
+<div class="container text-center py-3" data-controller="find-user">
   <% fruit_icon = ['<i class="fa-solid fa-lemon fa-sm icon-lemon-title"></i>', '<i class="fa-solid fa-apple-whole fa-sm icon-apple-title"></i>', '<i class="fa-solid fa-carrot fa-sm icon-carrot-title"></i>','<i class="fa-solid fa-pepper-hot fa-sm icon-pepper-title"></i>' ] %>
   <% if current_user == @user %>
     <h2>Bonjour <%= current_user.first_name %> <%= fruit_icon.sample.html_safe %></h2>
@@ -51,13 +51,10 @@
 
     </div>
 
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <%= form_tag add_friend_path, class: "simple_form_home search rounded", remote: true, method: :post do |f| %>
-        <div class="search-form-control form-group mb-3 ">
-          <%= text_field_tag :username, params[:query], class: "form-control string required bg-light", id: "search_query", placeholder: "Constantin" %>
-          <button name="button" type="submit" class="btn btn-flat">
-            <i class="fas fa-search"></i>
-          </button>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" data-controller="search-users">
+      <%= simple_form_for add_friend_path, method: 'get', class: "form-inline" do %>
+        <div id= "search-data" class="form-search search-data" data-users="<%= @users %>">
+          <%= text_field_tag :q, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search by programming language..." %>
         </div>
       <% end %>
       <div class="container">

@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   end
 
   def profile
+    add_friend if params[:q].present?
     tutti_score_global
     tutti_score_current_month
     tutti_score_last_month
@@ -19,15 +20,17 @@ class PagesController < ApplicationController
     @followings = @user.social_as_asker
     @followings = @followings.includes([:receiver])
     @followers = @followers.includes([:asker])
+    @users = User.all.pluck(:username).sort.to_json
   end
 
   def map
     api_parsing
   end
 
-  def add_friend
-    receiver = User.find_by_username(params["username"])
+  private
 
+  def add_friend
+    receiver = User.find_by_username(params[:q])
     if receiver == current_user
       flash.alert = "Vous ne pouvez pas etre amis avec vous meme :)"
     end
@@ -40,8 +43,6 @@ class PagesController < ApplicationController
       flash.alert = "Utilisateur inconnu"
     end
   end
-
-  private
 
   def note(score)
     case score
