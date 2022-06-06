@@ -20,7 +20,11 @@ class ProductsController < ApplicationController
 
     @products = policy_scope(Product)
     authorize @products
-    @products = Product.seasonal(Time.now.month).includes([photo_attachment: :blob])
+    if params["chosen_month"].present?
+      @products = Product.seasonal_double(params["chosen_month"][0], params["chosen_month"][1]).includes([photo_attachment: :blob])
+    else
+      @products = Product.seasonal(Time.now.month).includes([photo_attachment: :blob])
+    end
     if params[:query].present?
       @products = Product.includes([photo_attachment: :blob]).where("name ILIKE ? OR category ILIKE ? OR sub_category ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
       if @products.count == 1
