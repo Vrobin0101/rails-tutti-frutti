@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-
+    set_mois
     if params[:legumes] == "true"
       @legumes_active = ["active", "show active"]
       @fruits_active = []
