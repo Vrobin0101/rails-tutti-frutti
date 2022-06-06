@@ -1,6 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: $green;
+  background-size: cover;
+  height: 100px;
+  background-position: bottom;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,7 +10,7 @@
 }
 
 .navbar-lewagon .navbar-brand {
-  color: $purple;
+  color: $white;
   font-family: $headers-font;
   font-weight: 600;
 }
@@ -16,6 +18,11 @@
 .navbar-toggler:focus {
   outline: none !important;
   box-shadow: none;
+
+}
+
+.navbar-toggler-icon {
+  color: $white
 }
 
 .dropdown-item {
@@ -30,6 +37,9 @@
 .navbar-brand {
   margin: 0;
   padding: 0 0.5em;
+  font-family: "Inconsolata" !important;
+  font-style: normal;
+  font-weight: 500;
 }
 
 .search-box-navbar {
@@ -46,7 +56,7 @@
   outline: none;
   border-radius: 25px;
   transition: all .5s ease-in-out;
-  background-color: $green;
+  background-color: $orange;
   padding-right: 40px;
   color:#fff;
 }
