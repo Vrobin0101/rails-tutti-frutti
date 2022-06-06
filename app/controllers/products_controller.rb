@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-
+    set_mois
     if params[:legumes] == "true"
       @legumes_active = ["active", "show active"]
       @fruits_active = []
@@ -20,7 +20,11 @@ class ProductsController < ApplicationController
 
     @products = policy_scope(Product)
     authorize @products
-    @products = Product.seasonal(Time.now.month).includes([photo_attachment: :blob])
+    if params["chosen_month"].present?
+      @products = Product.seasonal_double(params["chosen_month"][0], params["chosen_month"][1]).includes([photo_attachment: :blob])
+    else
+      @products = Product.seasonal(Time.now.month).includes([photo_attachment: :blob])
+    end
     if params[:query].present?
       @products = Product.includes([photo_attachment: :blob]).where("name ILIKE ? OR category ILIKE ? OR sub_category ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
       if @products.count == 1
@@ -33,6 +37,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    set_mois
     scrapping
     @products = Product.seasonal(Time.now.month).includes([photo_attachment: :blob])
     @follow_up = FollowUp.new
@@ -47,6 +52,10 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def set_mois
+    @mois = ["décembre", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
   end
 
   def scrapping

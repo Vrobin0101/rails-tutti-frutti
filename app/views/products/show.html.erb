@@ -1,7 +1,16 @@
 <%= render 'product', product: @product %>
 
 <div class="container p-3">
+<% joke_sentence = ['De rien, ça nous fait plaisir.', 'On vous voit sourire. On ferait pareil à votre place.', 'Oh yeah !', 'Mmmmh !', "C'est le moment de tester votre recette magique.", "C'est le moment de se faire plaisir."] %>
+  <p> À déguster sans culpabilité de <%=@mois[(@product.start_month)%12]%> à <%= @mois[(@product.end_month)%12]%>. <%= joke_sentence.sample %></p>
   <p><%= @product.description %></p>
+
+  <% if @product.end_month + @product.start_month == 13  %>
+    <p>Super, vous pouvez en profiter toute l'année.</p>
+  <% elsif (@product.end_month - Time.now.month).abs %>
+    <p>Encore <%= (@product.end_month - Time.now.month).abs %> mois pour en profiter.</p>
+  <% end %>
+
 </div>
 
 <div class="container">
