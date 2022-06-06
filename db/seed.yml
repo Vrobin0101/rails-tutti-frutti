@@ -474,8 +474,8 @@
     sub_category: fruit rouge
     description: On les cultive surtout dans la vallée du Rhône, en Côte-d’Or et dans le Val de Loire. Du rouge carmin au blanc, en passant par le violet ou le jaune, la groseille est une baie qui offre une farandole de couleurs.
     localable: true
-    start_month: 10
-    end_month: 15
+    start_month: 6
+    end_month: 8
     image_id: groseille_o7mtnn
 - kaki:
     category: fruit

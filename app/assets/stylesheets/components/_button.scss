@@ -13,9 +13,9 @@
 }
 
 .btn-flat {
-  color: white;
+  color: $white;
   padding: 8px 24px;
-  border-radius: 4px;
+  border-radius: 20px;
   background: $orange;
   transition: background 0.3s ease;
 }
@@ -26,11 +26,11 @@
 
 .btn-flat:hover {
   background: $red;
-  color: white;
+  color: $white;
 }
 
 .btn-gradient {
-  color: white;
+  color: $white;
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
@@ -41,11 +41,11 @@
 
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
-  color: white;
+  color: $white;
 }
 
 .btn-modal-map {
-  background-color: $purple;
+  background-color: $orange;
   border: none;
   color: $white;
 }
