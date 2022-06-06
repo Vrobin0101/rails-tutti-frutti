@@ -19,6 +19,8 @@ class PagesController < ApplicationController
     @followings = @user.social_as_asker
     @followings = @followings.includes([:receiver])
     @followers = @followers.includes([:asker])
+    @follow_ups = current_user.follow_ups
+    @product_id = @follow_ups.map { |f_u| { id: f_u.product.id } }
   end
 
   def map

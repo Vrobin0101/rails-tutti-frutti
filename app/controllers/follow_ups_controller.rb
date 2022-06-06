@@ -1,7 +1,7 @@
 class FollowUpsController < ApplicationController
-  before_action :set_follow_up, only: %i[edit update destroy]
-  before_action :set_user, only: %i[create destroy]
-  before_action :set_product, only: :create
+  before_action :set_follow_up, only: %i[update destroy]
+  before_action :set_user, only: %i[create update destroy]
+  before_action :set_product, only: %i[create]
 
   def create
     @follow_up = FollowUp.new(params_follow_up)
@@ -17,10 +17,11 @@ class FollowUpsController < ApplicationController
     end
   end
 
-  def edit() end
-
-  def updated
+  def update
     @follow_up.update(params_follow_up)
+    @product = @follow_up.product
+    @follow_up.carbon_calcul = calcul_follow_up
+    @follow_up.save
     redirect_to profile_path(@user)
   end
 
