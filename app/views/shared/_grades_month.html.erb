@@ -57,29 +57,34 @@
 
   </div>
 
-  <% unless score.nil? %>
-    <% if score < 20 %>
-      <h6 class="comment-score">Aïe, allez on vous aide.</h6>
-      <%= render 'shared/last_score', last: last, last_m: last_m %>
-      <p>Voici les fruits et légumes du mois: <br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, products_path %> !</p>
-    <% elsif score >= 20 && score < 40%>
-      <h6 class="comment-score">Encore un petit peu d'effort !</h6>
-      <%= render 'shared/last_score', last: last, last_m: last_m %>
-      <p>Suivez les fruits et légumes du mois ici: <br><br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, products_path %></p>
-    <% elsif score >= 40 && score < 60 %>
-      <h6 class="comment-score">C'est de mieux en mieux !</h6>
-      <%= render 'shared/last_score', last: last, last_m: last_m %>
-      <p>Continuez sur cette lancée en vous aidant de notre guide: <br><br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, products_path %></p>
-    <% elsif score >= 60 && score < 80 %>
-      <h6 class="comment-score">Bravo, vous êtes à quelques pas du but !</h6>
-      <%= render 'shared/last_score', last: last, last_m: last_m %>
-      <p>Aidez-vous de notre guide des produits du moment: <br><br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, products_path %></p>
-    <% elsif score <= 100 %>
-      <h6 class="comment-score">Génial, vos petits gestes ont de grands impacts !</h6>
-      <%= render 'shared/last_score', last: last, last_m: last_m %>
-      <p>Surpassez vous encore, et aller voir les produits du mois: <br><br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, products_path %></p>
+  <% if current_user == @user %>
+    <% unless score.nil? %>
+      <% if score < 20 %>
+        <h6 class="comment-score">Aïe, allez on vous aide.</h6>
+        <%= render 'shared/last_score', last: last, last_m: last_m %>
+        <p>Voici les fruits et légumes du mois:
+      <% elsif score >= 20 && score < 40%>
+        <h6 class="comment-score">Encore un petit peu d'effort !</h6>
+        <%= render 'shared/last_score', last: last, last_m: last_m %>
+        <p>Suivez les fruits et légumes du mois ici:
+      <% elsif score >= 40 && score < 60 %>
+        <h6 class="comment-score">C'est de mieux en mieux !</h6>
+        <%= render 'shared/last_score', last: last, last_m: last_m %>
+        <p>Continuez sur cette lancée en vous aidant de notre guide:
+      <% elsif score >= 60 && score < 80 %>
+        <h6 class="comment-score">Bravo, vous êtes à quelques pas du but !</h6>
+        <%= render 'shared/last_score', last: last, last_m: last_m %>
+        <p>Aidez-vous de notre guide des produits du moment:
+      <% elsif score <= 100 %>
+        <h6 class="comment-score">Génial, vos petits gestes ont de grands impacts !</h6>
+        <%= render 'shared/last_score', last: last, last_m: last_m %>
+        <p>Surpassez vous encore, et aller voir les produits du mois:</p>
+      <% end %>
     <% end %>
   <% end %>
+  <div>
+    <%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, products_path %></p>
+  </div>
 
 
 
