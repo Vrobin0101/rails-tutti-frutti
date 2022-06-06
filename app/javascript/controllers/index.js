@@ -4,9 +4,6 @@
 
 import { application } from "./application"
 
-import EditFollowUpController from "./edit_follow_up_controller.js"
-application.register("edit-follow-up", EditFollowUpController)
-
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
 

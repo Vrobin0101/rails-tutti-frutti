@@ -1,0 +1,41 @@
+.sign-in-title {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px !important;
+  letter-spacing: .15rem;
+  display: flex;
+  align-items: center;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: $green;
+  text-shadow: -2px 3px 0px #0B8790;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.label-sign-input {
+  font-family: 'Poppins';
+}
+
+.label-sign-in {
+  font-size: 14px;
+}
+
+.sign-up-sentence {
+  font-size: 13px;
+  padding-top: 10px;
+}
+
+.sign-up-link {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.background-sign-in {
+  background-repeat: no-repeat;
+  background-size: 170px;
+}
+
+.background-sign-up {
+  background-repeat: no-repeat;
+}
