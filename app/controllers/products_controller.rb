@@ -33,6 +33,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    set_mois
     scrapping
     @products = Product.seasonal(Time.now.month).includes([photo_attachment: :blob])
     @follow_up = FollowUp.new
@@ -47,6 +48,10 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def set_mois
+    @mois = ["décembre", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
   end
 
   def scrapping
