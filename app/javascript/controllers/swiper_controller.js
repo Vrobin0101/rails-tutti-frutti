@@ -3,9 +3,10 @@ import Swiper from 'swiper/bundle';
 
 export default class extends Controller {
   connect() {
-    console.log("Hello from swiper");
     const swiper = new Swiper('.swiper', {
       spaceBetween: 30,
+      effect: "cards",
+      grabCursor: true,
       slidesPerView: "auto",
       autoplay: {
         delay: 6000,

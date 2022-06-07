@@ -6,7 +6,8 @@
   </div>
 
   <div class="card-product m-1">
-    <%= cl_image_tag product.photo.key, height: 400, width: 400, crop: :fill %>
+    <%= cl_image_tag product.photo.key, :quality=>"auto:good", height: 300, width: 300, crop: :fill %>
+
   </div>
 
   <div class="card-product-description">
