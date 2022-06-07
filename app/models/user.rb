@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :username, :first_name, :last_name, :city, presence: true
+  validates :username, :first_name, :last_name, presence: true
 
   has_many :follow_ups, dependent: :destroy
 
