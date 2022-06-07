@@ -109,7 +109,7 @@
     localable: true
     start_month: 6
     end_month: 6
-    image_id: chou_romanesco_py8mmx
+    image_id: chou_romanesco_viubqj
 - chou fleur:
     category: légume
     sub_category: crucifère
@@ -341,7 +341,7 @@
     start_month: 12
     end_month: 15
     image_id: ananas_mnumjn
-- amande sèche:
+- amande:
     category: fruit
     sub_category: noix
     description: Parmi les graines oléagineuses, l'amande est sans doute l'une de celles regroupant le plus de bienfaits pour la santé. À tel point qu'elle était classée l'été dernier parmi les 50 ingrédients les plus sains au monde.
@@ -476,7 +476,7 @@
     localable: true
     start_month: 6
     end_month: 8
-    image_id: groseille_o7mtnn
+    image_id: groseille_scjsya
 - kaki:
     category: fruit
     sub_category: piridion
