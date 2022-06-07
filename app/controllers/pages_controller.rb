@@ -4,7 +4,7 @@ require 'open-uri'
 # Retrieve your user id and api key from https://htmlcsstoimage.com/dashboard
 
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :map, :export ]
+  skip_before_action :authenticate_user!, only: [ :welcome, :home, :map, :export ]
   before_action :set_user, only: [ :profile, :export]
   def home
     @products = Product.includes([photo_attachment: :blob]).seasonal(Time.now.month)
@@ -37,6 +37,12 @@ class PagesController < ApplicationController
     @current_month = (l Time.now, format: "%B").capitalize
     @last_month = (l (Date.today - 1.month), format: "%B").capitalize
     @follow_ups = @user.follow_ups
+  end
+
+  def about
+  end
+
+  def welcome
   end
 
   private
