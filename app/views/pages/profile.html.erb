@@ -29,7 +29,7 @@
         </div>
       <% else %>
         <h5 class="pt-3"><%= @user == current_user ? "Votre" : "Son" %><span class="title-score"> <strong>tutti score</strong></span> du mois de <%= @current_month %></h5>
-        <%= render 'shared/grades_month', score: @current_score, note: @current_note, last: @last_score, last_m: @last_month, user: current_user, export: false%>
+        <%= render 'shared/grades_month', score: @current_score, note: @current_note, last: @last_score, last_m: @last_month, user: @user, export: false %>
       <% end %>
 
     </div>
