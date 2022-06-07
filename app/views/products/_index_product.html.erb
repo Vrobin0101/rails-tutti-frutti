@@ -1,7 +1,7 @@
 <% products.each do |product| %>
   <%= link_to product_path(product),
               class: 'card-category-index col-4 m-1',
-              style: "background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(#{cl_image_path product.photo.key, quality: :auto, crop: :fill})" do %>
+              style: "background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(#{cl_image_path product.photo.key, :height=>300, :quality=>"auto:eco", :width=>300, :crop=>"fill"})" do %>
     <%= product.name.capitalize %>
   <% end %>
 <% end %>
