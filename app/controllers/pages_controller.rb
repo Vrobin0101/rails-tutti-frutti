@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   end
 
   def profile
-    add_friend if params[:q].present?
+    add_friend if params[:q]
     tutti_score_global
     tutti_score_current_month
     tutti_score_last_month
@@ -21,7 +21,6 @@ class PagesController < ApplicationController
     @followings = @followings.includes([:receiver])
     @followers = @followers.includes([:asker])
     @follow_ups = current_user.follow_ups
-    @product_id = @follow_ups.map { |f_u| { id: f_u.product.id } }
     @users = User.all.pluck(:username).sort.to_json
   end
 
@@ -38,8 +37,11 @@ class PagesController < ApplicationController
     end
     if receiver.present?
       social = Social.new(asker: current_user, receiver: receiver)
-      redirect_to profile_path(current_user), status: :unprocessable_entity unless social.save
-      redirect_to profile_path(current_user)
+      if social.save
+        redirect_to profile_path
+      else
+        redirect_to profile_path, status: :unprocessable_entity
+      end
     else
       redirect_to profile_path, status: :unprocessable_entity
       flash.alert = "Utilisateur inconnu"

@@ -4,7 +4,6 @@ import autocomplete from 'js-autocomplete';
 // Connects to data-controller="search-users"
 export default class extends Controller {
   connect() {
-    console.log("got here")
     console.log(document.getElementById('search-data').dataset.users)
     const users = JSON.parse(document.getElementById('search-data').dataset.users)
     const searchInput = document.getElementById('q');

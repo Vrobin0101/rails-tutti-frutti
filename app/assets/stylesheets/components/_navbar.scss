@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background-size: cover;
-  height: 100px;
+  height: 80px;
   background-position: bottom;
 }
 
@@ -32,6 +32,7 @@
   font-weight: 700;
   text-align: end;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  background-color: $orange;
 }
 
 .navbar-brand {
@@ -40,6 +41,7 @@
   font-family: "Inconsolata" !important;
   font-style: normal;
   font-weight: 500;
+  margin-bottom: 16px;
 }
 
 .search-box-navbar {
@@ -102,5 +104,6 @@
 
 .fa-seedling {
   font-size: 34px;
+
   color: $white;
 }

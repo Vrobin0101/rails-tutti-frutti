@@ -21,7 +21,6 @@
 
 
     <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-
       <% if @current_score.nil? %>
         <div class="container">
           <h5 class="pt-3">Vous n'avez pas encore de <span class="title-score"><strong>tutti score</strong></span> pour le mois de <%= @current_month %> <i class="fa-solid fa-face-sad-tear fa-xs smile-title-profile"></i></h5>
@@ -29,7 +28,7 @@
           <br><br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, products_path %></p>
         </div>
       <% else %>
-        <h5 class="pt-3">Votre <span class="title-score"><strong>tutti score</strong></span> du mois de <%= @current_month %></h5>
+        <h5 class="pt-3"><%= @user == current_user ? "Votre" : "Son" %><span class="title-score"> <strong>tutti score</strong></span> du mois de <%= @current_month %></h5>
         <%= render 'shared/grades_month', score: @current_score, note: @current_note, last: @last_score, last_m: @last_month, user: current_user %>
       <% end %>
 
@@ -37,34 +36,44 @@
 
     <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 
-      <% if @current_score.nil? %>
+      <% if @global_score.nil?%>
         <div class="container">
           <h5 class="pt-3">Vous n'avez pas encore de <span class="title-score"><strong>tutti score</strong></span> <i class="fa-solid fa-face-sad-tear fa-xs smile-title-profile"></i></h5>
           <br><p>Commencez dès maintenant votre suivi en suivant ce lien</p>
           <br><br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, products_path %></p>
         </div>
       <% else %>
-        <h5 class="pt-3">Votre <span class="title-score"><strong>tutti score</strong></span> global</h5>
+        <h5 class="pt-3"><%= @user == current_user ? "Votre" : "Son" %> <span class="title-score"><strong>tutti score</strong></span> global</h5>
         <%= render 'shared/grades_global', score: @global_score, note: @global_note %>
       <% end %>
 
     </div>
 
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" data-controller="search-users">
+    <% if @user == current_user %>
       <%= simple_form_for add_friend_path, method: 'get', class: "form-inline" do %>
         <div id= "search-data" class="form-search search-data" data-users="<%= @users %>">
-          <%= text_field_tag :q, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search by programming language..." %>
+          <%= text_field_tag :q, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Ajouter un(e) ami(e)" %>
         </div>
       <% end %>
-      <div class="container">
-        <h3>Abonnés</h3>
-        <% @followers.each do |follower| %>
-          <%= link_to follower.asker.username, profile_path(follower.asker) %>
-        <% end %>
-        <h4>Abonnements</h4>
-        <% @followings.each do |following| %>
-        <%= link_to following.receiver.username, profile_path(following.receiver) %>
-        <% end %>
+    <% end %>
+      <div class="container mt-3">
+        <div>
+          <h3>Abonnés</h3>
+          <div class="d-grid justify-content-center text-start">
+            <% @followers.each do |follower| %>
+              <%= link_to follower.asker.username, profile_path(follower.asker), class:"text-decoration-none text-danger" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="mt-3">
+          <h4>Abonnements</h4>
+          <div class="d-grid justify-content-center text-start">
+            <% @followings.each do |following| %>
+              <%= link_to following.receiver.username, profile_path(following.receiver), class:"text-decoration-none text-danger"%>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

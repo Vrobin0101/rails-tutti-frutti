@@ -1,16 +1,16 @@
 .card-product {
   overflow: hidden;
-  height: 200px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .card-product img {
   height: 200px;
-  width: 40%;
   object-fit: cover;
   border-radius: $border-radius;
+  flex-grow: 1;
+  background-size: cover;
+  background-position: center;
 }
 
 .card-product h1 {
