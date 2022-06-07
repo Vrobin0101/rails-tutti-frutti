@@ -1,7 +1,10 @@
 .product-recipes {
-  padding: 24px 0px;
+  padding-top: 16px;
   p {
+    display: inline-flex;
     font-size: 14px;
+    align-items: center;
+    color: $green;
   }
   a {
     color: $green;
@@ -9,5 +12,6 @@
     padding-bottom: 6px;
     border-bottom: 1px solid $green;
     font-family: 'Nunito';
+    line-height: 32px;
   }
 }
