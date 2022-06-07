@@ -81,36 +81,36 @@
   <% colors = ['#0B8790', '#90DBD0', '#FDCB44', '#FDB3A5', '#FC755D', '#FDE773'] %>
   <% unless user.follow_ups.nil? %>
     <div>
-      <% month = Date.today.month %>
-      <% month_fo_product = user.follow_ups.includes([:product]).where(month_number: month) %>
-      <% month_fo_product.each do |fo| %>
+      <% @month_fo_product.each do |fo| %>
         <div class="card card-edit-follow-up my-3" style="border-color: <%= colors.sample.html_safe %>">
           <div class="d-flex justify-content-between">
             <div>
-              <%= cl_image_tag fo.product.photo.key, :height=>300, :quality=>"auto:good", :width=>300, :crop=>"fill", overflow: 'hidden' %>
+              <%= cl_image_tag fo.product.photo.key, :height=>300, :quality=>"auto:good", :width=>300, :crop=>"fill", overflow: 'hidden', class: 'card-image-follow-up' %>
             </div>
 
             <div class="d-flex justify-content-between flex-grow-1">
-              <div>
-              <h2><%= fo.product.name.titleize %></h2>
-              <p>Ajouté le <span><%= (l fo.created_at, format: '%-d %B') %></span></p>
-                <% if fo.product.season?(month) %>
-                  <p>Season: Yes</p>
-                <% else  %>
-                  <p>Season: No</p>
-                <% end %>
+              <div class="follow-up-info">
+              <h2 class="pt-3" style="color: <%= colors.sample.html_safe %>"><%= fo.product.name.titleize %></h2>
+              <p class="add-date"><i>Ajouté le <span><%= (l fo.created_at, format: '%-d %B') %></span></i></p>
+                <div class="d-grid info-product-fo">
+                  <% if fo.product.season?(@month) %>
+                    <p><span>Season <i class="fa-solid fa-check fa-sm"></i></span></p>
+                  <% else  %>
+                    <p><span>Season <i class="fa-solid fa-check fa-sm"></i></span></p>
+                  <% end %>
 
-                <% if fo.local %>
-                  <p>Local: Yes</p>
-                <% else  %>
-                  <p>Local: No</p>
-                <% end %>
+                  <% if fo.local %>
+                    <span>Local: Yes</span>
+                  <% else  %>
+                    <span>Local: No</span>
+                  <% end %>
 
-                <% if fo.bio %>
-                  <p>Bio: Yes</p>
-                <% else  %>
-                  <p>Bio: No</p>
-                <% end %>
+                  <% if fo.bio %>
+                    <span>Bio: Yes</span>
+                  <% else  %>
+                    <span>Bio: No</span>
+                  <% end %>
+                </div>
               </div>
 
               <div>

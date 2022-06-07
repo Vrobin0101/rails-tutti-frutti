@@ -24,6 +24,8 @@ class PagesController < ApplicationController
     @followers = @followers.includes([:asker])
     @follow_ups = @user.follow_ups
     @users = User.all.pluck(:username).sort.to_json
+    @month = Date.today.month
+    @month_fo_product = current_user.follow_ups.includes(product: [photo_attachment: :blob]).where(month_number: @month)
   end
 
   def map
