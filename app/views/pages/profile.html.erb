@@ -1,16 +1,16 @@
-<div class="container text-center py-3">
+<div class="container text-center py-3" style="overflow: hidden">
   <% if current_user == @user %>
-    <h2>Bonjour <%= current_user.first_name %></h2>
+    <h2 class="py-3">Bonjour <span class="user-name"><%= current_user.first_name %></span></h2>
   <% else %>
-    <h2>Le profil de <%= @user.first_name %></h2>
+    <h2 class="py-3">Le profil de <span class="user-name"><%= @user.first_name %></span></h2>
   <% end %>
 
   <ul class="nav justify-content-around navbar-profile p-1" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <button class="nav-link nav-link-profile" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Score <%= @current_month %></button>
+      <button class="nav-link nav-link-profile <%= "active" if params[:tab] == "home" %>" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Score <%= @current_month %></button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link nav-link-profile active" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Score Global</button>
+      <button class="nav-link nav-link-profile <%= "active" unless params[:tab] == "home" %>" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Score Global</button>
     </li>
     <li class="nav-item" role="presentation">
       <button class="nav-link nav-link-profile" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><%= image_tag 'group.svg' %></button>
@@ -18,32 +18,28 @@
   </ul>
 
   <div class="tab-content" id="myTabContent">
-
-
-    <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade  <%= "active show" if params[:tab] == "home" %>" id="home" role="tabpanel" aria-labelledby="home-tab">
       <% if @current_score.nil? %>
         <div class="container">
-          <h5 class="pt-3">Vous n'avez pas encore de <span class="title-score"><strong>tutti score</strong></span> pour le mois de <%= @current_month %> <i class="fa-solid fa-face-sad-tear fa-xs smile-title-profile"></i></h5>
+          <h5 class="pt-3">Vous n'avez pas encore de <span class="title-score"><strong>suivi</strong></span> pour le mois de <%= @current_month %> <i class="fa-solid fa-face-sad-tear fa-xs smile-title-profile"></i></h5>
           <br><p>Commencez dès maintenant votre suivi en suivant ce lien</p>
           <br><br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, products_path %></p>
         </div>
       <% else %>
-        <h5 class="pt-3"><%= @user == current_user ? "Votre" : "Son" %><span class="title-score"> <strong>tutti score</strong></span> du mois de <%= @current_month %></h5>
         <%= render 'shared/grades_month', score: @current_score, note: @current_note, last: @last_score, last_m: @last_month, user: @user, export: false %>
       <% end %>
 
     </div>
 
-    <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <div class="tab-pane fade  <%= "active show" unless params[:tab] == "home" %>" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 
       <% if @global_score.nil?%>
         <div class="container">
-          <h5 class="pt-3">Vous n'avez pas encore de <span class="title-score"><strong>tutti score</strong></span> <i class="fa-solid fa-face-sad-tear fa-xs smile-title-profile"></i></h5>
+          <h5 class="pt-3">Vous n'avez pas encore de <span class="title-score"><strong>suivi</strong></span> <i class="fa-solid fa-face-sad-tear fa-xs smile-title-profile"></i></h5>
           <br><p>Commencez dès maintenant votre suivi en suivant ce lien</p>
           <br><br><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, products_path %></p>
         </div>
       <% else %>
-        <h5 class="pt-3"><%= @user == current_user ? "Votre" : "Son" %> <span class="title-score"><strong>tutti score</strong></span> global</h5>
         <%= render 'shared/grades_global', score: @global_score, note: @global_note %>
       <% end %>
 

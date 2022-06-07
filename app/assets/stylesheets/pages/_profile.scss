@@ -36,10 +36,11 @@
 
 .grade-scale-profile {
   padding: 14px 10px 0px 26px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   text-align: start;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-right: 52px;
+  padding-bottom: 1px;
   .grade-indicator {
     color: rgba(0, 0, 0, 0.7);
     margin-left: 5px;
@@ -47,23 +48,23 @@
 }
 
 .grade-a {
-  color: $light-green;
+  color: $grade-a;
   font-weight: bold;
 }
 .grade-b {
-  color: $green;
+  color: $grade-b;
   font-weight: bold;
 }
 .grade-c {
-  color: $light-yellow;
+  color: $grade-c;
   font-weight: bold;
 }
 .grade-d {
-  color: $yellow;
+  color: $grade-d;
   font-weight: bold;
 }
 .grade-e {
-  color: $red;
+  color: $grade-e;
   font-weight: bold;
 }
 
@@ -78,6 +79,7 @@
 .navbar-profile {
   border-radius: 40px;
   background-color: $lighter-grey;
+  margin-bottom: 10px;
 }
 
 .nav-index {
@@ -98,4 +100,46 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
   font-weight: bold;
   color: #0B8790;
+}
+
+.link-from-profile {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.motivation-speech {
+  height: 380px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.motivation-content {
+  padding-top: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+  color: white;
+  h6 {
+    font-size: 25px;
+  }
+}
+
+.progress-score-user {
+  margin-top: 27px;
+}
+
+.user-name {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: .15rem;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: $green;
+  text-shadow: -2px 3px 0px #0B8790;
+  color: white;
+  padding-left: 5px;
+}
+
+.card-edit-follow-up {
+  border: 1px solid;
 }

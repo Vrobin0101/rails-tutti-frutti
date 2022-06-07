@@ -2,9 +2,9 @@
     <% if score.nil? %>
       <div class="d-none"></div>
     <% else %>
-      <figure>
-        <figcaption><%= score %></figcaption>
-        <svg viewBox="0 0 63.6619772368 63.6619772368">
+      <figure class="progress-score-user">
+        <figcaption style="--color: <%= color(score) %>"><%= score %></figcaption>
+        <svg viewBox="0 0 63.6619772368 63.6619772368" style="--color: <%= color(score) %>">
           <circle class="pie1" style="--c: <%= score %>; --m: <%= 100 - score %>; --color: <%= color(score) %>" cx="31.8309886184" cy="31.8309886184" r="15.9154943092"/>
         </svg>
       </figure>
@@ -54,23 +54,27 @@
   </div>
 
   <% if current_user == @user %>
-    <% unless score.nil? %>
-      <% if score < 20 %>
-        <h6 class="comment-score">Aïe, allez on vous aide.</h6>
-        <p>Voici les fruits et légumes du mois:
-      <% elsif score >= 20 && score < 40%>
-        <h6 class="comment-score">Encore un petit peu d'effort !</h6>
-        <p>Suivez les fruits et légumes du mois ici:
-      <% elsif score >= 40 && score < 60 %>
-        <h6 class="comment-score">C'est de mieux en mieux !</h6>
-        <p>Continuez sur cette lancée en vous aidant de notre guide:
-      <% elsif score >= 60 && score < 80 %>
-        <h6 class="comment-score">Bravo, vous êtes à quelques pas du but !</h6>
-        <p>Aidez-vous de notre guide des produits du moment:
-      <% elsif score <= 100 %>
-        <h6 class="comment-score">Génial, vos petits gestes ont de grands impacts !</h6>
-        <p>Surpassez vous encore, et aller voir les produits du mois: </p>
-      <% end %>
-    <% end %>
+    <div class="motivation-speech" style="background-image: url(<%= image_path('shape-round.svg') %>)">
+      <%= image_tag 'various_fruits.svg', class: 'pt-5' %>
+      <div class="motivation-content">
+        <% unless score.nil? %>
+          <% if score < 20 %>
+            <h6 class="comment-score">Aïe, allez on vous aide.</h6>
+            <p>Voici les <%= link_to 'fruits et légumes', products_path, class: 'link-from-profile' %> du mois.
+          <% elsif score >= 20 && score < 40%>
+            <h6 class="comment-score">Encore un petit peu d'effort !</h6>
+            <p>Suivez les fruits et légumes du mois <%= link_to 'ici', products_path, class: 'link-from-profile' %>.
+          <% elsif score >= 40 && score < 60 %>
+            <h6 class="comment-score">C'est de mieux en mieux !</h6>
+            <p>Continuez sur cette lancée en vous aidant de notre <%= link_to 'guide', products_path, class: 'link-from-profile' %>.
+          <% elsif score >= 60 && score < 80 %>
+            <h6 class="comment-score">Bravo, vous êtes à quelques pas du but !</h6>
+            <p>Aidez-vous de notre <%= link_to 'guide', products_path, class: 'link-from-profile' %> des produits du moment.
+          <% elsif score <= 100 %>
+            <h6 class="comment-score">Génial, vos petits gestes ont de grands impacts !</h6>
+          <p>Surpassez vous encore, et aller voir les <%= link_to 'produits du mois', products_path, class: 'link-from-profile' %>. </p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
-  <p><%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, products_path %></p>
