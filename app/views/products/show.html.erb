@@ -13,7 +13,9 @@
     <% @recipes.each do |recipe| %>
       <div>
         <p>
+        <%= link_to recipe[:link] do %>
           <%= recipe[:name] %>
+        <% end %>
           <%= recipe[:note] %>
         </p>
       </div>
