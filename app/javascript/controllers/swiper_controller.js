@@ -5,6 +5,8 @@ export default class extends Controller {
   connect() {
     const swiper = new Swiper('.swiper', {
       spaceBetween: 30,
+      effect: "cards",
+      grabCursor: true,
       slidesPerView: "auto",
       autoplay: {
         delay: 6000,
