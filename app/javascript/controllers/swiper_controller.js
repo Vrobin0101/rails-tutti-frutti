@@ -8,7 +8,6 @@ export default class extends Controller {
       effect: "cards",
       grabCursor: true,
       slidesPerView: "auto",
-      loop: true,
       autoplay: {
         delay: 6000,
       },
