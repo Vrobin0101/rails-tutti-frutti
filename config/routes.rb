@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get "/profile/:id", to: "pages#profile", as: 'profile'
   get "/profile/:id", to: "pages#add_friend", as: 'add_friend'
   get "/map", to: "pages#map", as: 'map'
+  get "/export/:id", to: "pages#export", as: "export"
 
 end
