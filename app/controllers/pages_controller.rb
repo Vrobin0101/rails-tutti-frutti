@@ -4,8 +4,8 @@ require 'open-uri'
 # Retrieve your user id and api key from https://htmlcsstoimage.com/dashboard
 
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :map ]
-  before_action :set_user, only: [ :profile ]
+  skip_before_action :authenticate_user!, only: [ :home, :map, :export ]
+  before_action :set_user, only: [ :profile, :export]
   def home
     @products = Product.includes([photo_attachment: :blob]).seasonal(Time.now.month)
     @current_month = (l Time.now, format: "%B").capitalize
@@ -30,7 +30,17 @@ class PagesController < ApplicationController
     api_parsing
   end
 
+  def export
+    tutti_score_global
+    tutti_score_current_month
+    tutti_score_last_month
+    @current_month = (l Time.now, format: "%B").capitalize
+    @last_month = (l (Date.today - 1.month), format: "%B").capitalize
+    @follow_ups = @user.follow_ups
+  end
+
   private
+
 
   def add_friend
     receiver = User.find_by_username(params[:q])
