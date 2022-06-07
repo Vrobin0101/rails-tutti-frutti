@@ -43,9 +43,29 @@
     h3 {
       margin: 0;
       font-size: 16px;
+      padding-left: 7px;
+      font-family: 'Nunito';
     }
 }
 
 .card-product-info {
   margin-top: 45px;
+  h5, p {
+    margin: 0;
+    color: $orange
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+.card-product-info-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $orange;
+  padding-bottom: 12px;
+    h5, p {
+    margin: 0;
+  }
 }

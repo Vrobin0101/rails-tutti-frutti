@@ -1,5 +1,6 @@
 .search-form-control {
   position: relative;
+  z-index: -1;
 }
 
 .search-form-control .btn {
@@ -13,6 +14,7 @@
   height: 3.5rem;
   box-shadow: $box-shadow;
   border: 1px solid #E7E7E7;
+  border-radius: 40px !important;
 }
 
 .search-form-control .form-control:focus {

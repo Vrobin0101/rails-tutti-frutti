@@ -9,7 +9,8 @@
 .swiper-small {
   --swiper-navigation-size: 25px;
   font-weight: bold;
-  color: $white;
+  color: $white !important;
+  opacity: 0.6 !important;
 }
 
 .swiper-button-nexy {
@@ -64,13 +65,13 @@ body {
   align-items: flex-start;
   flex-grow: 1;
   -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: $orange;
-  text-shadow: -2px 3px 0px $orange;
+  -webkit-text-stroke-color: $green;
+  text-shadow: -2px 3px 0px $green;
   color: white;
   margin-bottom: 30px;
   }
 }
 
 .highlight-title-bis p {
-  color: $black;
+  color: $green;
 }

@@ -52,8 +52,7 @@
 
 
   </div>
-
-<% if current_user == @user %>
+<% if current_user == @user && !export %>
   <div class="motivation-speech" style="background-image: url(<%= image_path('shape-round.svg') %>)">
     <%= image_tag 'various_fruits.svg', class: 'pt-5' %>
     <div class="motivation-content">

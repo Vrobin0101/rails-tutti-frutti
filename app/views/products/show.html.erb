@@ -1,25 +1,33 @@
 <%= render 'product', product: @product %>
+
 <div class="show-container">
   <%= simple_form_for [@product, @follow_up] do |f| %>
     <% if @product.localable %>
-      <%= f.input :local, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none" } %>
+      <%= f.input :local, as: :boolean, label: 'Votre produit est&nbsp<strong>français</strong>'.html_safe, input_html: { class: "toggle d-none" } %>
     <% else %>
-      <%= f.input :local, as: :boolean, disabled: true, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"} %>
+      <%= f.input :local, as: :boolean, disabled: true, label: "Votre produit n'est pas&nbsp<strong>français</strong>".html_safe, input_html: { class: "toggle d-none"} %>
     <% end %>
-    <%= f.input :bio, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"} %>
+    <%= f.input :bio, as: :boolean, label: 'Votre produit est&nbsp<strong>bio</strong>'.html_safe, input_html: { class: "toggle d-none"} %>
 
-    <h2>Des idees de recettes</h2>
+  <div class="card-product-info-title border-bottom mt-5">
+    <h5>Des idees de recettes</h5>
+  </div>
+
+  <div class="product-recipes">
     <% @recipes.each do |recipe| %>
-      <div>
-        <p>
+      <div class="d-flex justify-content-between">
+        <h6><%= link_to recipe[:link] do %>
           <%= recipe[:name] %>
-          <%= recipe[:note] %>
-        </p>
+        <% end %></h6>
+        <p><%= recipe[:note] %><i class="fa-solid fa-star text-info"></i></p>
       </div>
     <% end %>
+  </div>
 
     <% if @product.season?(Time.now.month) %>
-      <h2>Cela pourrait vous plaire </h2>
+      <div class="card-product-info-title border-bottom mt-5">
+        <h5>Cela pourrait vous plaire </h5>
+      </div>
       <div class="container w-90">
         <%= render 'shared/carousel', products: @alternatives %>
       </div>

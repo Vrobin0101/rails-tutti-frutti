@@ -15,12 +15,23 @@
 .btn-flat {
   color: $white;
   padding: 8px 24px;
-  border-radius: 20px;
+  border-radius: 40px;
   background: $orange;
   transition: background 0.3s ease;
   font-family: 'Poppins';
   font-size: 20px;
 }
+
+.btn-welcome {
+text-decoration: none;
+background-color: white;
+border-radius: 40px;
+padding: 10px 10px;
+box-shadow: $box-shadow;
+color: $green;
+font-size: bold;
+}
+
 
 .btn-bot {
   height: 75px;

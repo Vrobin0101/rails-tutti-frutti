@@ -1,9 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="background-image: url('<%= image_url('navbar-background.svg')%>');">
   <div class="container-fluid">
-    <% if params[:action] == "home" %>
+    <% if params[:action] == "home" || params[:action] == "export" %>
       <%= link_to "#", class: "navbar-brand" do %>
         Tutti Frutti <i class="fa-solid fa-seedling"></i>
-        <% end %>
+      <% end %>
       <% elsif params[:action] != "export" %>
           <div class="navbar-brand">
             <div class="search-box-navbar" data-controller="search-button">
@@ -19,6 +19,7 @@
           <% end  %>
       <% end %>
     <% if params[:action] != "export" %>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,7 +32,7 @@
             <%= link_to "Où acheter ?", map_path, class: "dropdown-item" %>
             <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
           </li>
-          <% else %>
+        <% else %>
           <li class="nav-item dropdown">
             <%= link_to "Se connecter", new_user_session_path, class: "dropdown-item text-end" %>
             <%= link_to "Où acheter ?", map_path, class: "dropdown-item text-end"%>
