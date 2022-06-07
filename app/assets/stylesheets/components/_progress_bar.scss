@@ -1,169 +1,226 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:700);
+// @import url(https://fonts.googleapis.com/css?family=Lato:700);
 
-// -- vars
-$bg-color: #34495e;
-$default-size: 1em;
-$label-font-size: $default-size / 4;
-$label-font-size-redo: $default-size * 4;
+// // -- vars
+// $bg-color: #34495e;
+// $default-size: 1em;
+// $label-font-size: $default-size / 4;
+// $label-font-size-redo: $default-size * 4;
 
-// -- mixins
-@mixin size($width, $height) {
-  height: $height;
-  width: $width;
-}
+// // -- mixins
+// @mixin size($width, $height) {
+//   height: $height;
+//   width: $width;
+// }
 
-@mixin draw-progress($progress, $color) {
+// @mixin draw-progress($progress, $color) {
 
-  $calcul: $progress * 3.6deg;
+//   $calcul: $progress * 3.6deg;
 
-  // @keyframes grow {
-  //   0% {
-  //     transform: rotate(0);
-  //   }
-  //   100% {
-  //     transform: rotate($calcul);
-  //     // transform: rotate(100);
-  //   }
-  // }
+//   @keyframes grow {
+//     0% {
+//       transform: translate(0);
+//     }
+//     100% {
+//       transform: translate($calcul);
+//     }
+//   }
 
-  .pie {
-    .half-circle {
-      border-color: $color;
-    }
+//   .pie {
+//     .half-circle {
+//       border-color: $color;
+//     }
 
-    .left-side {
-      // animation: grow 10s ease;
-      // animation-iteration-count: 1;
-      // animation-fill-mode: forwards;
-      transform: rotate($calcul)
-    }
+//     .left-side {
+//       animation: grow 4s ease;
+//       transform: rotate($calcul)
+//     }
 
-    @if $progress <= 50 {
-      .right-side {
-        display: none;
-      }
-    } @else {
-      clip: rect(auto, auto, auto, auto);
+//     @if $progress <= 50 {
+//       .right-side {
+//         display: none;
+//       }
+//     } @else {
+//       clip: rect(auto, auto, auto, auto);
 
-      .right-side {
-        transform: rotate(180deg);
-      }
-    }
-  }
-}
+//       .right-side {
+//         animation-direction: reverse;
+//         transform: rotate(180deg);
+//       }
+//     }
+//   }
+// }
 
-// -- selectors
+// // -- selectors
 
-.set-size {
-  font-size: 10em;
-}
+// .set-size {
+//   font-size: 10em;
+// }
 
-.charts-container {
-  &:after {
-    clear: both;
-    content: '';
-    display: table;
-  }
-}
+// .charts-container {
+//   &:after {
+//     clear: both;
+//     content: '';
+//     display: table;
+//   }
+// }
 
-.pie-wrapper {
-  @include size($default-size, $default-size);
-  float: left;
-  margin: 15px;
+// .pie-wrapper {
+//   @include size($default-size, $default-size);
+//   float: left;
+//   margin: 15px;
+//   position: relative;
+
+//   &:nth-child(3n + 1) {
+//     clear: both;
+//   }
+
+//   .pie {
+//     @include size(100%, 100%);
+//     clip: rect(0, $default-size, $default-size, $default-size / 2);
+//     left: 0;
+//     position: absolute;
+//     top: 0;
+
+//     .half-circle {
+//       @include size(100%, 100%);
+//       border: ($default-size / 10) solid #3498db;
+//       border-radius: 50%;
+//       clip: rect(0, $default-size / 2, $default-size, 0);
+//       left: 0;
+//       position: absolute;
+//       top: 0;
+//     }
+//   }
+
+//   .label {
+//     background: $bg-color;
+//     border-radius: 50%;
+//     bottom: $label-font-size-redo / 10;
+//     color: #ecf0f1;
+//     cursor: default;
+//     display: block;
+//     font-size: $label-font-size;
+//     left: $label-font-size-redo / 10;
+//     line-height: $label-font-size-redo * .70;
+//     position: absolute;
+//     right: $label-font-size-redo / 10;
+//     text-align: center;
+//     top: $label-font-size-redo / 10;
+
+//     .smaller {
+//       color: #bdc3c7;
+//       font-size: .45em;
+//       padding-bottom: 20px;
+//       vertical-align: super;
+//     }
+//   }
+
+//   .shadow {
+//     @include size(100%, 100%);
+//     border: $default-size / 10 solid #bdc3c7;
+//     border-radius: 50%;
+//   }
+
+//   &.style-2 {
+//     .label {
+//       background: none;
+//       color: #7f8c8d;
+
+//       .smaller {
+//         color: #bdc3c7;
+//       }
+//     }
+//   }
+
+//   $base-note: 0;
+//   $e-note: 20;
+//   $d-note: 40;
+//   $c-note: 60;
+//   $b-note: 80;
+//   $a-note: 100;
+
+//   @for $i from $base-note through $e-note {
+//     &.progress-#{$i} {
+//       @include draw-progress($i, $red);
+//     }
+//   }
+//   @for $i from $e-note through $d-note {
+//     &.progress-#{$i} {
+//       @include draw-progress($i, $yellow);
+//     }
+//   }
+//   @for $i from $d-note through $c-note {
+//     &.progress-#{$i} {
+//       @include draw-progress($i, $light-yellow);
+//     }
+//   }
+//   @for $i from $c-note through $b-note {
+//     &.progress-#{$i} {
+//       @include draw-progress($i, $green);
+//     }
+//   }
+//   @for $i from $b-note through $a-note {
+//     &.progress-#{$i} {
+//       @include draw-progress($i, $light-green);
+//     }
+
+//   }
+// }
+
+
+
+
+figure {
+  display: block;
+  height: 0;
+  margin: 0 auto;
   position: relative;
+  font-size:16px;
+  font-size:1vw;
+  width: 40em;
+  padding-bottom: 40em;
+}
+figcaption {
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  z-index:2;
+  margin: 16px;
+  font-size: 50px;
+}
+svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  background-color: white;
+}
+circle {
+	fill:rgba(0,0,0,0);
+  stroke-width:31.8309886184;
+  stroke-dasharray: 0,0,0,100;
+  stroke-dashoffset: 25;
+  -webkit-animation: pie1 3s ease both;
+  animation: pie1 6s ease both;
+}
+.pie1 {
+  stroke: var(--color);
+  // stroke: $green;
+}
 
-  &:nth-child(3n + 1) {
-    clear: both;
-  }
-
-  .pie {
-    @include size(100%, 100%);
-    clip: rect(0, $default-size, $default-size, $default-size / 2);
-    left: 0;
-    position: absolute;
-    top: 0;
-
-    .half-circle {
-      @include size(100%, 100%);
-      border: ($default-size / 10) solid #3498db;
-      border-radius: 50%;
-      clip: rect(0, $default-size / 2, $default-size, 0);
-      left: 0;
-      position: absolute;
-      top: 0;
-    }
-  }
-
-  .label {
-    background: $bg-color;
-    border-radius: 50%;
-    bottom: $label-font-size-redo / 10;
-    color: #ecf0f1;
-    cursor: default;
-    display: block;
-    font-size: $label-font-size;
-    left: $label-font-size-redo / 10;
-    line-height: $label-font-size-redo * .70;
-    position: absolute;
-    right: $label-font-size-redo / 10;
-    text-align: center;
-    top: $label-font-size-redo / 10;
-
-    .smaller {
-      color: #bdc3c7;
-      font-size: .45em;
-      padding-bottom: 20px;
-      vertical-align: super;
-    }
-  }
-
-  .shadow {
-    @include size(100%, 100%);
-    border: $default-size / 10 solid #bdc3c7;
-    border-radius: 50%;
-  }
-
-  &.style-2 {
-    .label {
-      background: none;
-      color: #7f8c8d;
-
-      .smaller {
-        color: #bdc3c7;
-      }
-    }
-  }
-
-  $base-note: 0;
-  $e-note: 20;
-  $d-note: 40;
-  $c-note: 60;
-  $b-note: 80;
-  $a-note: 100;
-
-  @for $i from $base-note through $e-note {
-    &.progress-#{$i} {
-      @include draw-progress($i, $red);
-    }
-  }
-  @for $i from $e-note through $d-note {
-    &.progress-#{$i} {
-      @include draw-progress($i, $yellow);
-    }
-  }
-  @for $i from $d-note through $c-note {
-    &.progress-#{$i} {
-      @include draw-progress($i, $light-yellow);
-    }
-  }
-  @for $i from $c-note through $b-note {
-    &.progress-#{$i} {
-      @include draw-progress($i, $green);
-    }
-  }
-  @for $i from $b-note through $a-note {
-    &.progress-#{$i} {
-      @include draw-progress($i, $light-green);
-    }
-  }
+@-webkit-keyframes pie1 {
+  50%,100% {stroke-dasharray: var(--c),var(--m),0,0;}
+}
+@keyframes pie1 {
+  50%,100% {stroke-dasharray: var(--c),var(--m),0,0;}
 }

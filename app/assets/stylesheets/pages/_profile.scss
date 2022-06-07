@@ -74,3 +74,28 @@
 .smile-title-profile {
   color: $purple;
 }
+
+.navbar-profile {
+  border-radius: 40px;
+  background-color: $lighter-grey;
+}
+
+.nav-index {
+  margin-bottom: 10px;
+  border-radius: 40px;
+  background-color: $lighter-grey;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-link.active {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  color: #0B8790;
+}

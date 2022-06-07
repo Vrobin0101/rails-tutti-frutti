@@ -6,27 +6,24 @@
 .toggle + label {
   position: relative;
   cursor: pointer;
-  object-fit: contain;
   outline-offset: 10px;
-  justify-content: space-between;
   align-items: center;
   display: flex;
   padding: 15px;
   border: 0.5px solid grey;
   border-radius: 50px;
-  margin: 26px 18px;
+  margin: 8px 18px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   color: $green;
-    h3 {
-      margin: 0;
-      font-size: 16px;
-    }
+  padding-left: 22px;
 }
 
 .toggle:checked + label {
-  border: 2px solid $purple;
+  border: 3px solid $orange;
   outline-offset: 10px;
-  border-radius: $border-radius;
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
 }
 
 .form-check {

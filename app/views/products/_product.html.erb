@@ -1,5 +1,5 @@
 <div class="show-container">
-  <div class="card-product-title mb-4 rounded d-flex flex-column align-items-center justify-content-start">
+  <div class="card-product-title rounded d-flex flex-column align-items-center justify-content-start">
     <h1 class="mb-3"><strong><%= product.name.capitalize %></strong></h1>
     <%# joke_sentence = ['De rien, ça nous fait plaisir.', 'On vous voit sourire. On ferait pareil à votre place.', 'Oh yeah !', 'Mmmmh !', "C'est le moment de tester votre recette magique.", "C'est le moment de se faire plaisir."] %>
     <p class="text-justify"> Disponible de <%=@mois[(@product.start_month)%12]%> à <%= @mois[(@product.end_month)%12]%>. <%#= joke_sentence.sample %></p>
@@ -7,7 +7,6 @@
 
   <div class="card-product m-1">
     <%= cl_image_tag product.photo.key, :quality=>"auto:good", height: 300, width: 300, crop: :fill %>
-
   </div>
 
   <div class="card-product-description">
@@ -15,14 +14,17 @@
   </div>
 
   <div class="card-product-info">
-    <h4>Soyez précis</h4>
+    <div class="card-product-info-title border-bottom">
+      <h5>Soyez précis</h4>
+      <p>Cliquer pour sélectionner</p>
+    </div>
     <% if product.season? Date.today.month + 48 %>
       <div class="card-product-info-season">
         </i><h3>Votre produit est de <strong>saison</strong></h3><i class="fa-solid fa-check text-success"></i>
       </div>
     <% else %>
       <div class="card-product-info-season">
-        <h3>Votre produit est <strong>hors saison</strong></h3><i class="fa-solid fa-xmark text-danger"></i>
+        <h3>Votre produit n'est <strong>pas de saison</strong></h3><i class="fa-solid fa-xmark text-danger"></i>
       </div>
     <% end %>
   </div>

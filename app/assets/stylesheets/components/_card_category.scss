@@ -17,6 +17,14 @@
   border: solid 2px $green;
 }
 
+.swiper {
+  width: 70%;
+}
+
+.swiper-wrapper, .swiper-slide-shadow {
+  border-radius: $border-radius;
+}
+
 .swiper-slide a:hover, .cards-all a:hover {
   color: $white;
 }
