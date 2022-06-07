@@ -1,8 +1,10 @@
 require 'json'
 require 'open-uri'
 
+# Retrieve your user id and api key from https://htmlcsstoimage.com/dashboard
+
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :map ]
+  skip_before_action :authenticate_user!, only: [ :home, :map, :profile ]
   before_action :set_user, only: [ :profile ]
   def home
     @products = Product.includes([photo_attachment: :blob]).seasonal(Time.now.month)
@@ -20,6 +22,8 @@ class PagesController < ApplicationController
     @followings = @user.social_as_asker
     @followings = @followings.includes([:receiver])
     @followers = @followers.includes([:asker])
+    return unless current_user.present?
+
     @follow_ups = current_user.follow_ups
     @users = User.all.pluck(:username).sort.to_json
   end

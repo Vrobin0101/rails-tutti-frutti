@@ -3,7 +3,6 @@ import Swiper from 'swiper/bundle';
 
 export default class extends Controller {
   connect() {
-    console.log("Hello from swiper");
     const swiper = new Swiper('.swiper', {
       spaceBetween: 30,
       slidesPerView: "auto",
