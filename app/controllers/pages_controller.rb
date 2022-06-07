@@ -22,9 +22,7 @@ class PagesController < ApplicationController
     @followings = @user.social_as_asker
     @followings = @followings.includes([:receiver])
     @followers = @followers.includes([:asker])
-    return unless current_user.present?
-
-    @follow_ups = current_user.follow_ups
+    @follow_ups = @user.follow_ups
     @users = User.all.pluck(:username).sort.to_json
   end
 
