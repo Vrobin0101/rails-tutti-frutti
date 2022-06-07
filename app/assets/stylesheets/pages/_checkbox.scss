@@ -5,17 +5,22 @@
 
 .toggle + label {
   position: relative;
-  display: inline-block;
-  height: 100px;
-  width: 100px;
   cursor: pointer;
   object-fit: contain;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px dotted rgba(0,0,0,0.7);
   outline-offset: 10px;
-  border-radius: $border-radius;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: 15px;
+  border: 0.5px solid grey;
+  border-radius: 50px;
+  margin: 26px 18px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  color: $green;
+    h3 {
+      margin: 0;
+      font-size: 16px;
+    }
 }
 
 .toggle:checked + label {

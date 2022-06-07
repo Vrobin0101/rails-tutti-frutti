@@ -1,27 +1,35 @@
-  <div class="card-product-infos ms-2 rounded d-flex flex-column align-items-center p-3 justify-content-start">
-    <h1 class="mb-3"><%= product.name.capitalize %></h1>
-  <div class="card-product m-3">
+<div class="show-container">
+  <div class="card-product-title mb-4 rounded d-flex flex-column align-items-center justify-content-start">
+    <h1 class="mb-3"><strong><%= product.name.capitalize %></strong></h1>
+    <%# joke_sentence = ['De rien, ça nous fait plaisir.', 'On vous voit sourire. On ferait pareil à votre place.', 'Oh yeah !', 'Mmmmh !', "C'est le moment de tester votre recette magique.", "C'est le moment de se faire plaisir."] %>
+    <p class="text-justify"> Disponible de <%=@mois[(@product.start_month)%12]%> à <%= @mois[(@product.end_month)%12]%>. <%#= joke_sentence.sample %></p>
+  </div>
+
+  <div class="card-product m-1">
     <%= cl_image_tag product.photo.key, height: 400, width: 400, crop: :fill %>
   </div>
-    <div class="my-auto">
-      <% if product.season? Date.today.month + 48 %>
-        <div class="d-flex align-items-center mb-3">
-        <i class="pb-1 fa-solid fa-lg fa-calendar-check text-success"></i><h3 class="ms-3">produit de saison</h3>
-        </div>
-      <% else %>
-        <div class="d-flex align-items-center mb-3">
-          <i class="pb-1 fa-solid fa-lg fa-calendar-check text-danger"></i><h3 class="ms-3">produit hors saison</h3>
-        </div>
-      <% end %>
-      <% if product.localable %>
-        <div class="d-flex align-items-center mb-3">
-          <i class="pb-1 fa-solid fa-lg fa-location-dot text-success"></i><h3 class="ms-3">possiblement cultivé en France</h3>
-        </div>
-      <% else %>
-          <div class="d-flex align-items-center mb-3">
-            <i class="pb-1 fa-solid fa-lg fa-location-dot"></i><h3 class="ms-3">produit en dehors de la France</h3>
-          </div>
-      <% end %>
-    </div>
+
+  <div class="card-product-description">
+    <p><%= @product.description %></p>
+  </div>
+
+  <div class="card-product-info">
+    <h4>Soyez précis</h4>
+    <% if product.season? Date.today.month + 48 %>
+      <div class="card-product-info-season">
+        </i><h3>Votre produit est de <strong>saison</strong></h3><i class="fa-solid fa-check text-success"></i>
+      </div>
+    <% else %>
+      <div class="card-product-info-season">
+        <h3>Votre produit est <strong>hors saison</strong></h3><i class="fa-solid fa-xmark text-danger"></i>
+      </div>
+    <% end %>
   </div>
 </div>
+
+
+  <%# <% if @product.end_month + @product.start_month == 13  %>
+    <%# <p>Super, vous pouvez en profiter toute l'année.</p> %>
+  <%# <% elsif (@product.end_month - Time.now.month).abs %>
+    <%# <p>Encore = (@product.end_month - Time.now.month).abs mois pour en profiter.</p> %>
+  <%# <% end %>

@@ -1,41 +1,46 @@
+.show-container {
+  padding: 18px 18px 4px 18px;
+}
+
+.card-product-title {
+  text-align: justify;
+}
+
+.card-product img {
+  height: 200px;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+}
+
 .card-product {
   overflow: hidden;
   display: flex;
   flex-grow: 1;
 }
 
-.card-product img {
-  height: 200px;
-  object-fit: cover;
-  border-radius: $border-radius;
-  flex-grow: 1;
-  background-size: cover;
-  background-position: center;
+
+.card-product-description {
+  text-align: justify;
+  margin-top: 32px;
 }
 
-.card-product h1 {
-  font-size: 25px;
-  font-weight: 500;
-  margin: 0;
+.card-product-info-season {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: 15px;
+  border: 0.5px solid grey;
+  border-radius: 50px;
+  margin: 26px 18px 0px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  color: $green;
+    h3 {
+      margin: 0;
+      font-size: 16px;
+    }
 }
 
-.card-product h3 {
-  font-size: 18px;
-  margin: 0;
-}
-
-
-.card-product p {
-  font-size: 16px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .card-product-infos {
-  padding: 20px;
-  height: 200px;
-  width: 60%;
-  background-color: #FFFCF2;
+.card-product-info {
+  margin-top: 45px;
 }
