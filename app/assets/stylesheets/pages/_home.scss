@@ -23,6 +23,7 @@ body {
 .month-display {
   color: $light-green;
   font-size: 28px !important;
+  font-family: 'Poppins';
 }
 
 .highlight-title {
@@ -43,4 +44,26 @@ body {
 }
 .highlight-title p {
   color: $green;
+}
+
+.highlight-title-bis {
+  h6 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: .15rem;
+  display: flex;
+  align-items: flex-start;
+  flex-grow: 1;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: $orange;
+  text-shadow: -2px 3px 0px $orange;
+  color: white;
+  margin-bottom: 30px;
+  }
+}
+
+.highlight-title-bis p {
+  color: $black;
 }
