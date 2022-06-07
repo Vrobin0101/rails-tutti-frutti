@@ -8,7 +8,7 @@
   cursor: pointer;
   object-fit: contain;
   outline-offset: 10px;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: center;
   display: flex;
   padding: 15px;
@@ -24,9 +24,9 @@
 }
 
 .toggle:checked + label {
-  border: 2px solid $purple;
+  border: 3px solid $orange;
   outline-offset: 10px;
-  border-radius: $border-radius;
+  border-radius: 50px;
 }
 
 .form-check {
