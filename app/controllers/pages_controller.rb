@@ -4,7 +4,7 @@ require 'open-uri'
 # Retrieve your user id and api key from https://htmlcsstoimage.com/dashboard
 
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :map, :profile ]
+  skip_before_action :authenticate_user!, only: [ :home, :map ]
   before_action :set_user, only: [ :profile ]
   def home
     @products = Product.includes([photo_attachment: :blob]).seasonal(Time.now.month)
