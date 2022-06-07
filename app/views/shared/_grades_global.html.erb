@@ -2,16 +2,12 @@
     <% if score.nil? %>
       <div class="d-none"></div>
     <% else %>
-      <div class="set-size charts-container">
-        <div class="pie-wrapper progress-<%= score %> style-2">
-          <span class="label"><%= score %><span class="smaller"></span></span>
-            <div class="pie">
-            <div class="left-side half-circle"></div>
-              <div class="right-side half-circle"></div>
-            </div>
-          <div class="shadow"></div>
-        </div>
-      </div>
+      <figure>
+        <figcaption><%= score %></figcaption>
+        <svg viewBox="0 0 63.6619772368 63.6619772368">
+          <circle class="pie1" style="--c: <%= score %>; --m: <%= 100 - score %>; --color: <%= color(score) %>" cx="31.8309886184" cy="31.8309886184" r="15.9154943092"/>
+        </svg>
+      </figure>
 
       <div>
         <ul class="list-unstyled grade-scale-profile">
