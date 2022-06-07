@@ -31,6 +31,7 @@ class PagesController < ApplicationController
   end
 
   def export
+    # render layout: false
     tutti_score_global
     tutti_score_current_month
     tutti_score_last_month

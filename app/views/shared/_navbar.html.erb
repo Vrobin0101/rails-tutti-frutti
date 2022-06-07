@@ -1,10 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="background-image: url('<%= image_url('navbar-background.svg')%>');">
   <div class="container-fluid">
-    <% if params[:action] == "home"%>
+    <% if params[:action] == "home" %>
       <%= link_to "#", class: "navbar-brand" do %>
         Tutti Frutti <i class="fa-solid fa-seedling"></i>
         <% end %>
-      <% else %>
+      <% elsif params[:action] != "export" %>
           <div class="navbar-brand">
             <div class="search-box-navbar" data-controller="search-button">
               <button name="button" class="btn-search-navbar" data-action = "click->search-button#displaySearchBar"><i class="fas fa-search"></i></button>
@@ -18,7 +18,7 @@
             <i class="fa-solid fa-seedling"></i>
           <% end  %>
       <% end %>
-
+    <% if params[:action] != "export" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,6 +41,7 @@
     </div>
   </div>
 </div>
+<% end %>
 
   <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
   <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
