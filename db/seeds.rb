@@ -15,7 +15,7 @@
 
 puts "Creating Users..."
 10.times do
-  user = User.new(username: Faker::Internet.username,first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "azerty", city: "Paris")
+  user = User.new(username: Faker::Internet.username,first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "azerty")
   user.save!
 end
 puts "Finish Users"
