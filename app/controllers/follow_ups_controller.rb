@@ -22,7 +22,7 @@ class FollowUpsController < ApplicationController
     @product = @follow_up.product
     @follow_up.carbon_calcul = calcul_follow_up
     @follow_up.save
-    redirect_to profile_path(@user)
+    redirect_to profile_path(@user, tab: "home")
   end
 
   def destroy

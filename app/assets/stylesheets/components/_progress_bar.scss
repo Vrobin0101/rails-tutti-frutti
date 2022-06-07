@@ -180,6 +180,7 @@ figure {
   width: 40em;
   padding-bottom: 40em;
 }
+
 figcaption {
   width: 80%;
   height: 80%;
@@ -190,11 +191,14 @@ figcaption {
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 0;
+  left: -1px;
   z-index:2;
   margin: 16px;
   font-size: 50px;
+  border: 0.1px solid;
+  border-color: var(--color);
 }
+
 svg {
   display: block;
   height: 100%;
@@ -205,6 +209,7 @@ svg {
   overflow: visible;
   background-color: white;
 }
+
 circle {
 	fill:rgba(0,0,0,0);
   stroke-width:31.8309886184;
@@ -213,6 +218,7 @@ circle {
   -webkit-animation: pie1 3s ease both;
   animation: pie1 6s ease both;
 }
+
 .pie1 {
   stroke: var(--color);
   // stroke: $green;
@@ -221,6 +227,7 @@ circle {
 @-webkit-keyframes pie1 {
   50%,100% {stroke-dasharray: var(--c),var(--m),0,0;}
 }
+
 @keyframes pie1 {
   50%,100% {stroke-dasharray: var(--c),var(--m),0,0;}
 }

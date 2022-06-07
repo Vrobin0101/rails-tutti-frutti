@@ -2,16 +2,12 @@
     <% if score.nil? %>
       <div class="d-none"></div>
     <% else %>
-      <div class="set-size charts-container">
-        <div class="pie-wrapper progress-<%= score %> style-2">
-          <span class="label"><%= score %><span class="smaller"></span></span>
-            <div class="pie">
-              <div class="left-side half-circle"></div>
-              <div class="right-side half-circle"></div>
-            </div>
-          <div class="shadow"></div>
-        </div>
-      </div>
+      <figure class="progress-score-user">
+        <figcaption style="--color: <%= color(score) %>"><%= score %></figcaption>
+        <svg viewBox="0 0 63.6619772368 63.6619772368">
+          <circle class="pie1" style="--c: <%= score %>; --m: <%= 100 - score %>; --color: <%= color(score) %>" cx="31.8309886184" cy="31.8309886184" r="15.9154943092"/>
+        </svg>
+      </figure>
 
       <div>
         <ul class="list-unstyled grade-scale-profile">
@@ -56,109 +52,110 @@
 
 
   </div>
-  <% if current_user == @user && !export %>
-    <% unless score.nil? %>
-      <% if score < 20 %>
-        <h6 class="comment-score">Aïe, allez on vous aide.</h6>
-        <%= render 'shared/last_score', last: last, last_m: last_m %>
-        <p>Voici les fruits et légumes du mois:
-      <% elsif score >= 20 && score < 40%>
-        <h6 class="comment-score">Encore un petit peu d'effort !</h6>
-        <%= render 'shared/last_score', last: last, last_m: last_m %>
-        <p>Suivez les fruits et légumes du mois ici:
-      <% elsif score >= 40 && score < 60 %>
-        <h6 class="comment-score">C'est de mieux en mieux !</h6>
-        <%= render 'shared/last_score', last: last, last_m: last_m %>
-        <p>Continuez sur cette lancée en vous aidant de notre guide:
-      <% elsif score >= 60 && score < 80 %>
-        <h6 class="comment-score">Bravo, vous êtes à quelques pas du but !</h6>
-        <%= render 'shared/last_score', last: last, last_m: last_m %>
-        <p>Aidez-vous de notre guide des produits du moment:
-      <% elsif score <= 100 %>
-        <h6 class="comment-score">Génial, vos petits gestes ont de grands impacts !</h6>
-        <%= render 'shared/last_score', last: last, last_m: last_m %>
-        <p>Surpassez vous encore, et aller voir les produits du mois:</p>
+<% if current_user == @user && !export %>
+  <div class="motivation-speech" style="background-image: url(<%= image_path('shape-round.svg') %>)">
+    <%= image_tag 'various_fruits.svg', class: 'pt-5' %>
+    <div class="motivation-content">
+      <% unless score.nil? %>
+        <% if score < 20 %>
+          <h6 class="comment-score">Aïe, allez on vous aide.</h6>
+          <p>Voici les <%= link_to 'fruits et légumes', products_path, class: 'link-from-profile' %> du mois.
+        <% elsif score >= 20 && score < 40%>
+          <h6 class="comment-score">Encore un petit peu d'effort !</h6>
+          <p>Suivez les fruits et légumes du mois <%= link_to 'ici', products_path, class: 'link-from-profile' %>.
+        <% elsif score >= 40 && score < 60 %>
+          <h6 class="comment-score">C'est de mieux en mieux !</h6>
+          <p>Continuez sur cette lancée en vous aidant de notre <%= link_to 'guide', products_path, class: 'link-from-profile' %>.
+        <% elsif score >= 60 && score < 80 %>
+          <h6 class="comment-score">Bravo, vous êtes à quelques pas du but !</h6>
+          <p>Aidez-vous de notre <%= link_to 'guide', products_path, class: 'link-from-profile' %> des produits du moment.
+        <% elsif score <= 100 %>
+          <h6 class="comment-score">Génial, vos petits gestes ont de grands impacts !</h6>
+          <p>Surpassez vous encore, et aller voir les <%= link_to 'produits du mois', products_path, class: 'link-from-profile' %>. </p>
+        <% end %>
       <% end %>
-    <% end %>
-  <div>
-    <%= link_to ('<i class="fa-solid fa-seedling icon-link-score"></i>').html_safe, products_path %></p>
+    </div>
   </div>
 
 
-
-
-    <% month = Date.today.month %>
-    <% month_fo_product = user.follow_ups.includes([:product]).where(month_number: month) %>
-    <% month_fo_product.each do |fo| %>
-      <div class="card">
-        <div class="d-flex justify-content-between">
-          <div>
-            <h2><%= fo.product.name.titleize %></h2>
-            <p>Ajouté le <span><%= (l fo.created_at, format: '%-d %B') %></span></p>
-          </div>
-
-          <div class="d-flex justify-content-between flex-grow-1">
+  <% colors = ['#0B8790', '#90DBD0', '#FDCB44', '#FDB3A5', '#FC755D', '#FDE773'] %>
+  <% unless user.follow_ups.nil? %>
+    <div>
+      <% month = Date.today.month %>
+      <% month_fo_product = user.follow_ups.includes([:product]).where(month_number: month) %>
+      <% month_fo_product.each do |fo| %>
+        <div class="card card-edit-follow-up my-3" style="border-color: <%= colors.sample.html_safe %>">
+          <div class="d-flex justify-content-between">
             <div>
-              <% if fo.product.season?(month) %>
-                <p>Season: Yes</p>
-              <% else  %>
-                <p>Season: No</p>
-              <% end %>
-
-              <% if fo.local %>
-                <p>Local: Yes</p>
-              <% else  %>
-                <p>Local: No</p>
-              <% end %>
-
-              <% if fo.bio %>
-                <p>Bio: Yes</p>
-              <% else  %>
-                <p>Bio: No</p>
-              <% end %>
+              <%= cl_image_tag fo.product.photo.key, :height=>300, :quality=>"auto:good", :width=>300, :crop=>"fill", overflow: 'hidden' %>
             </div>
 
-            <div>
-              <!-- Button trigger modal -->
-              <button data-bs-toggle="modal" data-bs-target="#exampleModal<%= fo.id %>">
-                Edit
-              </button>
+            <div class="d-flex justify-content-between flex-grow-1">
+              <div>
+              <h2><%= fo.product.name.titleize %></h2>
+              <p>Ajouté le <span><%= (l fo.created_at, format: '%-d %B') %></span></p>
+                <% if fo.product.season?(month) %>
+                  <p>Season: Yes</p>
+                <% else  %>
+                  <p>Season: No</p>
+                <% end %>
 
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal<%= fo.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel"><%= fo.product.name.titleize %></h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                      <%= simple_form_for fo do |f| %>
-                        <div class="modal-body">
-                          <div class="container">
-                            <div class="d-flex justify-content-evenly h-100">
-                              <% if fo.product.localable %>
-                                <%= f.input :local, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none", checked: fo.local }, label_html: {style: "background-image: url('#{image_url('france.svg')}'); background-position: center; background-size: 75%;"}  %>
-                              <% else %>
-                                <%= f.input :local, disabled: true, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('france.svg')}'); background-position: center; background-size: 75%;"} %>
-                              <% end %>
-                              <%= f.input :bio, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none", checked: fo.bio }, label_html: {style: "background-image: url('#{image_url('bio3.png')}'); background-position: center; background-size: 75%;"} %>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <%= f.submit 'Save', class: 'btn btn-primary' %>
-                        </div>
-                      <% end %>
-                  </div>
-                </div>
+                <% if fo.local %>
+                  <p>Local: Yes</p>
+                <% else  %>
+                  <p>Local: No</p>
+                <% end %>
+
+                <% if fo.bio %>
+                  <p>Bio: Yes</p>
+                <% else  %>
+                  <p>Bio: No</p>
+                <% end %>
               </div>
 
-              <%= link_to 'Delete', follow_up_path(fo), data: { turbo_method: 'delete' } %>
+              <div>
+                <!-- Button trigger modal -->
+                <button data-bs-toggle="modal" data-bs-target="#exampleModal<%= fo.id %>">
+                  Edit
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal<%= fo.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><%= fo.product.name.titleize %></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                        <%= simple_form_for fo do |f| %>
+                          <div class="modal-body">
+                            <div class="container">
+                              <div class="d-flex justify-content-evenly h-100">
+                                <% if fo.product.localable %>
+                                  <%= f.input :local, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none", checked: fo.local }, label_html: {style: "background-image: url('#{image_url('france.svg')}'); background-position: center; background-size: 75%;"}  %>
+                                <% else %>
+                                  <%= f.input :local, disabled: true, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('france.svg')}'); background-position: center; background-size: 75%;"} %>
+                                <% end %>
+                                <%= f.input :bio, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none", checked: fo.bio }, label_html: {style: "background-image: url('#{image_url('bio3.png')}'); background-position: center; background-size: 75%;"} %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <%= f.submit 'Save', class: 'btn btn-primary' %>
+                          </div>
+                        <% end %>
+                    </div>
+                  </div>
+                </div>
+
+                <%= link_to 'Delete', follow_up_path(fo), data: { turbo_method: 'delete' } %>
+              </div>
             </div>
           </div>
-        </div>
 
-      </div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+<% end %>
