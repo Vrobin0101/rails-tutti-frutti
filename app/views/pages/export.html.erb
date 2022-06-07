@@ -1,5 +1,5 @@
-<div class="mt-4 container text-center">
-  <h1><%= @user.username %></h1>
+<div class="mt-4 container highlight-title">
+  <h6><%= @user.username %></h6>
   <h5 class="pt-3"><%= @user == current_user ? "Votre" : "Son" %><span class="title-score"> <strong>tutti score</strong></span> du mois de <%= @current_month %></h5>
   <%= render 'shared/grades_month', score: @current_score, note: @current_note, last: @last_score, last_m: @last_month, user: @user, export: true %>
 </div>
