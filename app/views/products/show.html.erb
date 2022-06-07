@@ -1,12 +1,13 @@
 <%= render 'product', product: @product %>
+
 <div class="show-container">
   <%= simple_form_for [@product, @follow_up] do |f| %>
     <% if @product.localable %>
-      <%= f.input :local, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none" } %>
+      <%= f.input :local, as: :boolean, label: 'Votre produit est&nbsp<strong>français</strong>'.html_safe, input_html: { class: "toggle d-none" } %>
     <% else %>
-      <%= f.input :local, as: :boolean, disabled: true, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"} %>
+      <%= f.input :local, as: :boolean, disabled: true, label: "Votre produit n'est pas&nbsp<strong>français</strong>".html_safe, input_html: { class: "toggle d-none"} %>
     <% end %>
-    <%= f.input :bio, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"} %>
+    <%= f.input :bio, as: :boolean, label: 'Votre produit est&nbsp<strong>bio</strong>'.html_safe, input_html: { class: "toggle d-none"} %>
 
     <h2>Des idees de recettes</h2>
     <% @recipes.each do |recipe| %>
