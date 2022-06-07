@@ -1,7 +1,6 @@
 import autocomplete from 'js-autocomplete';
 
 const autocompleteSearch = function() {
-  console.log("got here")
   const users = JSON.parse(document.getElementById('search-data').dataset.users)
   const searchInput = document.getElementById('q');
 
