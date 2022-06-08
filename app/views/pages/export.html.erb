@@ -1,3 +1,9 @@
+<title><% content_for :title, "Dites-le à vos amis sur les réseaux" %></title>
+
+<head>
+  <title>Les Produits de Juin</title>
+</head>
+
 <div class="mt-4 container highlight-title">
   <h6><%= @user.username %></h6>
   <h5 class="pt-3"><%= @user == current_user ? "Votre" : "Son" %><span class="title-score"> <strong>tutti score</strong></span> du mois de <%= @current_month %></h5>
