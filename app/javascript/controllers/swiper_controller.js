@@ -8,9 +8,6 @@ export default class extends Controller {
       effect: "cards",
       grabCursor: true,
       slidesPerView: "auto",
-      autoplay: {
-        delay: 6000,
-      },
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
