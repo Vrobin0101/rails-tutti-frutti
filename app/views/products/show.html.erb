@@ -1,6 +1,6 @@
 <%= render 'product', product: @product %>
 
-<div class="show-container" style="background-image: url('<%= image_url('shape-bottom.svg')%>'); background-repeat: no-repeat; background-position: bottom center; ">
+<div class="show-container-bottom" style="background-image: url('<%= image_url('shape-bottom.svg')%>'); background-repeat: no-repeat; background-position: bottom center; ">
   <%= simple_form_for [@product, @follow_up] do |f| %>
     <% if @product.localable %>
       <%= f.input :local, as: :boolean, label: 'Votre produit est&nbsp<strong>français</strong>'.html_safe, input_html: { class: "toggle d-none" } %>
@@ -38,11 +38,18 @@
       </div>
     <% end %>
 
-      <div style="margin-top: 150px"></div>
-      <div class="d-flex">
-        <%= f.submit class:"btn-bot btn-block fixed-bottom w-100 btn-lg btn-primary rounded-0", value: "Ajouter à mon suivi", style: "color:white"%>
+
+      <% if user_signed_in? %>
+      <div style="margin-top: 150px">
+        <div class="d-flex">
+          <%= f.submit class:"btn-bot btn-block fixed-bottom w-100 btn-lg btn-primary rounded-0", value: "Ajouter à mon suivi", style: "color:white"%>
+        </div>
       </div>
-    <% end %>
+      <% else %>
+      <div style="margin-top: 150px background-color: $yellow">
+      </div>
+      <% end %>
+  <% end %>
 
   </div>
 </div>
