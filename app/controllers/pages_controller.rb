@@ -103,7 +103,7 @@ class PagesController < ApplicationController
       {
         lng: e['fields']['geo_point_2d'][1],
         lat: e['fields']['geo_point_2d'][0],
-        image_url: helpers.asset_url("marker_contours_green.png"),
+        image_url: helpers.asset_url("marker_map_new.svg"),
         id: e['recordid']
       }
     end
