@@ -187,6 +187,9 @@
   background: none;
   border: none;
   color: $green;
+  // font-weight: bold;
+  // font-size: 12px;
+  // margin-top: 22px;
   &:focus {
     border: none;
     box-shadow: none;
@@ -195,4 +198,16 @@
 
 .button-delete-modal {
   color: $red;
+}
+
+.about-score {
+  font-size: 12px;
+  a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+.modal-edit-title {
+  font-weight: bold;
 }
