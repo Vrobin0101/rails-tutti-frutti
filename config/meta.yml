@@ -1,5 +1,5 @@
 meta_product_name: "Tutti Frutti"
 meta_title: "Tutti Frutti - Manger de saison, bio et local"
 meta_description: "Relevant description"
-meta_image: "veggies.jpg" # should exist in `app/assets/images/`
+meta_image: "meta-og.jpg" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
