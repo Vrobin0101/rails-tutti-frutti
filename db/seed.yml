@@ -289,7 +289,7 @@
 - radis:
     category: légume
     sub_category: apiacée
-    description: Le radis noir est un légume qui a des capacités détoxifiantes radicales. Grâce à ses effets purificateurs, il stimule les fonctions digestives et facilite l’évacuation de la bile en excès.
+    description: Le radis est un légume qui a des capacités détoxifiantes radicales. Grâce à ses effets purificateurs, il stimule les fonctions digestives et facilite l’évacuation de la bile en excès.
     localable: true
     start_month: 2
     end_month: 12
