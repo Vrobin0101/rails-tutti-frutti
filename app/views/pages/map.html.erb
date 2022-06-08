@@ -1,4 +1,4 @@
-<div style="width: 100%; height: 100vh;"
+<div style="width: 100%; height: 100vh; margin-top: -40px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
@@ -10,7 +10,8 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><%= store['fields']['nom_du_commerce'].titleize %></h5>
+          <% colors = ['#0B8790', '#90DBD0', '#FDCB44', '#FDB3A5', '#FC755D', '#FDE773'] %>
+          <h5 class="modal-title" id="exampleModalLabel" style="color: <%= colors.sample.html_safe %>; font-weight: bold"><%= store['fields']['nom_du_commerce'].titleize %></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -21,9 +22,6 @@
               <li><i class="fa-solid fa-earth-europe pe-3 fa-sm font-icon-map"></i><strong><%= link_to store['fields']['nom_du_commerce'].titleize, store['fields']['site_internet'], target: '_blank', class: 'text-decoration-none' %></strong></li>
             <% end %>
           </ul>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-modal-map" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
