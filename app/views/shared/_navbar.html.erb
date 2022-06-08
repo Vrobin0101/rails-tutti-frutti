@@ -2,7 +2,9 @@
   <div class="container-fluid">
     <% if params[:action] == "home" || params[:action] == "export" %>
       <%= link_to "#", class: "navbar-brand" do %>
-        Tutti Frutti <i class="fa-solid fa-seedling"></i>
+        <%# Tutti Frutti <i class="fa-solid fa-seedling"></i> %>
+        <span style="padding-bottom: 10px;">Tutti Frutti</span>
+        <%= image_tag 'new_logo.png', class: 'image-logo-navbar' %>
       <% end %>
       <% elsif params[:action] != "export" %>
           <div class="navbar-brand">
