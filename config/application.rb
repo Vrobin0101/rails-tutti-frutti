@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module RailsTuttiFrutti
   class Application < Rails::Application
-    config.exceptions_app = self.routes
+    # config.exceptions_app = self.routes
     config.generators do |generate|
       generate.assets false
       generate.helper false
