@@ -17,7 +17,7 @@
     <% @recipes.each do |recipe| %>
       <div class="d-flex justify-content-between">
         <h6><%= link_to recipe[:link] do %>
-          <%= recipe[:name] %>
+          <%= recipe[:name].capitalize %>
         <% end %></h6>
         <p><%= recipe[:note] %> <i class="fa-solid fa-star text-info"></i></p>
       </div>
@@ -32,7 +32,7 @@
         <%= render 'shared/carousel', products: @alternatives %>
       </div>
     <% else %>
-      <h2>Découvrez les alternatives </h2>
+      <h5 class="card-product-info-title border-bottom mt-5">Découvrez les alternatives </h5>
       <div class="container w-90">
         <%= render 'shared/carousel', products: @alternatives %>
       </div>
