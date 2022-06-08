@@ -25,6 +25,11 @@
 
 .navbar-toggler {
   border: none;
+  padding-bottom: 10px;
+}
+
+.navbar-nav {
+  margin-top: -20px;
 }
 
 .navbar-toggler-icon {
@@ -46,6 +51,15 @@
   border-bottom-right-radius: $border-radius;
 }
 
+.navbar-brand-home {
+  margin: 0;
+  padding: 0 0.5em;
+  font-family: "Inconsolata" !important;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
 .navbar-brand {
   margin: 0;
   padding: 0 0.5em;
@@ -53,6 +67,10 @@
   font-style: normal;
   font-weight: 500;
   margin-bottom: 16px;
+  display: flex;
+  width: calc(50% + 35px);
+  justify-content: space-between;
+  align-items: end;
 }
 
 .search-box-navbar {
@@ -117,4 +135,8 @@
   font-size: 34px;
 
   color: $white;
+}
+
+.image-logo-navbar {
+  width: 70px;
 }
