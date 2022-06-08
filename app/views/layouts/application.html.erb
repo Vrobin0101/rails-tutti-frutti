@@ -2,7 +2,7 @@
 <html>
   <head>
     <%= favicon_link_tag %>
-    <title><%= meta_title %></title>
+    <title><%= yield(:title) %></title>
     <meta name="description" content="<%= meta_description %>">
 
     <!-- Facebook Open Graph data -->
@@ -34,7 +34,7 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" unless params[:action] == "welcome" %>
+    <%= render "shared/navbar" unless params[:action] == "welcome"%>
     <%= render "shared/flashes" %>
     <%= yield %>
   </body>

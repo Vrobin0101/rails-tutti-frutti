@@ -1,17 +1,23 @@
-<div class="row justify-content-center m-2">
-  <div class="col-sm-8 m-2">
-    <h1>Comment est calculé votre score ?</h1>
-    <p> Notre méthodologie est simple et pragmatique.</p>
-    <p>Seuls 3 critères sont pris en compte afin de calculer le score.</p>
-    <ul>
-  </div>
-</div>
+<title><% content_for :title, "Tout comprendre sur votre score" %></title>
 
-  <div style="background-image: url('<%= image_url('welcome.svg')%>'); background-repeat: no-repeat;
-    background-position: right; height: 360px;">
-    <ul>
-      <li>La saison du produit</li>
-      <li>La provenance du produit</li>
-      <li>Le fait que le produit soit issu ou non de l'agriculture biologique</li>
-    </ul>
+<div class="container" style="height: 100vh; background-image: url('<%= image_url('lemon.svg')%>'); background-repeat: no-repeat; background-position: right center; background-size: contain;">
+  <div class="row justify-content-center m-2">
+    <div class="col-sm-8 m-2">
+      <div class="text-justify my-2 align-items-justify highlight-title">
+        <h6>Comment est calculé votre score ?</h6>
+        <p> Notre méthodologie est <strong>simple et pragmatique</strong>.</p>
+        <p>Seuls 3 critères sont pris en compte afin de calculer un <strong>score sur 100 points</strong>.</p>
+        <ul>
+      </div>
+    </div>
   </div>
+
+  <div class="text-justify my-2 align-items-justify highlight-title" >
+    <ol>
+      <li><p>La saison du produit : c'est le critère le plus important. Si vous ne deviez en retenir qu'un ce serait celui là. <br><strong>75 points</strong>.</p></li>
+      <li><p>La provenance du produit : il est préférable de consommer local. Choisir un produit français optimise votre impact environnemental. <br><strong>15 points</strong>.</p></li>
+      <li><p>Le fait que le produit soit issu ou non de l'agriculture biologique. S'il est bio, votre produit a été produit dans des conditions respectueuses de l'environnement. <br><strong>10 points</strong>.</p></li>
+    </ol>
+  </div>
+
+</div>
