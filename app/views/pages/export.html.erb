@@ -1,12 +1,12 @@
 <title><% content_for :title, "Tutti Frutti - Dites-le à vos amis sur les réseaux" %></title>
 
-<head>
-  <title>Les Produits de Juin</title>
-</head>
-
-<div class="mt-4 container highlight-title">
-  <h6><%= @user.username %></h6>
+<div class="mt-4 container">
+  <div class="highlight-title">
+    <h6><%= @user.username.capitalize %></h6>
+  </div>
   <h5 class="pt-3"><%= @user == current_user ? "Votre" : "Son" %><span class="title-score"> <strong>Le suivi</strong></span> du mois de <%= @current_month %></h5>
+  <div class="text-center">
   <%= render 'shared/grades_month', score: @current_score, note: @current_note, last: @last_score, last_m: @last_month, user: @user, export: true %>
+  </div>
 </div>
 </html>
