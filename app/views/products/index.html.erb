@@ -1,3 +1,4 @@
+
 <div class="container-sm show">
 
   <% if params[:query].present? %>
@@ -15,6 +16,7 @@
         <%= @mois[params["chosen_month"][1].to_i%12].capitalize %>
       <% else %>
         <%= @current_month %>
+
       <% end %>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -23,6 +25,7 @@
         <% end %>
       </ul>
     </div>
+
 
       <ul class="nav justify-content-around navbar-profile p-1 nav-index" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
