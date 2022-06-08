@@ -1,6 +1,6 @@
 <%= render 'product', product: @product %>
 
-<div class="show-container" style="background-image: url('<%= image_url('shape-bottom.svg')%>'); background-repeat: no-repeat; background-position: bottom center; ">
+<div class="show-container-bottom" style="background-image: url('<%= image_url('shape-bottom.svg')%>'); background-repeat: no-repeat; background-position: bottom center; ">
   <%= simple_form_for [@product, @follow_up] do |f| %>
     <% if @product.localable %>
       <%= f.input :local, as: :boolean, label: 'Votre produit est&nbsp<strong>français</strong>'.html_safe, input_html: { class: "toggle d-none" } %>
@@ -10,14 +10,14 @@
     <%= f.input :bio, as: :boolean, label: 'Votre produit est&nbsp<strong>bio</strong>'.html_safe, input_html: { class: "toggle d-none"} %>
 
   <div class="card-product-info-title border-bottom mt-5">
-    <h5>Des idees de recettes</h5>
+    <h5>Des idées de recettes</h5>
   </div>
 
   <div class="product-recipes">
     <% @recipes.each do |recipe| %>
-      <div class="d-flex justify-content-between">
-        <h6><%= link_to recipe[:link] do %>
-          <%= recipe[:name] %>
+      <div class="d-flex justify-content-between align-items-center">
+        <h6><%= link_to recipe[:link], target: '_blank' do %>
+          <%= recipe[:name].capitalize %>
         <% end %></h6>
         <p><%= recipe[:note] %> <i class="fa-solid fa-star text-info"></i></p>
       </div>
@@ -32,17 +32,24 @@
         <%= render 'shared/carousel', products: @alternatives %>
       </div>
     <% else %>
-      <h2>Découvrez les alternatives </h2>
+      <h5 class="card-product-info-title border-bottom mt-5">Découvrez les alternatives </h5>
       <div class="container w-90">
         <%= render 'shared/carousel', products: @alternatives %>
       </div>
     <% end %>
 
-      <div style="margin-top: 150px"></div>
-      <div class="d-flex">
-        <%= f.submit class:"btn-bot btn-block fixed-bottom w-100 btn-lg btn-primary rounded-0", value: "Ajouter à mon suivi", style: "color:white"%>
+
+      <% if user_signed_in? %>
+      <div style="margin-top: 150px">
+        <div class="d-flex">
+          <%= f.submit class:"btn-bot btn-block fixed-bottom w-100 btn-lg btn-primary rounded-0", value: "Ajouter à mon suivi", style: "color:white"%>
+        </div>
       </div>
-    <% end %>
+      <% else %>
+      <div style="margin-top: 150px background-color: $yellow">
+      </div>
+      <% end %>
+  <% end %>
 
   </div>
 </div>

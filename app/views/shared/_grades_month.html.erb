@@ -1,4 +1,5 @@
-<div class="d-flex justify-content-evenly py-3">
+ <div>
+  <div class="d-flex justify-content-evenly py-3">
     <% if score.nil? %>
       <div class="d-none"></div>
     <% else %>
@@ -49,9 +50,10 @@
         </ul>
       </div>
     <% end %>
-
-
   </div>
+</div>
+<p class="about-score">En savoir plus sur le <%= link_to 'score', about_path  %></p>
+
   <div class="motivation-speech" style="background-image: url(<%= image_path('shape-round.svg') %>)">
     <%= image_tag 'various_fruits.svg', class: 'pt-5' %>
     <div class="motivation-content">
@@ -94,29 +96,29 @@
               <p class="add-date"><i>Ajouté le <span><%= (l fo.created_at, format: '%-d %B') %></span></i></p>
                 <div class="d-grid info-product-fo">
                   <% if fo.product.season?(@month) %>
-                    <p><span>Season <i class="fa-solid fa-check fa-sm"></i></span></p>
+                    <p><span>Saison <i class="fa-solid fa-check fa-sm card-check"></i></span></p>
                   <% else  %>
-                    <p><span>Season <i class="fa-solid fa-check fa-sm"></i></span></p>
+                    <p><span>Saison <i class="fa-solid fa-xmark fa-sm card-cross"></i></span></p>
                   <% end %>
 
                   <% if fo.local %>
-                    <span>Local: Yes</span>
+                    <p class="card-info-check"><span>Local <i class="fa-solid fa-check fa-sm card-check"></i></span></p>
                   <% else  %>
-                    <span>Local: No</span>
+                    <p class="card-info-check"><span>Local <i class="fa-solid fa-xmark fa-sm card-cross"></i></span></p>
                   <% end %>
 
                   <% if fo.bio %>
-                    <span>Bio: Yes</span>
+                    <p class="card-info-check"><span>Bio <i class="fa-solid fa-check fa-sm card-check"></i></span></p>
                   <% else  %>
-                    <span>Bio: No</span>
+                    <p class="card-info-check"><span>Bio <i class="fa-solid fa-xmark fa-sm card-cross"></i></span></p>
                   <% end %>
                 </div>
               </div>
 
-              <div>
+              <div class="d-grid pt-3 pe-4">
                 <!-- Button trigger modal -->
-                <button data-bs-toggle="modal" data-bs-target="#exampleModal<%= fo.id %>">
-                  Edit
+                <button type="button" class="btn button-edit-modal" data-bs-toggle="modal" data-bs-target="#exampleModal<%= fo.id %>">
+                  <i class="fa-solid fa-pen-to-square fa-sm"></i>
                 </button>
 
                 <!-- Modal -->
@@ -124,32 +126,32 @@
                   <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"><%= fo.product.name.titleize %></h5>
+                        <h5 class="modal-title modal-edit-title" id="exampleModalLabel" style="color: <%= colors.sample.html_safe %>"><%= fo.product.name.titleize %></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                         <%= simple_form_for fo do |f| %>
                           <div class="modal-body">
                             <div class="container">
-                              <div class="d-flex justify-content-evenly h-100">
+                              <div class="h-100">
                                 <% if fo.product.localable %>
-                                  <%= f.input :local, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none", checked: fo.local }, label_html: {style: "background-image: url('#{image_url('france.svg')}'); background-position: center; background-size: 75%;"}  %>
+                                  <%= f.input :local, as: :boolean, label: 'Votre produit est&nbsp<strong>français</strong>'.html_safe, input_html: { class: "toggle d-none", id: "product-local#{fo.id}" }, label_html: { for: "product-local#{fo.id}"} %>
                                 <% else %>
-                                  <%= f.input :local, disabled: true, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none"}, label_html: {style: "background-image: url('#{image_url('france.svg')}'); background-position: center; background-size: 75%;"} %>
+                                  <%= f.input :local, as: :boolean, disabled: true, label: "Votre produit n'est pas&nbsp<strong>français</strong>".html_safe, input_html: { class: "toggle d-none"} %>
                                 <% end %>
-                                <%= f.input :bio, as: :boolean, label: '&nbsp'.html_safe, input_html: { class: "toggle d-none", checked: fo.bio }, label_html: {style: "background-image: url('#{image_url('bio3.png')}'); background-position: center; background-size: 75%;"} %>
+                                <%= f.input :bio, as: :boolean, label: 'Votre produit est&nbsp<strong>bio</strong>'.html_safe, input_html: { class: "toggle d-none", id: "product-bio#{fo.id}"}, label_html: { for: "product-bio#{fo.id}"} %>
                               </div>
                             </div>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <%= f.submit 'Save', class: 'btn btn-primary' %>
+                            <%= f.submit 'Enregistrer', class: 'btn btn-primary', style: 'color: white' %>
                           </div>
                         <% end %>
                     </div>
                   </div>
                 </div>
 
-                <%= link_to 'Delete', follow_up_path(fo), data: { turbo_method: 'delete' } %>
+                <%= link_to ('<i class="fa-solid fa-trash-can fa-sm"></i>').html_safe, follow_up_path(fo), data: { turbo_method: 'delete' }, class: 'button-delete-modal' %>
+
               </div>
             </div>
           </div>

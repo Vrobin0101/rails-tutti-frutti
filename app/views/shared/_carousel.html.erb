@@ -5,7 +5,7 @@
       <div class="swiper-slide">
         <%= link_to product_path(product),
                       class: 'card-category text-decoration-none',
-                      style: "background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(#{cl_image_path product.photo.key, :height=>300, :quality=>"auto:good", :width=>300, :crop=>"fill"})" do %>
+                      style: "background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(#{cl_image_path product.photo.key, :height=>300, :quality=>"auto:good", :width=>300, :crop=>"fill"})" do %>
             <%= product.name.capitalize %>
           <% end %>
       </div>

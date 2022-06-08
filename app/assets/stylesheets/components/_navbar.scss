@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background-size: cover;
-  height: 80px;
+  height: 85px;
   background-position: bottom;
 }
 
@@ -20,6 +20,10 @@
   outline: none !important;
   box-shadow: none;
 
+}
+
+.navbar-toggler {
+  border: none;
 }
 
 .navbar-toggler-icon {

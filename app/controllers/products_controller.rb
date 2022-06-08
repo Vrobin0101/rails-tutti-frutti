@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
       @legumes_active = []
     else
       @legumes_active = []
-      @fruits_active = []
+      @fruits_active = ["active", "show active"]
     end
 
     @products = policy_scope(Product)
