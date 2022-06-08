@@ -170,3 +170,29 @@
   font-size: 12px;
   margin-top: -10px;
 }
+
+.card-info-check {
+  margin-top: -12px;
+}
+
+.card-check {
+  color: $light-green;
+}
+
+.card-cross {
+  color: $red;
+}
+
+.button-edit-modal {
+  background: none;
+  border: none;
+  color: $green;
+  &:focus {
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.button-delete-modal {
+  color: $red;
+}

@@ -94,29 +94,31 @@
               <p class="add-date"><i>Ajouté le <span><%= (l fo.created_at, format: '%-d %B') %></span></i></p>
                 <div class="d-grid info-product-fo">
                   <% if fo.product.season?(@month) %>
-                    <p><span>Season <i class="fa-solid fa-check fa-sm"></i></span></p>
+                    <p><span>Saison <i class="fa-solid fa-check fa-sm card-check"></i></span></p>
                   <% else  %>
-                    <p><span>Season <i class="fa-solid fa-check fa-sm"></i></span></p>
+                    <p><span>Saison <i class="fa-solid fa-xmark fa-sm card-cross"></i></span></p>
                   <% end %>
 
                   <% if fo.local %>
-                    <span>Local: Yes</span>
+                    <p class="card-info-check"><span>Local <i class="fa-solid fa-check fa-sm card-check"></i></span></p>
                   <% else  %>
-                    <span>Local: No</span>
+                    <p class="card-info-check"><span>Local <i class="fa-solid fa-xmark fa-sm card-cross"></i></span></p>
                   <% end %>
 
                   <% if fo.bio %>
-                    <span>Bio: Yes</span>
+                    <p class="card-info-check"><span>Bio <i class="fa-solid fa-check fa-sm card-check"></i></span></p>
                   <% else  %>
-                    <span>Bio: No</span>
+                    <p class="card-info-check"><span>Bio <i class="fa-solid fa-xmark fa-sm card-cross"></i></span></p>
                   <% end %>
                 </div>
               </div>
 
               <div>
+                <%= link_to ('<i class="fa-solid fa-trash-can"></i>').html_safe, follow_up_path(fo), data: { turbo_method: 'delete' }, class: 'button-delete-modal' %>
+
                 <!-- Button trigger modal -->
-                <button data-bs-toggle="modal" data-bs-target="#exampleModal<%= fo.id %>">
-                  Edit
+                <button type="button" class="btn button-edit-modal" data-bs-toggle="modal" data-bs-target="#exampleModal<%= fo.id %>">
+                  Modifier
                 </button>
 
                 <!-- Modal -->
@@ -148,8 +150,6 @@
                     </div>
                   </div>
                 </div>
-
-                <%= link_to 'Delete', follow_up_path(fo), data: { turbo_method: 'delete' } %>
               </div>
             </div>
           </div>
