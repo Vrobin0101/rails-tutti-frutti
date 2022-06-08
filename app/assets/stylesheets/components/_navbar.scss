@@ -28,6 +28,10 @@
   padding-bottom: 10px;
 }
 
+.navbar-nav {
+  margin-top: -20px;
+}
+
 .navbar-toggler-icon {
   color: $white
 }
@@ -45,6 +49,15 @@
 .dropdown-item:last-child {
   border-bottom-left-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
+}
+
+.navbar-brand-home {
+  margin: 0;
+  padding: 0 0.5em;
+  font-family: "Inconsolata" !important;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 16px;
 }
 
 .navbar-brand {

@@ -7,7 +7,7 @@
         <%= image_tag 'new_logo.png', class: 'image-logo-navbar' %>
       <% end %>
       <% elsif params[:action] != "export" %>
-          <div class="navbar-brand">
+          <div class="navbar-brand-home">
             <div class="search-box-navbar" data-controller="search-button">
               <button name="button" class="btn-search-navbar" data-action = "click->search-button#displaySearchBar"><i class="fas fa-search"></i></button>
               <%= form_tag products_path, method: :get do |f| %>
@@ -17,8 +17,8 @@
             </div>
           </div>
           <%= link_to home_path do %>
-            <i class="fa-solid fa-seedling"></i>
-          <% end  %>
+            <%= image_tag 'new_logo.png', class: 'image-logo-navbar' %>
+          <% end %>
       <% end %>
     <% if params[:action] != "export" %>
 
