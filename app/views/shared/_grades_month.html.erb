@@ -52,7 +52,6 @@
 
 
   </div>
-<% if current_user == @user && !export %>
   <div class="motivation-speech" style="background-image: url(<%= image_path('shape-round.svg') %>)">
     <%= image_tag 'various_fruits.svg', class: 'pt-5' %>
     <div class="motivation-content">
@@ -78,6 +77,7 @@
   </div>
 
 
+<% if current_user == @user && !export %>
   <% colors = ['#0B8790', '#90DBD0', '#FDCB44', '#FDB3A5', '#FC755D', '#FDE773'] %>
   <% unless user.follow_ups.nil? %>
     <div>

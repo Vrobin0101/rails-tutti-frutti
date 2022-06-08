@@ -1,13 +1,17 @@
 .product-recipes {
-  padding: 24px 0px;
+  padding-top: 16px;
   p {
+    display: inline-flex;
     font-size: 14px;
+    align-items: center;
+    color: $green;
   }
   a {
     color: $green;
     text-decoration: none;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
     border-bottom: 1px solid $green;
     font-family: 'Nunito';
+    line-height: 32px;
   }
 }

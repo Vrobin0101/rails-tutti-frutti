@@ -1,4 +1,4 @@
-<div class="container-sm show" style="background-image: url('<%= image_url('shape-bottom.svg')%>'); background-repeat: no-repeat; background-position: bottom center; ">
+<div class="container-sm show" style="background-image: url('<%= image_url('shape.svg')%>'); background-repeat: no-repeat; background-position: left center;">
 
 <% if params[:query].present? %>
   <div class="cards-all row justify-content-center">
@@ -19,10 +19,11 @@
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
       <% @mois.drop(1).each do |mois| %>
-      <li class="dropdown-month-item"><%= link_to mois.capitalize, products_path(chosen_month: [@mois.index(mois), @mois.index(mois)+ 12]) %></li>
+      <li class="dropdown-month-item"><%= link_to mois.capitalize, products_path(chosen_month: [@mois.index(mois), @mois.index(mois)+ 12], fruits: params[:fruits], legumes: params[:legumes]) %></li>
       <% end %>
     </ul>
   </div>
+
 
     <ul class="nav justify-content-around navbar-profile p-1 nav-index" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
