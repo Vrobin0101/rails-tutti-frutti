@@ -2,6 +2,7 @@
 
   <% if params[:query].present? %>
     <div class="cards-all row justify-content-center">
+      <h2 class="mt-3 pb-3 text-center">Les résultats pour "<%= params[:query] %>"</h2>
       <%= render 'index_product', products: @products %>
     </div>
   <% else %>
