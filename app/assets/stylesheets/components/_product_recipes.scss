@@ -5,6 +5,8 @@
     font-size: 14px;
     align-items: center;
     color: $green;
+    margin: 0;
+    padding-bottom: 5px;
   }
   a {
     color: $green;
@@ -13,5 +15,8 @@
     border-bottom: 1px solid $green;
     font-family: 'Nunito';
     line-height: 32px;
+  }
+  i {
+    padding-left: 6px;
   }
 }

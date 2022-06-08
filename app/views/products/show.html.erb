@@ -15,8 +15,8 @@
 
   <div class="product-recipes">
     <% @recipes.each do |recipe| %>
-      <div class="d-flex justify-content-between">
-        <h6><%= link_to recipe[:link] do %>
+      <div class="d-flex justify-content-between align-items-center">
+        <h6><%= link_to recipe[:link], target: '_blank' do %>
           <%= recipe[:name].capitalize %>
         <% end %></h6>
         <p><%= recipe[:note] %> <i class="fa-solid fa-star text-info"></i></p>
