@@ -3,6 +3,8 @@
     <% if score.nil? %>
       <div class="d-none"></div>
     <% else %>
+      <%= image_tag 'little-stick.svg', class: "stick-bottom" %>
+      <%= image_tag 'little-stick-top.svg', class: "stick-top" %>
       <figure class="progress-score-user">
         <figcaption style="--color: <%= color(score) %>"><%= score %></figcaption>
         <svg viewBox="0 0 63.6619772368 63.6619772368">
