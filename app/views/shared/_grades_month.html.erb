@@ -52,7 +52,9 @@
     <% end %>
   </div>
 </div>
-<p class="about-score">En savoir plus sur le <%= link_to 'score', about_path  %></p>
+<% unless export %>
+  <p class="about-score">En savoir plus sur le <%= link_to 'score', about_path  %></p>
+<% end %>
 
   <div class="motivation-speech" style="background-image: url(<%= image_path('shape-round.svg') %>)">
     <%= image_tag 'various_fruits.svg', class: 'pt-5' %>
