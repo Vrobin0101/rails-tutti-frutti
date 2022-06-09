@@ -13,8 +13,8 @@ application.register("map", MapController)
 import SearchButtonController from "./search_button_controller.js"
 application.register("search-button", SearchButtonController)
 
-import SearchUsersController from "./search_users_controller.js"
-application.register("search-users", SearchUsersController)
+import SearchCompleteController from "./search_complete_controller.js"
+application.register("search-complete", SearchCompleteController)
 
 import SwiperController from "./swiper_controller.js"
 application.register("swiper", SwiperController)

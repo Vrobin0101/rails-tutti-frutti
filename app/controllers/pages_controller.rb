@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   before_action :set_user, only: [ :profile, :export]
   def home
     @products = Product.includes([photo_attachment: :blob]).seasonal(Time.now.month)
+    @products_all = Product.all.pluck(:name).sort.to_json
     @current_month = (l Time.now, format: "%B").capitalize
   end
 
