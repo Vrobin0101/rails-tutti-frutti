@@ -2,7 +2,7 @@
 <%= form_tag products_path, class: "simple_form_home search rounded", method: :get do |f| %>
   <div class="search-form-control form-group my-3" data-controller="search-complete" data-search-complete-source-value="<%= @products_all %>">
     <div class="form-search search-data">
-    <%= text_field_tag :query, params[:query], data: { 'search-complete-target' => 'query' }, autocomplete: :off, class: "form-control string required bg-light", placeholder: 'Fraise' %>
+    <%= text_field_tag :query, params[:query], data: { 'search-complete-target' => 'query' }, autocomplete: :off, class: "form-control form-control-search-homepage string required bg-light", placeholder: 'Fraise' %>
     <button name="button" type="submit" class="btn btn-flat d-flex justify-content-center align-items-center">
       <i class="fas fa-search"></i>
     </button>
