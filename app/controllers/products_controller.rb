@@ -18,7 +18,6 @@ class ProductsController < ApplicationController
       @fruits_active = ["active", "show active"]
     end
 
-    @products_all = Product.all.pluck(:name).sort.to_json
     @products = policy_scope(Product)
     authorize @products
     if params["chosen_month"].present?

@@ -1,10 +1,10 @@
 <title><% content_for :title, "Tutti Frutti - Bienvenue sur Tutti Frutti" %></title>
 
-<div class="welcome" style="background-color: #F3795B; height: 100vh">
-  <div style="background-image: url('<%= image_url('welcome.svg')%>'); height: 100vh; background-size: cover;background-repeat: no-repeat;background-position: left;">
+<div class="welcome" style="background-color: #FB7259; height: 100vh">
+  <div style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url('<%= image_url('welcome.svg')%>'); height: 100vh; background-size: cover;background-repeat: no-repeat;background-position: left;">
     <div class="flex-column text-center" style="padding-top: 85px;">
-      <h1 style="color: #ACD8AA;font-family: 'Inconsolata'; font-weight: 800;font-size: 48px;text-shadow: 0 0 black;" class="m-5">Tutti Frutti</h1><br>
-      <h6 style="color: white;" class="mx-5 px-5;">Découvrez le pouvoir des <strong>fruits et légumes de saison</strong></h6>
+      <h1 style="color: white;font-family: 'Inconsolata'; font-weight: 800;font-size: 48px" class="m-5">Tutti Frutti</h1><br>
+      <h6 style="color: white; letter-spacing: 1px;" class="mx-5 px-5;">Découvrez le pouvoir des <br><strong style="color: white; text-shadow: -2px 3px 0px #0b8690; letter-spacing: 1px; line-height: 1.6">fruits et légumes de saison</strong></h6>
 
       <div class="choice d-flex flex-column w-100 px-3" style="margin-top: 50px ;">
         <%= link_to 'Connexion ou inscription', user_session_path, class: 'btn-welcome py-3 mb-3'%>
