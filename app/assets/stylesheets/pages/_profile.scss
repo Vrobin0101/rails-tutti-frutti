@@ -208,3 +208,18 @@
 .modal-edit-title {
   font-weight: bold;
 }
+
+.stick-bottom {
+  position: absolute;
+  top: 430px;
+  left: 85px;
+  z-index: 1;
+  width: 40px;
+}
+
+.stick-top {
+  width: 40px;
+  position: absolute;
+  top: 275px;
+  z-index: 1;
+}
