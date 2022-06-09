@@ -1,3 +1,4 @@
+<%  @products_all = Product.pluck(:name) %>
 <%= form_tag products_path, class: "simple_form_home search rounded", method: :get do |f| %>
   <div class="search-form-control form-group my-3" data-controller="search-complete" data-search-complete-source-value="<%= @products_all %>">
     <div class="form-search search-data">
