@@ -191,7 +191,8 @@ figcaption {
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: -1px;
+  left: 1px;
+  top: 1px;
   z-index:2;
   margin: 16px;
   font-size: 50px;
