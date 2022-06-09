@@ -5,11 +5,11 @@
 <div class="show-container-bottom" style="background-image: url('<%= image_url('shape-bottom.svg')%>'); background-repeat: no-repeat; background-position: bottom center; ">
   <%= simple_form_for [@product, @follow_up] do |f| %>
     <% if @product.localable %>
-      <%= f.input :local, as: :boolean, label: 'Votre produit est&nbsp<strong>français</strong>'.html_safe, input_html: { class: "toggle d-none" } %>
+      <%= f.input :local, as: :boolean, label: '<div>Votre produit est&nbsp<strong>français</strong></div>'.html_safe, input_html: { class: "toggle d-none" } %>
     <% else %>
-      <%= f.input :local, as: :boolean, disabled: true, label: "Votre produit n'est pas&nbsp<strong>français</strong>".html_safe, input_html: { class: "toggle d-none"} %>
+      <%= f.input :local, as: :boolean, disabled: true, label: "<div>Votre produit n'est pas&nbsp<strong>français</strong></div>".html_safe, input_html: { class: "toggle d-none"} %>
     <% end %>
-    <%= f.input :bio, as: :boolean, label: 'Votre produit est&nbsp<strong>bio</strong>'.html_safe, input_html: { class: "toggle d-none"} %>
+    <%= f.input :bio, as: :boolean, label: '<div>Votre produit est&nbsp<strong>bio</strong></div>'.html_safe, input_html: { class: "toggle d-none"} %>
 
   <div class="card-product-info-title border-bottom mt-5">
     <h5>Des idées de recettes</h5>
