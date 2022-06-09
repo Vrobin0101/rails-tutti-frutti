@@ -19,10 +19,17 @@
 }
 
 .toggle:checked + label {
-  border: 3px solid $orange;
+  border: 3px solid $green;
   outline-offset: 10px;
   border-radius: 50px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+  &:after {
+    content: "✓";
+    font-size: 25px;
+    line-height: 0px;
+  }
 
 }
 

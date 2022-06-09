@@ -22,7 +22,8 @@
 }
 
 .card-product {
-  overflow: hidden;
+  // overflow: hidden;
+  position: relative;
   display: flex;
   flex-grow: 1;
   justify-content: center;
@@ -38,22 +39,21 @@
   justify-content: space-between;
   align-items: center;
   display: flex;
-  padding: 15px;
+  padding-bottom: 16px;
   // border: 0.5px solid grey;
   // border-radius: 50px;
-  margin: 26px 18px 0px;
+  // margin: 26px 18px 0px;
   // box-shadow: 0 0 15px rgba(0,0,0,0.1);
   color: $green;
     h3 {
       margin: 0;
       font-size: 16px;
-      padding-left: 7px;
+      // padding-left: 7px;
       font-family: 'Nunito';
     }
 }
 
 .card-product-info {
-  margin-top: 45px;
   h5, p {
     margin: 0;
     color: $orange
@@ -72,4 +72,46 @@
     h5, p {
     margin: 0;
   }
+}
+
+.stamp-season {
+  display: flex;
+  border: 0.5rem solid #85bc82;
+  transform: rotate(12deg);
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: #85bc82;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  top: -29px;
+  right: -12px;
+  // font-size: 14px;
+    p {
+      margin: 0;
+      line-height: 17px;
+    }
+}
+.stamp-not-season {
+    display: flex;
+    border: 0.5rem solid $orange;
+    transform: rotate(12deg);
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: $orange;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    top: -29px;
+    right: -12px;
+    p {
+      margin: 0;
+      line-height: 17px;
+    }
 }
