@@ -8,9 +8,15 @@ export default class extends Controller {
 
   displaySearchBar(event) {
     event.preventDefault()
-    console.log(event.currentTarget, this.submitTarget) // trigger
     this.submitTarget.classList.remove("d-none")
     this.submitTarget.classList.add("btn-search-navbar")
     this.inputTarget.classList.add("input-search-navbar-display")
+    this.inputTarget.focus()
+  }
+
+  closeSearchBar() {
+    this.submitTarget.classList.add("d-none")
+    this.submitTarget.classList.remove("btn-search-navbar")
+    this.inputTarget.classList.remove("input-search-navbar-display")
   }
 }

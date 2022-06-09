@@ -1,30 +1,37 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="background-image: url('<%= image_url('navbar-background.svg')%>');">
   <div class="container-fluid">
     <% if params[:action] == "home" || params[:action] == "export" %>
-      <%= link_to "#", class: "navbar-brand" do %>
+      <%= link_to home_path, class: "navbar-brand" do %>
         <%# Tutti Frutti <i class="fa-solid fa-seedling"></i> %>
         <span style="padding-bottom: 10px;">Tutti Frutti</span>
         <%= image_tag 'new_logo.png', class: 'image-logo-navbar' %>
       <% end %>
       <% elsif params[:action] != "export" %>
-          <div class="navbar-brand-home">
+          <div class="navbar-brand-else" data-controller="search-complete" data-search-complete-source-value="<%= @products_all %>">
             <div class="search-box-navbar" data-controller="search-button">
               <button name="button" class="btn-search-navbar" data-action = "click->search-button#displaySearchBar"><i class="fas fa-search"></i></button>
               <%= form_tag products_path, method: :get do |f| %>
                   <button name="button" type="submit" class="d-none" data-search-button-target="submit"><i class="fas fa-search"></i></button>
-                  <%= text_field_tag :query, params[:query], data: { 'search-button-target' => 'input' }, class: "form-control string required input-search-navbar rounded", id: "search_query", placeholder: "Fruit ou légume", style: "color: white" %>
+                  <%= text_field_tag :query, params[:query], data: { 'search-button-target' => 'input', 'search-complete-target' => 'query', 'action' => 'focusout->search-button#closeSearchBar' }, class: "form-control string required input-search-navbar rounded", id: "search_query", placeholder: "Haricot", style: "color: white" %>
               <% end  %>
             </div>
+            <%= link_to home_path do %>
+              <%= image_tag 'new_logo.png', class: 'image-logo-navbar' %>
+            <% end %>
           </div>
-          <%= link_to home_path do %>
-            <%= image_tag 'new_logo.png', class: 'image-logo-navbar' %>
-          <% end %>
       <% end %>
     <% if params[:action] != "export" %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <input id="toggle" type="checkbox" class="d-none"/>
+    <label class="hamburger" for="toggle" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="top"></div>
+      <div class="meat"></div>
+      <div class="bottom"></div>
+    </label>
+
+    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> %>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto d-flex flex-col align-items-end" >

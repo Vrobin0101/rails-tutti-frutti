@@ -51,28 +51,30 @@
 
     </div>
 
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" data-controller="search-users">
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" data-controller="search-complete"   data-search-complete-source-value="<%= @users %>">
     <% if @user == current_user %>
       <%= simple_form_for add_friend_path, method: 'get', class: "form-inline" do %>
-        <div id= "search-data" class="form-search search-data" data-users="<%= @users %>">
-          <%= text_field_tag :q, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Ajouter un(e) ami(e)" %>
+        <div class="form-search search-data">
+          <%= text_field_tag :query, params[:query], data: { 'search-complete-target' => 'query' }, autocomplete: :off, class: "form-control search-input", placeholder: "Ajouter un(e) ami(e)" %>
         </div>
       <% end %>
     <% end %>
       <div class="container mt-3">
         <div>
-          <h3>Abonnés</h3>
-          <div class="d-grid justify-content-center text-start">
-            <% @followers.each do |follower| %>
-              <%= link_to follower.asker.username, profile_path(follower.asker), class:"text-decoration-none text-danger" %>
-            <% end %>
-          </div>
-        </div>
-        <div class="mt-3">
-          <h4>Abonnements</h4>
-          <div class="d-grid justify-content-center text-start">
-            <% @followings.each do |following| %>
-              <%= link_to following.receiver.username, profile_path(following.receiver), class:"text-decoration-none text-danger"%>
+          <h3>Amis</h3>
+          <div class="d-grid justify-content-center text-start mt-3">
+            <% @follows.each do |follow| %>
+              <% if @user == follow.receiver %>
+                <div class="card-user">
+                  <%= link_to follow.asker.username, profile_path(follow.asker), class:"text-decoration-none text-danger" %>
+                    <p>vous suit</p>
+                </div>
+              <% else %>
+                <div class="card-user">
+                  <%= link_to follow.receiver.username, profile_path(follow.asker), class:"text-decoration-none text-danger" %>
+                  <p>vous le suivez</p>
+                </div>
+              <% end %>
             <% end %>
           </div>
         </div>
