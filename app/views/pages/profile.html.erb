@@ -62,18 +62,18 @@
       <div class="container mt-3">
         <div>
           <h3>Amis</h3>
-          <div class="d-grid justify-content-center text-start">
+          <div class="d-grid justify-content-center text-start mt-3">
             <% @follows.each do |follow| %>
               <% if @user == follow.receiver %>
-                <%= link_to profile_path(follow.asker), class:"text-decoration-none text-danger" do %>
-                  <%= follow.asker.username %>
-                  vous suit
-                <% end %>
+                <div class="card-user">
+                  <%= link_to follow.asker.username, profile_path(follow.asker), class:"text-decoration-none text-danger" %>
+                    <p>vous suit</p>
+                </div>
               <% else %>
-                <%= link_to profile_path(follow.asker), class:"text-decoration-none text-danger" do %>
-                  <%= follow.receiver.username %>
-                  vous le suivez
-                <% end %>
+                <div class="card-user">
+                  <%= link_to follow.receiver.username, profile_path(follow.asker), class:"text-decoration-none text-danger" %>
+                  <p>vous le suivez</p>
+                </div>
               <% end %>
             <% end %>
           </div>
