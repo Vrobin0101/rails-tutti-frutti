@@ -4,8 +4,9 @@ require 'open-uri'
 # Retrieve your user id and api key from https://htmlcsstoimage.com/dashboard
 
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :welcome, :home, :map, :export, :about ]
-  before_action :set_user, only: [ :profile, :export]
+  skip_before_action :authenticate_user!, only: %i[welcome home map export about]
+  before_action :set_user, only: %i[profile export]
+
   def home
     @products = Product.includes([photo_attachment: :blob]).seasonal(Time.now.month)
     @current_month = (l Time.now, format: "%B").capitalize
@@ -13,9 +14,7 @@ class PagesController < ApplicationController
 
   def profile
     add_friend if params[:query]
-    tutti_score_global
-    tutti_score_current_month
-    tutti_score_last_month
+    count_score
     @current_month = (l Time.now, format: "%B").capitalize
     @last_month = (l (Date.today - 1.month), format: "%B").capitalize
     @follows = @user.social_as_receiver + @user.social_as_asker.includes(%i[receiver asker])
@@ -31,7 +30,6 @@ class PagesController < ApplicationController
   end
 
   def export
-    # render layout: false
     tutti_score_global
     tutti_score_current_month
     tutti_score_last_month
@@ -51,9 +49,6 @@ class PagesController < ApplicationController
 
   def add_friend
     receiver = User.find_by_username(params[:query])
-    if receiver == current_user
-      flash.alert = "Vous ne pouvez pas etre amis avec vous meme :)"
-    end
     if receiver.present?
       social = Social.new(asker: current_user, receiver: receiver)
       if social.save
@@ -67,6 +62,11 @@ class PagesController < ApplicationController
     end
   end
 
+  def count_score
+    tutti_score_global
+    tutti_score_current_month
+    tutti_score_last_month
+  end
 
   def note(score)
     case score
