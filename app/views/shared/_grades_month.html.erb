@@ -5,9 +5,9 @@
     <% else %>
       <%= image_tag 'little-stick.svg', class: "stick-bottom" %>
       <%= image_tag 'little-stick-top.svg', class: "stick-top" %>
-      <figure class="progress-score-user">
-        <figcaption style="--color: <%= color(score) %>"><%= score %></figcaption>
-        <svg viewBox="0 0 63.6619772368 63.6619772368">
+      <figure class="progress-score-user" data-controller="countup-month">
+        <figcaption style="--color: <%= color(score) %>" id="score-month" data-countup-month-target="scoreMonth"><%= score %></figcaption>
+        <svg viewBox="0 0 63.6619772368 63.6619772368" style="--color: <%= color(score) %>">
           <circle class="pie1" style="--c: <%= score %>; --m: <%= 100 - score %>; --color: <%= color(score) %>" cx="31.8309886184" cy="31.8309886184" r="15.9154943092"/>
         </svg>
       </figure>

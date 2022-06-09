@@ -4,6 +4,12 @@
 
 import { application } from "./application"
 
+import CountupController from "./countup_controller.js"
+application.register("countup", CountupController)
+
+import CountupMonthController from "./countup_month_controller.js"
+application.register("countup-month", CountupMonthController)
+
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
 
