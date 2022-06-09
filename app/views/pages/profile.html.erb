@@ -51,7 +51,7 @@
 
     </div>
 
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" data-controller="search-complete" data-search-complete-source-value="<%= @users %>">
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" data-controller="search-complete"   data-search-complete-source-value="<%= @users %>">
     <% if @user == current_user %>
       <%= simple_form_for add_friend_path, method: 'get', class: "form-inline" do %>
         <div class="form-search search-data">
@@ -61,18 +61,20 @@
     <% end %>
       <div class="container mt-3">
         <div>
-          <h3>Abonnés</h3>
+          <h3>Amis</h3>
           <div class="d-grid justify-content-center text-start">
-            <% @followers.each do |follower| %>
-              <%= link_to follower.asker.username, profile_path(follower.asker), class:"text-decoration-none text-danger" %>
-            <% end %>
-          </div>
-        </div>
-        <div class="mt-3">
-          <h4>Abonnements</h4>
-          <div class="d-grid justify-content-center text-start">
-            <% @followings.each do |following| %>
-              <%= link_to following.receiver.username, profile_path(following.receiver), class:"text-decoration-none text-danger"%>
+            <% @follows.each do |follow| %>
+              <% if @user == follow.receiver %>
+                <%= link_to profile_path(follow.asker), class:"text-decoration-none text-danger" do %>
+                  <%= follow.asker.username %>
+                  vous suit
+                <% end %>
+              <% else %>
+                <%= link_to profile_path(follow.asker), class:"text-decoration-none text-danger" do %>
+                  <%= follow.receiver.username %>
+                  vous le suivez
+                <% end %>
+              <% end %>
             <% end %>
           </div>
         </div>

@@ -13,18 +13,17 @@ class PagesController < ApplicationController
   end
 
   def profile
-    add_friend if params[:q]
+    add_friend if params[:query]
     tutti_score_global
     tutti_score_current_month
     tutti_score_last_month
+    @products_all = Product.pluck(:name)
     @current_month = (l Time.now, format: "%B").capitalize
     @last_month = (l (Date.today - 1.month), format: "%B").capitalize
-    @followers = @user.social_as_receiver
-    @followings = @user.social_as_asker
-    @followings = @followings.includes([:receiver])
-    @followers = @followers.includes([:asker])
+    @follows = @user.social_as_receiver.includes(%i[receiver asker]) + @user.social_as_asker.includes(%i[receiver asker])
+    @follows.sort_by!(&:created_at)
     @follow_ups = @user.follow_ups
-    @users = User.all.pluck(:username).sort.to_json
+    @users = User.pluck(:username).sort.to_json
     @month = Date.today.month
     @month_fo_product = current_user.follow_ups.includes(product: [photo_attachment: :blob]).where(month_number: @month)
   end
@@ -52,9 +51,8 @@ class PagesController < ApplicationController
 
   private
 
-
   def add_friend
-    receiver = User.find_by_username(params[:q])
+    receiver = User.find_by_username(params[:query])
     if receiver == current_user
       flash.alert = "Vous ne pouvez pas etre amis avec vous meme :)"
     end
@@ -70,6 +68,7 @@ class PagesController < ApplicationController
       flash.alert = "Utilisateur inconnu"
     end
   end
+
 
   def note(score)
     case score
