@@ -2,7 +2,7 @@
   h2 {
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
   }
 }
 
@@ -53,6 +53,7 @@ body {
 
 .highlight-title p {
   color: $green;
+  margin-bottom: 5rem;
 }
 
 .highlight-title-bis {
@@ -75,4 +76,34 @@ body {
 
 .highlight-title-bis p {
   color: $green;
+}
+
+.stick-carousel-bottom {
+  position: absolute;
+  top: 500px;
+  left: 35px;
+  z-index: 1;
+  width: 40px;
+}
+
+.stick-carousel-top {
+  width: 40px;
+  position: absolute;
+  top: 285px;
+  right: 30px;
+  z-index: 1;
+}
+
+.underline-left {
+  position: absolute;
+  top: 1075px;
+  right: 240px;
+  z-index: 1;
+}
+
+.underline-right {
+  position: absolute;
+  top: 1075px;
+  left: 240px;
+  z-index: 1;
 }
