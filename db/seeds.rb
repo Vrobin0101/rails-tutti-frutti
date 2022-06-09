@@ -13,12 +13,19 @@
 # puts "Destroy users.."
 # User.destroy_allZ
 
-puts "Creating Users..."
-10.times do
+puts "Creating Perso Users..."
+user = User.create(username: "Marlou", first_name: "Marly", last_name: "Diallo", email: "marly@gmail.com", password: "azerty")
+user = User.create(username: "Max", first_name: "Maxime", last_name: "Andre", email: "maxime@gmail.com", password: "azerty")
+user = User.create(username: "Thib", first_name: "Thibault", last_name: "Chassine", email: "thibault@gmail.com", password: "azerty")
+user = User.create(username: "Robinou", first_name: "Robin", last_name: "Varetz", email: "robin@gmail.com", password: "azerty")
+puts "Finish Perso Users"
+
+puts "Creating Random Users..."
+6.times do
   user = User.new(username: Faker::Internet.username,first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "azerty")
   user.save!
 end
-puts "Finish Users"
+puts "Finish Random Users"
 
 puts "Creating Products..."
 
