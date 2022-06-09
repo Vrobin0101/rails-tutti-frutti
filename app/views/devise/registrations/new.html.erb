@@ -8,33 +8,42 @@
       <div class="form-inputs">
         <%= f.input :first_name,
                     autofocus: true,
+                    label: false,
+                    input_html: { id: 'input-registration' },
                     label_html: { class: 'label-sign-input'},
-                    placeholder: 'Michael' %>
+                    placeholder: 'Prénom' %>
         <%= f.input :last_name,
                     autofocus: true,
+                    label: false,
+                    input_html: { id: 'input-registration' },
                     label_html: { class: 'label-sign-input'},
-                    placeholder: 'Scott' %>
+                    placeholder: 'Nom' %>
         <%= f.input :username,
                     autofocus: true,
+                    label: false,
+                    input_html: { id: 'input-registration' },
                     label_html: { class: 'label-sign-input'},
-                    placeholder: 'Marc' %>
+                    placeholder: "Nom d'utilisateur" %>
         <%= f.input :email,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "email" },
+                    label: false,
+                    input_html: { autocomplete: "email", id: 'input-registration' },
                     label_html: { class: 'label-sign-input'},
                     placeholder: 'michael@dundermifflin.com' %>
         <%= f.input :password,
                     required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    label: false,
+                    hint: ("#{@minimum_password_length} lettres minimum" if @minimum_password_length),
                     input_html: { autocomplete: "new-password" },
                     label_html: { class: 'label-sign-input'},
-                    placeholder: '●●●●●●' %>
+                    placeholder: 'Mot de passe' %>
         <%= f.input :password_confirmation,
                     required: true,
-                    input_html: { autocomplete: "new-password" },
+                    label: false,
+                    input_html: { autocomplete: "new-password", id: 'last-input-registration'  },
                     label_html: { class: 'label-sign-input'},
-                    placeholder: '●●●●●●' %>
+                    placeholder: 'Confirmation mot de passe' %>
       </div>
 
       <div class="form-actions">

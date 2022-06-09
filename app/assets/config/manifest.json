@@ -3,6 +3,7 @@
     "description": "Tutti Frutti vous permet de suivre votre consommation carbone dans la vie de tous les jours !",
     "display": "fullscreen",
     "name": "Tutti Frutti",
+    "orientation": "portrait",
     "icons": [
       {
        "src": "\/android-icon-36x36.png",
@@ -42,4 +43,3 @@
       }
      ]
   }
-  
