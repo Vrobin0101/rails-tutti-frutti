@@ -64,15 +64,21 @@
           <h3>Amis</h3>
           <div class="d-grid justify-content-center text-start mt-3">
             <% @follows.each do |follow| %>
-              <% if @user == follow.receiver %>
+            <% if (same = Social.find_by(asker: follow.receiver, receiver: follow.asker)) %>
+            <% @follows.delete(same) %>
+              <div class="card-user">
+                <%= link_to follow.receiver.username, profile_path(follow.asker), class:"text-decoration-none text-danger" %>
+                <p>Tutti-Amis</p>
+              </div>
+            <% elsif @user == follow.receiver %>
                 <div class="card-user">
                   <%= link_to follow.asker.username, profile_path(follow.asker), class:"text-decoration-none text-danger" %>
-                    <p>vous suit</p>
-                </div>
+                  <%= link_to "Suivre en retour", add_friend_path(query: follow.asker.username), class: "btn btn-primary text-white" %>
+                  </div>
               <% else %>
                 <div class="card-user">
-                  <%= link_to follow.receiver.username, profile_path(follow.asker), class:"text-decoration-none text-danger" %>
-                  <p>vous le suivez</p>
+                  <%= link_to follow.receiver.username, profile_path(follow.receiver), class:"text-decoration-none text-danger" %>
+                  <p>En attente</p>
                 </div>
               <% end %>
             <% end %>
