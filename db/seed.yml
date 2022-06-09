@@ -337,7 +337,7 @@
 - abricot:
     category: fruit
     sub_category: rosacée
-    description: 'Tout doux, l'abricot est un véritable symbole de l'été. Qu’on le croque en toute simplicité, qu’on le déguste dans une pâtisserie ou qu’on s’en délecte en confiture, l’abricot a le pouvoir d’offrir à nos papilles une dose de soleil.'
+    description: Tout doux, l'abricot est un véritable symbole de l'été. Qu’on le croque en toute simplicité, qu’on le déguste dans une pâtisserie ou qu’on s’en délecte en confiture, l’abricot a le pouvoir d’offrir à nos papilles une dose de soleil.
     localable: true
     start_month: 6
     end_month: 8
