@@ -11,7 +11,12 @@ export default class extends Controller {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+      preventClicks: false,
+      preventClicksPropagation: false
     });
+  }
 
+  navigate(event) {
+    window.location = event.currentTarget.querySelector('.swiper-slide-visible > a').href
   }
 }

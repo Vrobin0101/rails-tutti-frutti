@@ -11,5 +11,12 @@ export default class extends Controller {
     this.submitTarget.classList.remove("d-none")
     this.submitTarget.classList.add("btn-search-navbar")
     this.inputTarget.classList.add("input-search-navbar-display")
+    this.inputTarget.focus()
+  }
+
+  closeSearchBar() {
+    this.submitTarget.classList.add("d-none")
+    this.submitTarget.classList.remove("btn-search-navbar")
+    this.inputTarget.classList.remove("input-search-navbar-display")
   }
 }
