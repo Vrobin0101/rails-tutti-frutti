@@ -57,7 +57,7 @@
 - brocoli:
     category: légume
     sub_category: crucifère
-    description: Le brocoli possède des qualités nutritionnelles remarquables. 100 g de brocoli contiennent 2 fois plus de vitamine C qu'une orange.
+    description: Le brocoli possède des qualités nutritionnelles remarquables. 100 grammes de brocoli contiennent 2 fois plus de vitamine C qu'une orange.
     localable: true
     start_month: 6
     end_month: 11
@@ -65,7 +65,7 @@
 - carotte:
     category: légume
     sub_category: apiacée
-    description: Consommez la cuite et sous forme de purée pour encore plus de bêta-carotène ingéré !
+    description: Consommez-la cuite et sous forme de purée pour encore plus de bêta-carotène ingéré !
     localable: true
     start_month: 1
     end_month: 12
@@ -91,8 +91,8 @@
     sub_category: crucifère
     description: Il y en a de deux sortes. Il se nomme chou Cabus, si sa tête et ses feuilles sont lisses. Ou chou pommé de Milan, si sa tête et ses feuilles sont frisées.
     localable: true
-    start_month: 12
-    end_month: 15
+    start_month: 0
+    end_month: 3
     image_id: chou_l9ifvv
 - chou de Bruxelles:
     category: légume
@@ -102,7 +102,7 @@
     start_month: 9
     end_month: 15
     image_id: chou_de_bruxelles_ofgcp4
-- chou Romaneso:
+- chou Romanesco:
     category: légume
     sub_category: crucifère
     description: Wahou un objet fractal naturel ! Cela signifie que chaque partie du chou de la plus petite à la plus grande possède une forme identique à la forme de l’ensemble.
@@ -143,7 +143,7 @@
     end_month: 10
     image_id: courgette_h5ks6f
 - crosne:
-    category: rhizome
+    category: légume
     sub_category: crucifère
     description: Plante vivace et rustique, elle peut être consommée comme la pomme de terre.
     localable: true
@@ -175,8 +175,8 @@
     end_month: 12
     image_id: epinard_dozvmw
 - fenouil:
-    category: apiacée
-    sub_category: crucifère
+    category: légume
+    sub_category: apiacée
     description: Les propriétés digestives du fenouil sont reconnues grâce aux substances contenues dans ses graines ainsi que dans son bulbe.
     localable: true
     start_month: 6
@@ -215,8 +215,8 @@
     end_month: 15
     image_id: mache_mb1pdk
 - navet:
-    category: féculent
-    sub_category: crucifère
+    category: légume
+    sub_category: féculent
     description: Un bon navet doit être bien blanc, sans taches brunes, ni flétrissures. Mieux vaut éviter les gros navets qui sont souvent assez durs et creux.
     localable: true
     start_month: 10
@@ -306,9 +306,18 @@
     category: légume
     sub_category: rhizome
     description: Pour préparer les salsifis, il faut d’abord bien les laver. Ensuite, on coupe les extrémités puis on les épluche. Pour ne pas les casser, on maintient le salsifis à plat sur une planche puis on l’épluche de la tête vers le pied.
+    localable: true
     start_month: 10
     end_month: 15
     image_id: salsifi_vwakod
+- tomate:
+    category: légume
+    sub_category: légume
+    description: La tomate est l'aliment le plus consommé au monde. Il s'agit bien d'un fruit et non d'un légume. On se doute que vous le savez mais on aime bien le rappeler.
+    localable: true
+    start_month: 5
+    end_month: 10
+    image_id: tomate_jo5v4z
 - topinambour:
     category: légume
     sub_category: rhizome
@@ -328,7 +337,7 @@
 - abricot:
     category: fruit
     sub_category: rosacée
-    description: Tout doux, l'abricot est un véritable symbole de l‘été. Qu’on le croque en toute simplicité, qu’on le déguste dans une pâtisserie ou qu’on s’en délecte en confiture, l’abricot a le pouvoir d’offrir à nos papilles une dose de soleil.
+    description: 'Tout doux, l'abricot est un véritable symbole de l'été. Qu’on le croque en toute simplicité, qu’on le déguste dans une pâtisserie ou qu’on s’en délecte en confiture, l’abricot a le pouvoir d’offrir à nos papilles une dose de soleil.'
     localable: true
     start_month: 6
     end_month: 8
@@ -338,8 +347,8 @@
     sub_category: exotique
     description: Parfum des parfums, c’est ainsi que les amérindiens nommèrent l’ananas, eux qui connaissent et cultivent ce fruit depuis fort longtemps. Ce fruit est malheureusement importé de loin, très loin.
     localable: false
-    start_month: 12
-    end_month: 15
+    start_month: 0
+    end_month: 3
     image_id: ananas_mnumjn
 - amande:
     category: fruit
@@ -376,7 +385,7 @@
 - cassis:
     category: fruit
     sub_category: fruit rouge
-    description: La baie de cassis est quatre fois plus riche en vitamine C  que l'orange !
+    description: La baie de cassis est quatre fois plus riche en vitamine C que l'orange !
     localable: true
     start_month: 6
     end_month: 8
@@ -392,7 +401,7 @@
 - châtaigne:
     category: fruit
     sub_category: noix
-    description: La châtaigne est cloisonnée, tandis que le marron est un fruit homogène. A vous de briller en société maintenant.
+    description: La châtaigne est cloisonnée, tandis que le marron est un fruit homogène. À vous de briller en société maintenant.
     localable: true
     start_month: 10
     end_month: 12
@@ -432,7 +441,7 @@
 - figue:
     category: fruit
     sub_category: figue
-    description: Contrairement à ce que l’on pourrait penser, la figue n’est pas un fruit. Il s’agit en effet d’une sorte de fleur inversée dans laquelle de petites fleurs poussent à l’intérieur de la coque rigide. C'est délicieux. Evidemment.
+    description: Contrairement à ce que l’on pourrait penser, la figue n’est pas un fruit. Il s’agit en effet d’une sorte de fleur inversée dans laquelle de petites fleurs poussent à l’intérieur de la coque rigide. C'est délicieux. Évidemment.
     localable: true
     start_month: 9
     end_month: 10
@@ -464,7 +473,7 @@
 - grenade:
     category: fruit
     sub_category: exotique
-    description: Originaire du Bassin Méditerranéen, la grenade est un fruit très réputé pour ses qualités gustatives dans les pays du Proche-Orient ou encore en Italie et en Espagne. On l'adore ici aussi.
+    description: Originaire du bassin méditerranéen, la grenade est un fruit très réputé pour ses qualités gustatives dans les pays du Proche-Orient ou encore en Italie et en Espagne. On l'adore ici aussi.
     localable: true
     start_month: 9
     end_month: 11
@@ -488,7 +497,7 @@
 - kiwi:
     category: fruit
     sub_category: juicy
-    description: "Le kiwi possède des qualités nutritionnelles exceptionnelles : 100 g de kiwi contiennent 5 fois plus de vitamine C qu'une orange. Le kiwi jaune vient souvent de très loin, préférez le kiwi local."
+    description: "Le kiwi possède des qualités nutritionnelles exceptionnelles : 100 grammes de kiwi contiennent 5 fois plus de vitamine C qu'une orange. Le kiwi jaune vient souvent de très loin, préférez le kiwi local."
     localable: true
     start_month: 10
     end_month: 14
@@ -506,13 +515,13 @@
     sub_category: exotique
     description: "Le goût de la mangue est dépendant de sa variété et de sa maturité : on peut y déceler des saveurs de pêche, fleurs, citron, abricot, banane, menthe... Tout simplement délicieuse, malheureusement elle vient de loin. A savourer avec modération donc."
     localable: false
-    start_month: 12
-    end_month: 19
+    start_month: 0
+    end_month: 7
     image_id: mangue_jbinqf
 - melon:
     category: fruit
     sub_category: juicy
-    description: On compte plus de 300 variétés différentes de melon. La variété la plus répandue étant le charentais (aussi appelée cantaloup), que vous pouvez reconnaître à sa chair orangée, fondante, sucrée et juteuse. Qui a hâte d'être à l'été maintenant ?
+    description: On compte plus de 300 variétés différentes de melon. La variété la plus répandue étant le charentais (aussi appelée cantaloup), que vous pouvez reconnaître à sa chair orangée, fondante, sucrée et juteuse. Qui a hâte d'être en été maintenant ?
     localable: true
     start_month: 6
     end_month: 9
@@ -600,7 +609,7 @@
 - pastèque:
     category: fruit
     sub_category: juicy
-    description: Originaire d’Afrique, la pastèque fait partie de la famille des cucurbitacées au même titre que le melon, le potimarron ou le cornichon. C'est trop bon (rime en "on")
+    description: Originaire d’Afrique, la pastèque fait partie de la famille des cucurbitacées au même titre que le melon, le potimarron ou le cornichon. C'est trop bon (rime en "on").
     localable: true
     start_month: 6
     end_month: 9
@@ -661,11 +670,3 @@
     start_month: 5
     end_month: 7
     image_id: rhubarbe_f15rjd
-- tomate:
-    category: légume
-    sub_category: légume
-    description: La tomate est l'aliment le plus consommé au monde. Il s'agit bien d'un fruit et non d'un légume. On se doute que vous le savez mais on aime bien le rappeler.
-    localable: true
-    start_month: 5
-    end_month: 10
-    image_id: tomate_jo5v4z
