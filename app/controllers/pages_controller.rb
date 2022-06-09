@@ -21,7 +21,7 @@ class PagesController < ApplicationController
     @current_month = (l Time.now, format: "%B").capitalize
     @last_month = (l (Date.today - 1.month), format: "%B").capitalize
     @follows = @user.social_as_receiver.includes(%i[receiver asker]) + @user.social_as_asker.includes(%i[receiver asker])
-    @follows.sort_by!(&:created_at)
+    @follows.sort_by!(&:created_at).reverse!
     @follow_ups = @user.follow_ups
     @users = User.pluck(:username).sort.to_json
     @month = Date.today.month
