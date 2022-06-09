@@ -74,13 +74,17 @@
   border-bottom-right-radius: 20px;
 }
 
-.navbar-brand-home {
+.navbar-brand-else {
   margin: 0;
   padding: 0 0.5em;
   font-family: "Inconsolata" !important;
   font-style: normal;
   font-weight: 500;
   margin-bottom: 16px;
+  display: flex;
+  width: calc(50% + 35px);
+  justify-content: space-between;
+  align-items: end;
 }
 
 .navbar-brand {
@@ -91,7 +95,7 @@
   font-weight: 500;
   margin-bottom: 16px;
   display: flex;
-  width: calc(50% + 35px);
+  width: calc(50% + 37px);
   justify-content: space-between;
   align-items: end;
   &:hover {
@@ -119,10 +123,13 @@
   background-color: $orange;
   padding-right: 40px;
   color:#fff;
+  box-shadow: none !important;
+  border: none !important;
+  background: none;
 }
 .input-search-navbar::placeholder{
-  color:rgba(255,255,255,.5);
-  font-size: 12px;
+  color:rgba(255,255,255,.8);
+  font-size: 18px;
   font-weight: 100;
 }
 .btn-search-navbar{
