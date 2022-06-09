@@ -8,7 +8,6 @@ class PagesController < ApplicationController
   before_action :set_user, only: [ :profile, :export]
   def home
     @products = Product.includes([photo_attachment: :blob]).seasonal(Time.now.month)
-    @products_all = Product.all.pluck(:name).sort.to_json
     @current_month = (l Time.now, format: "%B").capitalize
   end
 
@@ -17,7 +16,6 @@ class PagesController < ApplicationController
     tutti_score_global
     tutti_score_current_month
     tutti_score_last_month
-    @products_all = Product.pluck(:name)
     @current_month = (l Time.now, format: "%B").capitalize
     @last_month = (l (Date.today - 1.month), format: "%B").capitalize
     @follows = @user.social_as_receiver.includes(%i[receiver asker]) + @user.social_as_asker.includes(%i[receiver asker])
