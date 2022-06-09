@@ -30,14 +30,14 @@
       <ul class="navbar-nav me-auto d-flex flex-col align-items-end" >
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-            <%= link_to "Mon profil", profile_path(current_user), class: "dropdown-item" %>
+            <%= link_to "Mon profil", profile_path(current_user), class: "dropdown-item dropdown-item-first" %>
             <%= link_to "Où acheter ?", map_path, class: "dropdown-item" %>
-            <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item dropdown-item-last" %>
           </li>
         <% else %>
           <li class="nav-item dropdown">
-            <%= link_to "Se connecter", new_user_session_path, class: "dropdown-item text-end" %>
-            <%= link_to "Où acheter ?", map_path, class: "dropdown-item text-end"%>
+            <%= link_to "Se connecter", new_user_session_path, class: "dropdown-item text-end dropdown-item-first" %>
+            <%= link_to "Où acheter ?", map_path, class: "dropdown-item text-end dropdown-item-last"%>
           </li>
         <% end %>
       </ul>

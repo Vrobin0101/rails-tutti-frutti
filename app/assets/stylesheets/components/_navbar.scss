@@ -50,6 +50,28 @@
 .dropdown-item {
   background: rgba(255, 255, 255, 0.8);
   color: #FF7E60;
+  &:focus {
+    border: none;
+    box-shadow: none;
+    color: #FF7E60;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  &:hover {
+    border: none;
+    box-shadow: none;
+    color: #FF7E60;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.dropdown-item-first {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.dropdown-item-last {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .navbar-brand-home {
@@ -72,6 +94,12 @@
   width: calc(50% + 35px);
   justify-content: space-between;
   align-items: end;
+  &:hover {
+    color: white !important;
+  }
+  &:focus {
+    color: white !important;
+  }
 }
 
 .search-box-navbar {
