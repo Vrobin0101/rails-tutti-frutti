@@ -15,15 +15,15 @@
       <button class="btn btn-flat dropdown-toggle my-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 
       <% if params["chosen_month"] %>
-        <%= @mois[params["chosen_month"][1].to_i%12].capitalize %>
+        <%= @month[params["chosen_month"][1].to_i%12].capitalize %>
       <% else %>
         <%= @current_month %>
 
       <% end %>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <% @mois.drop(1).each do |mois| %>
-        <li class="dropdown-month-item"><%= link_to mois.capitalize, products_path(chosen_month: [@mois.index(mois), @mois.index(mois)+ 12]) %></li>
+        <% @month.drop(1).each do |month| %>
+        <li class="dropdown-month-item"><%= link_to month.capitalize, products_path(chosen_month: [@month.index(month), @month.index(month)+ 12]) %></li>
         <% end %>
       </ul>
     </div>

@@ -4,12 +4,12 @@
       <div class="card-product-info">
         <% if product.season? Date.today.month + 48 %>
           <div class="card-product-info-season">
-            <h3 class="text-justify">Disponible de <%=@mois[(@product.start_month)%12]%> à <%= @mois[(@product.end_month)%12]%></h3>
+            <h3 class="text-justify">Disponible de <%=@month[(@product.start_month)%12]%> à <%= @month[(@product.end_month)%12]%></h3>
             <i class="fa-solid fa-check text-success" style="padding-left: 9px"></i>
           </div>
         <% else %>
           <div class="card-product-info-season">
-            <h3 class="text-justify" style="color: #FC755D">Disponible de <%=@mois[(@product.start_month)%12]%> à <%= @mois[(@product.end_month)%12]%></h3>
+            <h3 class="text-justify" style="color: #FC755D">Disponible de <%=@month[(@product.start_month)%12]%> à <%= @month[(@product.end_month)%12]%></h3>
             <i class="fa-solid fa-xmark text-danger" style="padding-left: 9px"></i>
           </div>
         <% end %>
@@ -17,7 +17,7 @@
 
 
     <% joke_sentence = ['De rien, ça nous fait plaisir.', 'On vous voit sourire. On ferait pareil à votre place.', 'Oh yeah !', 'Mmmmh !', "C'est le moment de tester votre recette magique.", "C'est le moment de se faire plaisir."] %>
-    <%# <h5 class="text-justify"> Disponible de =@mois[(@product.start_month)%12] à = @mois[(@product.end_month)%12]</h5> %>
+    <%# <h5 class="text-justify"> Disponible de =@month[(@product.start_month)%12] à = @month[(@product.end_month)%12]</h5> %>
     <% if @product.season? Date.today.month + 48 %>
       <p class="text-center"><%= joke_sentence.sample %></p>
     <% end %>
@@ -50,5 +50,5 @@
   <%# <% if @product.end_month + @product.start_month == 13  %>
     <%# <p>Super, vous pouvez en profiter toute l'année.</p> %>
   <%# <% elsif (@product.end_month - Time.now.month).abs %>
-    <%# <p>Encore = (@product.end_month - Time.now.month).abs mois pour en profiter.</p> %>
+    <%# <p>Encore = (@product.end_month - Time.now.month).abs month pour en profiter.</p> %>
   <%# <% end %>

@@ -3,21 +3,11 @@ require 'nokogiri'
 
 class ProductsController < ApplicationController
   before_action :set_product, only: :show
+  before_action :set_month, only: %i[show index]
   skip_before_action :authenticate_user!
 
   def index
-    set_mois
-    if params[:legumes] == "true"
-      @legumes_active = ["active", "show active"]
-      @fruits_active = []
-    elsif params[:fruits] == "true"
-      @fruits_active = ["active", "show active"]
-      @legumes_active = []
-    else
-      @legumes_active = []
-      @fruits_active = ["active", "show active"]
-    end
-
+    set_active
     @products = policy_scope(Product)
     authorize @products
     if params["chosen_month"].present?
@@ -27,9 +17,7 @@ class ProductsController < ApplicationController
     end
     if params[:query].present?
       @products = Product.includes([photo_attachment: :blob]).where("name ILIKE ? OR category ILIKE ? OR sub_category ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
-      if @products.count == 1
-        redirect_to @products.first
-      end
+      redirect_to @products.first if @products.count == 1
     end
     @fruits = @products.where(category: 'fruit')
     @legumes = @products.where(category: 'légume')
@@ -37,7 +25,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    set_mois
     scrapping
     @products = Product.seasonal(Time.now.month).includes([photo_attachment: :blob])
     @follow_up = FollowUp.new
@@ -50,12 +37,25 @@ class ProductsController < ApplicationController
 
   private
 
+  def set_active
+    if params[:legumes] == "true"
+      @legumes_active = ["active", "show active"]
+      @fruits_active = []
+    elsif params[:fruits] == "true"
+      @fruits_active = ["active", "show active"]
+      @legumes_active = []
+    else
+      @legumes_active = []
+      @fruits_active = ["active", "show active"]
+    end
+  end
+
   def set_product
     @product = Product.find(params[:id])
   end
 
-  def set_mois
-    @mois = ["décembre", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+  def set_month
+    @month = ["décembre", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
   end
 
   def scrapping
