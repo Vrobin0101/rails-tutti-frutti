@@ -48,12 +48,14 @@ body {
   text-shadow: -2px 3px 0px #0B8790;
   color: white;
   margin-bottom: 30px;
+  text-align: left;
   }
 }
 
 .highlight-title p {
   color: $green;
   margin-bottom: 5rem;
+  text-align: left;
 }
 
 .highlight-title-bis {
@@ -80,7 +82,7 @@ body {
 
 .stick-carousel-bottom {
   position: absolute;
-  top: 500px;
+  top: 480px;
   left: 35px;
   z-index: 1;
   width: 40px;
