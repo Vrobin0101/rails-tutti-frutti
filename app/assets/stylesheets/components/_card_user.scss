@@ -3,9 +3,10 @@
   justify-content: space-between;
   width: 300px;
   align-items: baseline;
+  margin: 10px 0;
   p {
     margin-left: 5px;
-    border: 1px solid rgba($color: #000000, $alpha: 0.4);
+    border: 1px solid rgba($color: $orange, $alpha: 0.4);
     padding: 5px 10px;
     border-radius: 15px;
   }
