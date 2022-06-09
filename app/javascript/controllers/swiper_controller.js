@@ -6,7 +6,6 @@ export default class extends Controller {
     const swiper = new Swiper('.swiper', {
       spaceBetween: 30,
       effect: "cards",
-      grabCursor: true,
       slidesPerView: "auto",
       navigation: {
         nextEl: ".swiper-button-next",

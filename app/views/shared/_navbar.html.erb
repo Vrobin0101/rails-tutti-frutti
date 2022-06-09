@@ -7,12 +7,12 @@
         <%= image_tag 'new_logo.png', class: 'image-logo-navbar' %>
       <% end %>
       <% elsif params[:action] != "export" %>
-          <div class="navbar-brand-home">
+          <div class="navbar-brand-home" data-controller="search-complete" data-search-complete-source-value="<%= @products_all %>">
             <div class="search-box-navbar" data-controller="search-button">
               <button name="button" class="btn-search-navbar" data-action = "click->search-button#displaySearchBar"><i class="fas fa-search"></i></button>
               <%= form_tag products_path, method: :get do |f| %>
                   <button name="button" type="submit" class="d-none" data-search-button-target="submit"><i class="fas fa-search"></i></button>
-                  <%= text_field_tag :query, params[:query], data: { 'search-button-target' => 'input' }, class: "form-control string required input-search-navbar rounded", id: "search_query", placeholder: "Fruit ou légume", style: "color: white" %>
+                  <%= text_field_tag :query, params[:query], data: { 'search-button-target' => 'input', 'search-complete-target' => 'query' }, class: "form-control string required input-search-navbar rounded", id: "search_query", placeholder: "Fruit ou légume", style: "color: white" %>
               <% end  %>
             </div>
           </div>
