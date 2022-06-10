@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background-size: cover;
-  height: 85px;
+  height: 80px;
   background-position: bottom;
   z-index: 100;
 }
@@ -39,7 +39,7 @@
   font-weight: 700;
   text-align: end;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  background-color: $orange;
+  // background-color: $orange;
 }
 
 // .dropdown-item:last-child {
@@ -120,7 +120,7 @@
   outline: none;
   border-radius: 25px;
   transition: all .5s ease-in-out;
-  background-color: $orange;
+  // background-color: $orange;
   padding-right: 40px;
   color:#fff;
   box-shadow: none !important;
