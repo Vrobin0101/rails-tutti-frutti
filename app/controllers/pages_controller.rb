@@ -43,6 +43,7 @@ class PagesController < ApplicationController
 
   def welcome
     # redirect_to :home if user_signed_in?
+    # line above is commented for the presentation
   end
 
   private
