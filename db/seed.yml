@@ -31,7 +31,7 @@
     end_month: 10
     image_id: aubergine_egjg94
 - avocat:
-    category: légume
+    category: fruit
     sub_category: avocat
     description: Les avocats sont extrêmement polyvalents. Vous pouvez les utiliser dans quasiment tous les plats. Préferez ceux qui viennent d'Espagne :)
     localable: false
