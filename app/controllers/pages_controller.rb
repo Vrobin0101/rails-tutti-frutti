@@ -42,7 +42,7 @@ class PagesController < ApplicationController
   end
 
   def welcome
-    redirect_to :home if user_signed_in?
+    # redirect_to :home if user_signed_in?
   end
 
   private
