@@ -96,7 +96,8 @@
 
             <div class="d-flex justify-content-between flex-grow-1">
               <div class="follow-up-info">
-              <h2 class="pt-3" style="color: <%= colors.sample.html_safe %>"><%= fo.product.name.titleize %></h2>
+              <h2 class="pt-3" style="color: <%= colors.sample.html_safe %>">
+              <%= link_to fo.product.name.titleize, fo.product, class: "d-block mb-2" %></h2>
               <p class="add-date"><i>Ajouté le <span><%= (l fo.created_at, format: '%-d %B') %></span></i></p>
                 <div class="d-grid info-product-fo">
                   <% if fo.product.season?(@month) %>
