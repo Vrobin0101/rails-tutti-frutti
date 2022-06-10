@@ -27,10 +27,10 @@
   <div class="card-product m-3">
         <% if product.season? Date.today.month + 48 %>
           <div class="stamp-season"><p>De saison</p></div>
-          <%= cl_image_tag product.photo.key, :quality=>"auto:good", height: 300, width: 300, crop: :fill %>
+          <%= cl_image_tag product.photo.key, :quality=>"50", height: 300, width: 300, crop: :fill %>
         <% else %>
           <div class="stamp-not-season"><p>Pas de saison</p></div>
-          <%= cl_image_tag product.photo.key, :quality=>"auto:good", height: 300, width: 300, crop: :fill %>
+          <%= cl_image_tag product.photo.key, :quality=>"50", height: 300, width: 300, crop: :fill %>
         <% end %>
   </div>
 
