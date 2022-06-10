@@ -6,7 +6,7 @@
         <%= link_to product_path(product),
                       data: { action: 'click->swiper#navigate' },
                       class: 'card-category text-decoration-none',
-                      style: "background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(#{cl_image_path product.photo.key, :height=>300, :quality=>"auto:good", :width=>300, :crop=>"fill"})" do %>
+                      style: "background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(#{cl_image_path product.photo.key, :height=>300, :quality=>"50", :width=>300, :crop=>"fill"})" do %>
             <p><%= product.name.capitalize %></p>
           <% end %>
       </div>
