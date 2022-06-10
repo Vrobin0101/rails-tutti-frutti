@@ -1,6 +1,6 @@
 <%  @products_all = Product.pluck(:name) %>
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="background-image: url('<%= image_url('navbar-background.svg')%>');">
-  <div class="container-fluid">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="background-image: url('<%= image_url('navbar-background.svg')%>');background-repeat: no-repeat" >
+  <div class="container">
     <% if params[:action] == "home" || params[:action] == "export" %>
       <%= link_to home_path, class: "navbar-brand" do %>
         <%# Tutti Frutti <i class="fa-solid fa-seedling"></i> %>
